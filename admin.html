@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Reno-Romax-Pro</title>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/jjm6Z2RL/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #f97316;
+      --primary-dark: #ea580c;
+      --primary-light: #fb923c;
+      --secondary: #253a46;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    /* Login Page */
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #253a46 0%, #1e293b 100%);
+      padding: 1rem;
+    }
+
+    .login-box {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-logo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .login-logo h1 {
+      font-size: 1.5rem;
+      color: var(--secondary);
+    }
+
+    .login-logo p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      border: 2px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #16a34a;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .error-message {
+      background: #fef2f2;
+      color: var(--danger);
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    /* Admin Layout */
+    .admin-container {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .admin-container.active {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: var(--secondary);
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 100;
+      transition: transform 0.3s;
+    }
+
+    .sidebar-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .sidebar-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 0.5rem;
+    }
+
+    .sidebar-header h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    .sidebar-nav {
+      padding: 1rem 0;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1.5rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-item:hover, .nav-item.active {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    .nav-item.active {
+      border-left: 3px solid var(--primary);
+    }
+
+    .nav-item svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .sidebar-footer {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: auto;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      margin-left: 260px;
+      min-height: 100vh;
+    }
+
+    .top-bar {
+      background: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .top-bar h1 {
+      font-size: 1.5rem;
+      color: var(--secondary);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .content-area {
+      padding: 1.5rem;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .stat-card h4 {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .stat-card.primary .value {
+      color: var(--primary);
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--bg-light);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    tr:hover {
+      background: var(--bg-light);
+    }
+
+    .product-row {
+      cursor: grab;
+    }
+
+    .product-row:active {
+      cursor: grabbing;
+    }
+
+    .product-row.dragging {
+      opacity: 0.5;
+      background: var(--primary-light);
+    }
+
+    .product-row.drag-over {
+      border-top: 2px solid var(--primary);
+    }
+
+    /* Product Image in Table */
+    .product-thumb {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 0.375rem;
+      background: var(--bg-light);
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-primary {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--primary);
+    }
+
+    .badge-success {
+      background: rgba(34, 197, 94, 0.1);
+      color: var(--success);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 1rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: white;
+      border-radius: 0.75rem;
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-header h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: var(--bg-light);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--danger);
+      color: white;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      justify-content: flex-end;
+    }
+
+    /* Categories Grid */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .category-card:hover {
+      border-color: var(--primary);
+    }
+
+    .category-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .category-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .category-card .actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-sm {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    /* File Upload */
+    .file-upload {
+      border: 2px dashed var(--border);
+      border-radius: 0.75rem;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .file-upload:hover {
+      border-color: var(--primary);
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .file-upload.drag-over {
+      border-color: var(--primary);
+      background: rgba(249, 115, 22, 0.1);
+    }
+
+    .file-upload svg {
+      width: 48px;
+      height: 48px;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .file-upload p {
+      color: var(--text-muted);
+    }
+
+    /* Import Results */
+    .import-results {
+      margin-top: 1.5rem;
+    }
+
+    .import-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: var(--bg-light);
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .import-item.success {
+      background: rgba(34, 197, 94, 0.1);
+    }
+
+    .import-item.error {
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .import-item.duplicate {
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    /* Section Pages */
+    .section-page {
+      display: none;
+    }
+
+    .section-page.active {
+      display: block;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 300;
+    }
+
+    .toast {
+      background: var(--secondary);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      animation: slideIn 0.3s ease;
+    }
+
+    .toast.success {
+      background: var(--success);
+    }
+
+    .toast.error {
+      background: var(--danger);
+    }
+
+    .toast.warning {
+      background: var(--warning);
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Search Input */
+    .search-box {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 2px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Hidden class */
+    .hidden {
+      display: none !important;
+    }
+
+    /* Product Move Item Hover */
+    .product-move-item:hover {
+      background: var(--bg-light);
+    }
+
+    .product-move-item:has(input:checked) {
+      background: rgba(249, 115, 22, 0.1);
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Page -->
+  <div class="login-container" id="loginPage">
+    <div class="login-box">
+      <div class="login-logo">
+        <img src="https://i.postimg.cc/jjm6Z2RL/logo.png" alt="Logo">
+        <h1>Admin Panel</h1>
+        <p>Reno-Romax-Pro</p>
+      </div>
+      <div class="error-message" id="loginError">Invalid username or password</div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.8rem;">
+        Default: admin / admin123
+      </p>
+    </div>
+  </div>
+
+  <!-- Admin Container -->
+  <div class="admin-container" id="adminContainer">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="https://i.postimg.cc/jjm6Z2RL/logo.png" alt="Logo">
+        <h2>Reno-Romax-Pro</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" data-section="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard
+        </a>
+        <a class="nav-item" data-section="products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          Products
+        </a>
+        <a class="nav-item" data-section="categories">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Categories
+        </a>
+        <a class="nav-item" data-section="import">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          Import CSV
+        </a>
+        <a class="nav-item" data-section="move">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="5 9 2 12 5 15"></polyline>
+            <polyline points="9 5 12 2 15 5"></polyline>
+            <polyline points="15 19 12 22 9 19"></polyline>
+            <polyline points="19 9 22 12 19 15"></polyline>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <line x1="12" y1="2" x2="12" y2="22"></line>
+          </svg>
+          Move Products
+        </a>
+        <a class="nav-item" data-section="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Settings
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="btn btn-secondary btn-block" onclick="logout()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar">
+        <h1 id="pageTitle">Dashboard</h1>
+        <div class="user-info">
+          <span id="welcomeUser">Welcome, Admin</span>
+          <a href="catalog.html" class="btn btn-secondary btn-sm">View Site</a>
+        </div>
+      </div>
+
+      <div class="content-area">
+        <!-- Dashboard Section -->
+        <div class="section-page active" id="dashboardSection">
+          <div class="stats-grid">
+            <div class="stat-card primary">
+              <h4>Total Products</h4>
+              <div class="value" id="totalProducts">0</div>
+            </div>
+            <div class="stat-card">
+              <h4>Categories</h4>
+              <div class="value" id="totalCategories">0</div>
+            </div>
+            <div class="stat-card">
+              <h4>Total Value</h4>
+              <div class="value" id="totalValue">$0</div>
+            </div>
+            <div class="stat-card">
+              <h4>Last Import</h4>
+              <div class="value" id="lastImport" style="font-size: 1rem;">Never</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Recent Products</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recentProductsTable">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Section -->
+        <div class="section-page" id="productsSection">
+          <div class="card">
+            <div class="card-header">
+              <h3>All Products</h3>
+              <button class="btn btn-primary btn-sm" onclick="openProductModal()">+ Add Product</button>
+            </div>
+            <div class="card-body">
+              <div class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="productSearch" placeholder="Search products..." oninput="filterProducts()">
+              </div>
+              <div class="form-group">
+                <select id="categoryFilter" onchange="filterProducts()">
+                  <option value="">All Categories</option>
+                </select>
+              </div>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="productsTable">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="section-page" id="categoriesSection">
+          <div class="card">
+            <div class="card-header">
+              <h3>Categories</h3>
+              <button class="btn btn-primary btn-sm" onclick="openCategoryModal()">+ Add Category</button>
+            </div>
+            <div class="card-body">
+              <div class="categories-grid" id="categoriesGrid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Import Section -->
+        <div class="section-page" id="importSection">
+          <div class="card">
+            <div class="card-header">
+              <h3>Import Products from CSV</h3>
+            </div>
+            <div class="card-body">
+              <div class="file-upload" id="dropZone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <p><strong>Drag & drop CSV file here</strong></p>
+                <p>or click to browse</p>
+                <input type="file" id="csvFile" accept=".csv" style="display: none;">
+              </div>
+              <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-light); border-radius: 0.5rem;">
+                <h4 style="margin-bottom: 0.5rem;">Supported CSV Formats:</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Shopify Export:</strong> Handle, Title, Body (HTML), Variant Price, Image Src, Product Category</p>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Simple format:</strong> name, description, price, image, category</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                  Multi-line descriptions in quotes are supported. Variants are automatically skipped.
+                </p>
+              </div>
+              <div class="import-results" id="importResults" style="display: none;">
+                <h4 style="margin-bottom: 1rem;">Import Results:</h4>
+                <div id="importResultsList"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Move Products Section -->
+        <div class="section-page" id="moveSection">
+          <div class="card">
+            <div class="card-header">
+              <h3>Move Products Between Categories</h3>
+            </div>
+            <div class="card-body">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
+                <div>
+                  <div class="form-group">
+                    <label><strong>From Category:</strong></label>
+                    <select id="moveFromCategory" onchange="loadProductsToMove()">
+                      <option value="">Select source category</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label><strong>To Category:</strong></label>
+                    <select id="moveToCategory">
+                      <option value="">Select target category</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label><strong>Select Products to Move:</strong></label>
+                <div style="margin-bottom: 0.5rem;">
+                  <button class="btn btn-secondary btn-sm" onclick="selectAllProductsToMove()">Select All</button>
+                  <button class="btn btn-secondary btn-sm" onclick="deselectAllProductsToMove()">Deselect All</button>
+                </div>
+                <div id="productsToMoveList" style="max-height: 400px; overflow-y: auto; border: 2px solid var(--border); border-radius: 0.5rem; padding: 0.5rem; min-height: 100px;">
+                  <p style="color: var(--text-muted); text-align: center; padding: 2rem;">Select a source category to see products</p>
+                </div>
+              </div>
+              
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="btn btn-primary" onclick="moveSelectedProducts()">Move Selected Products</button>
+                <span id="selectedCount" style="color: var(--text-muted);">0 products selected</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              <h3>Quick Category Overview</h3>
+            </div>
+            <div class="card-body">
+              <div id="categoryOverview" class="categories-grid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="section-page" id="settingsSection">
+          <div class="card">
+            <div class="card-header">
+              <h3>Site Settings</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Site Title</label>
+                <input type="text" id="siteTitle" placeholder="Reno-Romax-Pro">
+              </div>
+              <div class="form-group">
+                <label>Hero Title</label>
+                <input type="text" id="heroTitle" placeholder="Premium Sanitary Ware Solutions">
+              </div>
+              <div class="form-group">
+                <label>Hero Subtitle</label>
+                <textarea id="heroSubtitle" rows="2" placeholder="Discover our extensive collection..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Footer Text</label>
+                <input type="text" id="footerText" placeholder="© 2026 Reno-Romax-Pro. All rights reserved.">
+              </div>
+              <div class="form-group">
+                <label>Hero Banner Image URL</label>
+                <input type="text" id="heroBanner" placeholder="https://...">
+              </div>
+              <div class="form-group">
+                <label>WhatsApp Phone Number</label>
+                <input type="text" id="whatsappNumber" placeholder="14377999960">
+              </div>
+              <button class="btn btn-primary" onclick="saveSettings()">Save Settings</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Change Password</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Current Password</label>
+                <input type="password" id="currentPassword" placeholder="Enter current password">
+              </div>
+              <div class="form-group">
+                <label>New Password</label>
+                <input type="password" id="newPassword" placeholder="Enter new password">
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm new password">
+              </div>
+              <button class="btn btn-primary" onclick="changePassword()">Change Password</button>
+            </div>
+          </div>
+
+          <!-- Database Status Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3>☁️ Database Status</h3>
+              <a href="supabase-setup.html" class="btn btn-secondary btn-sm">⚙️ Setup Supabase</a>
+            </div>
+            <div class="card-body">
+              <div id="supabaseStatus" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: var(--bg-light); border-radius: 0.5rem; margin-bottom: 1rem;">
+                <span id="statusIndicator" style="width: 12px; height: 12px; border-radius: 50%; background: var(--warning);"></span>
+                <span id="statusText">Checking database connection...</span>
+              </div>
+              
+              <!-- Sync Button - Always Visible -->
+              <div style="background: rgba(249, 115, 22, 0.05); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 0.5rem; padding: 1rem;">
+                <button class="btn btn-primary" onclick="syncToSupabase()" id="syncBtn" style="width: 100%;">
+                  🔄 Sync Local Data to Supabase
+                </button>
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;" id="syncBtnHint">
+                  Загрузить товары из localStorage в облачную базу данных
+                </p>
+              </div>
+              
+              <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+                <strong>💡 Совет:</strong> Сначала настройте Supabase на странице <a href="supabase-setup.html" style="color: var(--primary);">Setup Supabase</a>, затем нажмите кнопку синхронизации.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>📁 Data Management</h3>
+            </div>
+            <div class="card-body">
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn-secondary" onclick="exportData()">Export Data (JSON)</button>
+                <button class="btn btn-success" onclick="document.getElementById('importFile').click()">Import Data (JSON)</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importData(this.files[0])">
+                <button class="btn btn-danger" onclick="resetData()">Reset All Data</button>
+              </div>
+              <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+                <strong>Export</strong> - скачивает все товары и категории в JSON файл<br>
+                <strong>Import</strong> - загружает товары из ранее экспортированного JSON файла
+              </p>
+            </div>
+          </div>
+
+          <div style="position: sticky; bottom: 0; background: var(--bg-light); padding: 1rem; margin: 0 -1.5rem -1.5rem; border-top: 1px solid var(--border); display: flex; gap: 1rem; justify-content: flex-end;">
+            <button class="btn btn-primary" onclick="saveAllChanges()" style="padding: 0.875rem 2rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+              </svg>
+              Save All Changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="productModal" onclick="if(event.target === this) closeProductModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="productModalTitle">Add Product</h3>
+        <button class="modal-close" onclick="closeProductModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="productId">
+        <div class="form-group">
+          <label>Product Name *</label>
+          <input type="text" id="productName" required>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="productDesc" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Price (CAD) *</label>
+          <input type="number" id="productPrice" step="0.01" min="0" required>
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="text" id="productImage" placeholder="https://...">
+        </div>
+        <div class="form-group">
+          <label>Category *</label>
+          <select id="productCategory" required>
+            <option value="">Select Category</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeProductModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveProduct()">Save Product</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Modal -->
+  <div class="modal-overlay" id="categoryModal" onclick="if(event.target === this) closeCategoryModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="categoryModalTitle">Add Category</h3>
+        <button class="modal-close" onclick="closeCategoryModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="categoryId">
+        <div class="form-group">
+          <label>Category Name *</label>
+          <input type="text" id="categoryName" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeCategoryModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveCategory()">Save Category</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    // ============================================
+    // Configuration
+    // ============================================
+    const CONFIG = {
+      AUTH_KEY: 'admin_authenticated',
+      DATA_KEY: 'reno_romax_data',
+      SETTINGS_KEY: 'reno_romax_settings',
+      DEFAULT_USER: 'admin',
+      DEFAULT_PASS: 'admin123'
+    };
+
+    // ============================================
+    // Data Structure
+    // ============================================
+    const defaultData = {
+      categories: [
+        'Shower sets',
+        'Bathroom Faucets',
+        'Kitchen Faucets',
+        'Bathtubs and Faucets',
+        'Vanities 24,30,36,42,48,54,60,72,84"',
+        'LED Mirrors/Pot Lights',
+        'Toilets',
+        'Drains',
+        'Pex/Fittings/Valves/ABS',
+        'Silicones',
+        'Miscellaneous'
+      ],
+      products: []
+    };
+
+    const defaultSettings = {
+      siteTitle: 'Reno-Romax-Pro',
+      heroTitle: 'Premium Sanitary Ware Solutions',
+      heroSubtitle: 'Discover our extensive collection of high-quality bathroom and kitchen products at wholesale prices.',
+      footerText: '© 2026 Reno-Romax-Pro. All rights reserved.',
+      heroBanner: 'https://res.cloudinary.com/dg27n9d1b/image/upload/v1772159803/upscaled_1180_egj7zm.png',
+      whatsappNumber: '14377999960'
+    };
+
+    // ============================================
+    // Utility Functions
+    // ============================================
+    function generateId() {
+      return Date.now().toString(36) + Math.random().toString(36).substr(2);
+    }
+
+    function generateHandle(name) {
+      return name.toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    // ============================================
+    // Data Management
+    // ============================================
+    function getData() {
+      const stored = localStorage.getItem(CONFIG.DATA_KEY);
+      return stored ? JSON.parse(stored) : { ...defaultData };
+    }
+
+    function saveData(data) {
+      localStorage.setItem(CONFIG.DATA_KEY, JSON.stringify(data));
+    }
+
+    // Clean products without images
+    function cleanProductsWithoutImages() {
+      const data = getData();
+      const beforeCount = data.products.length;
+      data.products = data.products.filter(p => p.image && p.image.trim() !== '');
+      const afterCount = data.products.length;
+      const removed = beforeCount - afterCount;
+      
+      if (removed > 0) {
+        saveData(data);
+        console.log(`Removed ${removed} products without images`);
+      }
+      
+      return removed;
+    }
+
+    function getSettings() {
+      const stored = localStorage.getItem(CONFIG.SETTINGS_KEY);
+      return stored ? JSON.parse(stored) : { ...defaultSettings };
+    }
+
+    function saveSettingsData(settings) {
+      localStorage.setItem(CONFIG.SETTINGS_KEY, JSON.stringify(settings));
+    }
+
+    // ============================================
+    // Authentication
+    // ============================================
+    function checkAuth() {
+      const isAuth = localStorage.getItem(CONFIG.AUTH_KEY) === 'true';
+      if (isAuth) {
+        showAdminPanel();
+      } else {
+        showLoginPage();
+      }
+    }
+
+    function showLoginPage() {
+      document.getElementById('loginPage').style.display = 'flex';
+      document.getElementById('adminContainer').classList.remove('active');
+    }
+
+    function showAdminPanel() {
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('adminContainer').classList.add('active');
+      // Clean products without images on load
+      const removed = cleanProductsWithoutImages();
+      if (removed > 0) {
+        showToast(`Removed ${removed} products without images`, 'warning');
+      }
+      loadDashboard();
+      loadCategories();
+      loadProducts();
+      loadSettings();
+    }
+
+    function login(username, password) {
+      // Check for custom password first
+      const customPassword = localStorage.getItem('admin_custom_password');
+      const validPassword = customPassword || CONFIG.DEFAULT_PASS;
+      
+      if (username === CONFIG.DEFAULT_USER && password === validPassword) {
+        localStorage.setItem(CONFIG.AUTH_KEY, 'true');
+        showAdminPanel();
+        return true;
+      }
+      return false;
+    }
+
+    function changePassword() {
+      const currentPass = document.getElementById('currentPassword').value;
+      const newPass = document.getElementById('newPassword').value;
+      const confirmPass = document.getElementById('confirmPassword').value;
+      
+      // Get current valid password
+      const customPassword = localStorage.getItem('admin_custom_password');
+      const validPassword = customPassword || CONFIG.DEFAULT_PASS;
+      
+      // Validate
+      if (!currentPass || !newPass || !confirmPass) {
+        showToast('Please fill in all fields', 'error');
+        return;
+      }
+      
+      if (currentPass !== validPassword) {
+        showToast('Current password is incorrect', 'error');
+        return;
+      }
+      
+      if (newPass.length < 6) {
+        showToast('New password must be at least 6 characters', 'error');
+        return;
+      }
+      
+      if (newPass !== confirmPass) {
+        showToast('New passwords do not match', 'error');
+        return;
+      }
+      
+      // Save new password
+      localStorage.setItem('admin_custom_password', newPass);
+      showToast('Password changed successfully!', 'success');
+      
+      // Clear fields
+      document.getElementById('currentPassword').value = '';
+      document.getElementById('newPassword').value = '';
+      document.getElementById('confirmPassword').value = '';
+    }
+
+    function saveAllChanges() {
+      // Save settings
+      const settings = {
+        siteTitle: document.getElementById('siteTitle').value,
+        heroTitle: document.getElementById('heroTitle').value,
+        heroSubtitle: document.getElementById('heroSubtitle').value,
+        footerText: document.getElementById('footerText').value,
+        heroBanner: document.getElementById('heroBanner').value,
+        whatsappNumber: document.getElementById('whatsappNumber').value
+      };
+      saveSettingsData(settings);
+      
+      showToast('All changes saved successfully!', 'success');
+    }
+
+    function logout() {
+      localStorage.removeItem(CONFIG.AUTH_KEY);
+      showLoginPage();
+    }
+
+    // ============================================
+    // Navigation
+    // ============================================
+    function initNavigation() {
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const section = this.dataset.section;
+          if (section) {
+            navItems.forEach(n => n.classList.remove('active'));
+            this.classList.add('active');
+            showSection(section);
+          }
+        });
+      });
+    }
+
+    function showSection(sectionName) {
+      const sections = document.querySelectorAll('.section-page');
+      sections.forEach(s => s.classList.remove('active'));
+      
+      const targetSection = document.getElementById(sectionName + 'Section');
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+
+      const titles = {
+        dashboard: 'Dashboard',
+        products: 'Products',
+        categories: 'Categories',
+        import: 'Import CSV',
+        move: 'Move Products',
+        settings: 'Settings'
+      };
+      document.getElementById('pageTitle').textContent = titles[sectionName] || 'Dashboard';
+      
+      // Load move section data when shown
+      if (sectionName === 'move') {
+        loadMoveSection();
+      }
+    }
+
+    // ============================================
+    // Dashboard
+    // ============================================
+    function loadDashboard() {
+      const data = getData();
+      
+      document.getElementById('totalProducts').textContent = data.products.length;
+      document.getElementById('totalCategories').textContent = data.categories.length;
+      
+      const totalValue = data.products.reduce((sum, p) => sum + (parseFloat(p.price) || 0), 0);
+      document.getElementById('totalValue').textContent = '$' + totalValue.toFixed(2);
+
+      // Recent products
+      const recentTable = document.getElementById('recentProductsTable');
+      const recentProducts = data.products.slice(-5).reverse();
+      recentTable.innerHTML = recentProducts.map(p => `
+        <tr>
+          <td><img src="${p.image || ''}" class="product-thumb" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22><rect fill=%22%23f1f5f9%22 width=%2250%22 height=%2250%22/><text x=%2225%22 y=%2230%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-size=%2210%22>No Image</text></svg>'"></td>
+          <td>${p.title}</td>
+          <td><span class="badge badge-primary">${p.category}</span></td>
+          <td>$${parseFloat(p.price || 0).toFixed(2)}</td>
+        </tr>
+      `).join('');
+    }
+
+    // ============================================
+    // Products Management
+    // ============================================
+    function loadProducts() {
+      const data = getData();
+      const table = document.getElementById('productsTable');
+      const categoryFilter = document.getElementById('categoryFilter');
+      const productCategory = document.getElementById('productCategory');
+
+      // Populate category dropdowns
+      const categoryOptions = data.categories.map(c => `<option value="${c}">${c}</option>`).join('');
+      categoryFilter.innerHTML = '<option value="">All Categories</option>' + categoryOptions;
+      productCategory.innerHTML = '<option value="">Select Category</option>' + categoryOptions;
+
+      renderProductsTable(data.products);
+    }
+
+    function renderProductsTable(products) {
+      const table = document.getElementById('productsTable');
+      table.innerHTML = products.map((p, index) => `
+        <tr class="product-row" draggable="true" data-index="${index}" data-id="${p.handle}">
+          <td><img src="${p.image || ''}" class="product-thumb" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22><rect fill=%22%23f1f5f9%22 width=%2250%22 height=%2250%22/><text x=%2225%22 y=%2230%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-size=%2210%22>No Image</text></svg>'"></td>
+          <td>${p.title}</td>
+          <td><span class="badge badge-primary">${p.category}</span></td>
+          <td>$${parseFloat(p.price || 0).toFixed(2)}</td>
+          <td>
+            <button class="btn btn-secondary btn-sm" onclick="editProduct('${p.handle}')">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteProduct('${p.handle}')">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+
+      initDragAndDrop();
+    }
+
+    function filterProducts() {
+      const search = document.getElementById('productSearch').value.toLowerCase();
+      const category = document.getElementById('categoryFilter').value;
+      const data = getData();
+
+      let filtered = data.products;
+      
+      if (search) {
+        filtered = filtered.filter(p => 
+          p.title.toLowerCase().includes(search) || 
+          (p.description && p.description.toLowerCase().includes(search))
+        );
+      }
+      
+      if (category) {
+        filtered = filtered.filter(p => p.category === category);
+      }
+
+      renderProductsTable(filtered);
+    }
+
+    function openProductModal(product = null) {
+      document.getElementById('productModalTitle').textContent = product ? 'Edit Product' : 'Add Product';
+      document.getElementById('productId').value = product ? product.handle : '';
+      document.getElementById('productName').value = product ? product.title : '';
+      document.getElementById('productDesc').value = product ? (product.description || '') : '';
+      document.getElementById('productPrice').value = product ? product.price : '';
+      document.getElementById('productImage').value = product ? (product.image || '') : '';
+      document.getElementById('productCategory').value = product ? product.category : '';
+      document.getElementById('productModal').classList.add('active');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('active');
+    }
+
+    function saveProduct() {
+      const id = document.getElementById('productId').value;
+      const name = document.getElementById('productName').value.trim();
+      const desc = document.getElementById('productDesc').value.trim();
+      const price = parseFloat(document.getElementById('productPrice').value) || 0;
+      const image = document.getElementById('productImage').value.trim();
+      const category = document.getElementById('productCategory').value;
+
+      if (!name || !category) {
+        showToast('Please fill in required fields', 'error');
+        return;
+      }
+
+      if (!image) {
+        showToast('Product image is required', 'error');
+        return;
+      }
+
+      const data = getData();
+
+      if (id) {
+        // Edit existing
+        const index = data.products.findIndex(p => p.handle === id);
+        if (index > -1) {
+          data.products[index] = {
+            ...data.products[index],
+            title: name,
+            description: desc,
+            price: price,
+            image: image,
+            category: category
+          };
+        }
+      } else {
+        // Add new
+        data.products.push({
+          handle: generateHandle(name) + '-' + generateId(),
+          title: name,
+          description: desc,
+          price: price,
+          image: image,
+          category: category
+        });
+      }
+
+      saveData(data);
+      closeProductModal();
+      loadProducts();
+      loadDashboard();
+      showToast('Product saved successfully', 'success');
+    }
+
+    function editProduct(handle) {
+      const data = getData();
+      const product = data.products.find(p => p.handle === handle);
+      if (product) {
+        openProductModal(product);
+      }
+    }
+
+    function deleteProduct(handle) {
+      if (!confirm('Are you sure you want to delete this product?')) return;
+      
+      const data = getData();
+      data.products = data.products.filter(p => p.handle !== handle);
+      saveData(data);
+      loadProducts();
+      loadDashboard();
+      showToast('Product deleted', 'success');
+    }
+
+    // ============================================
+    // Drag and Drop
+    // ============================================
+    function initDragAndDrop() {
+      const rows = document.querySelectorAll('.product-row');
+      
+      rows.forEach(row => {
+        row.addEventListener('dragstart', handleDragStart);
+        row.addEventListener('dragend', handleDragEnd);
+        row.addEventListener('dragover', handleDragOver);
+        row.addEventListener('drop', handleDrop);
+        row.addEventListener('dragleave', handleDragLeave);
+      });
+    }
+
+    let draggedItem = null;
+
+    function handleDragStart(e) {
+      draggedItem = this;
+      this.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function handleDragEnd(e) {
+      this.classList.remove('dragging');
+      document.querySelectorAll('.product-row').forEach(row => {
+        row.classList.remove('drag-over');
+      });
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+      if (this !== draggedItem) {
+        this.classList.add('drag-over');
+      }
+    }
+
+    function handleDragLeave(e) {
+      this.classList.remove('drag-over');
+    }
+
+    function handleDrop(e) {
+      e.preventDefault();
+      this.classList.remove('drag-over');
+      
+      if (this === draggedItem) return;
+
+      const data = getData();
+      const draggedId = draggedItem.dataset.id;
+      const targetId = this.dataset.id;
+
+      const draggedIndex = data.products.findIndex(p => p.handle === draggedId);
+      const targetIndex = data.products.findIndex(p => p.handle === targetId);
+
+      if (draggedIndex > -1 && targetIndex > -1) {
+        // Swap categories (move dragged product to target's category)
+        const targetCategory = data.products[targetIndex].category;
+        data.products[draggedIndex].category = targetCategory;
+        
+        saveData(data);
+        loadProducts();
+        showToast('Product moved to ' + targetCategory, 'success');
+      }
+    }
+
+    // ============================================
+    // Categories Management
+    // ============================================
+    function loadCategories() {
+      const data = getData();
+      const grid = document.getElementById('categoriesGrid');
+
+      grid.innerHTML = data.categories.map((cat, index) => {
+        const count = data.products.filter(p => p.category === cat).length;
+        return `
+          <div class="category-card">
+            <h4>${cat}</h4>
+            <p>${count} products</p>
+            <div class="actions">
+              <button class="btn btn-secondary btn-sm" onclick="editCategory(${index})">Edit</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteCategory(${index})">Delete</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openCategoryModal(index = null) {
+      document.getElementById('categoryModalTitle').textContent = index !== null ? 'Edit Category' : 'Add Category';
+      document.getElementById('categoryId').value = index !== null ? index : '';
+      
+      if (index !== null) {
+        const data = getData();
+        document.getElementById('categoryName').value = data.categories[index];
+      } else {
+        document.getElementById('categoryName').value = '';
+      }
+      
+      document.getElementById('categoryModal').classList.add('active');
+    }
+
+    function closeCategoryModal() {
+      document.getElementById('categoryModal').classList.remove('active');
+    }
+
+    function saveCategory() {
+      const id = document.getElementById('categoryId').value;
+      const name = document.getElementById('categoryName').value.trim();
+
+      if (!name) {
+        showToast('Please enter category name', 'error');
+        return;
+      }
+
+      const data = getData();
+
+      if (id !== '') {
+        // Edit existing
+        const oldName = data.categories[id];
+        data.categories[id] = name;
+        // Update products with this category
+        data.products.forEach(p => {
+          if (p.category === oldName) p.category = name;
+        });
+      } else {
+        // Add new
+        if (!data.categories.includes(name)) {
+          data.categories.push(name);
+        } else {
+          showToast('Category already exists', 'warning');
+          return;
+        }
+      }
+
+      saveData(data);
+      closeCategoryModal();
+      loadCategories();
+      loadProducts();
+      loadDashboard();
+      showToast('Category saved successfully', 'success');
+    }
+
+    function editCategory(index) {
+      openCategoryModal(index);
+    }
+
+    function deleteCategory(index) {
+      if (!confirm('Are you sure you want to delete this category? Products in this category will be moved to "Miscellaneous".')) return;
+      
+      const data = getData();
+      const catName = data.categories[index];
+      
+      // Move products to Miscellaneous
+      data.products.forEach(p => {
+        if (p.category === catName) p.category = 'Miscellaneous';
+      });
+      
+      data.categories.splice(index, 1);
+      saveData(data);
+      loadCategories();
+      loadProducts();
+      loadDashboard();
+      showToast('Category deleted', 'success');
+    }
+
+    // ============================================
+    // Move Products Between Categories
+    // ============================================
+    function loadMoveSection() {
+      const data = getData();
+      const fromSelect = document.getElementById('moveFromCategory');
+      const toSelect = document.getElementById('moveToCategory');
+      
+      // Populate category dropdowns
+      const options = data.categories.map(c => `<option value="${c}">${c}</option>`).join('');
+      fromSelect.innerHTML = '<option value="">Select source category</option>' + options;
+      toSelect.innerHTML = '<option value="">Select target category</option>' + options;
+      
+      // Reset products list
+      document.getElementById('productsToMoveList').innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">Select a source category to see products</p>';
+      document.getElementById('selectedCount').textContent = '0 products selected';
+      
+      // Load category overview
+      loadCategoryOverview();
+    }
+
+    function loadCategoryOverview() {
+      const data = getData();
+      const overview = document.getElementById('categoryOverview');
+      
+      overview.innerHTML = data.categories.map(cat => {
+        const count = data.products.filter(p => p.category === cat).length;
+        return `
+          <div class="category-card" style="cursor: pointer;" onclick="quickMoveFromCategory('${cat.replace(/'/g, "\\'")}')">
+            <h4>${cat}</h4>
+            <p>${count} products</p>
+            <div class="actions">
+              <button class="btn btn-secondary btn-sm">Select to Move</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function quickMoveFromCategory(categoryName) {
+      document.getElementById('moveFromCategory').value = categoryName;
+      loadProductsToMove();
+      // Scroll to top of move section
+      document.querySelector('.content-area').scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function loadProductsToMove() {
+      const fromCategory = document.getElementById('moveFromCategory').value;
+      const list = document.getElementById('productsToMoveList');
+      
+      if (!fromCategory) {
+        list.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">Select a source category to see products</p>';
+        updateSelectedCount();
+        return;
+      }
+      
+      const data = getData();
+      const products = data.products.filter(p => p.category === fromCategory);
+      
+      if (products.length === 0) {
+        list.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">No products in this category</p>';
+        updateSelectedCount();
+        return;
+      }
+      
+      list.innerHTML = products.map(p => `
+        <label class="product-move-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s;">
+          <input type="checkbox" class="product-checkbox" data-handle="${p.handle}" onchange="updateSelectedCount()" style="width: 18px; height: 18px; cursor: pointer;">
+          <img src="${p.image || ''}" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background: var(--bg-light);" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><rect fill=%22%23f1f5f9%22 width=%2240%22 height=%2240%22/><text x=%2220%22 y=%2225%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-size=%228%22>No Img</text></svg>'">
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.title}</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">$${parseFloat(p.price || 0).toFixed(2)}</div>
+          </div>
+        </label>
+      `).join('');
+      
+      updateSelectedCount();
+    }
+
+    function updateSelectedCount() {
+      const checkboxes = document.querySelectorAll('.product-checkbox:checked');
+      document.getElementById('selectedCount').textContent = checkboxes.length + ' product' + (checkboxes.length !== 1 ? 's' : '') + ' selected';
+    }
+
+    function selectAllProductsToMove() {
+      document.querySelectorAll('.product-checkbox').forEach(cb => cb.checked = true);
+      updateSelectedCount();
+    }
+
+    function deselectAllProductsToMove() {
+      document.querySelectorAll('.product-checkbox').forEach(cb => cb.checked = false);
+      updateSelectedCount();
+    }
+
+    function moveSelectedProducts() {
+      const fromCategory = document.getElementById('moveFromCategory').value;
+      const toCategory = document.getElementById('moveToCategory').value;
+      
+      if (!fromCategory) {
+        showToast('Please select a source category', 'error');
+        return;
+      }
+      
+      if (!toCategory) {
+        showToast('Please select a target category', 'error');
+        return;
+      }
+      
+      if (fromCategory === toCategory) {
+        showToast('Source and target categories must be different', 'warning');
+        return;
+      }
+      
+      const checkboxes = document.querySelectorAll('.product-checkbox:checked');
+      if (checkboxes.length === 0) {
+        showToast('Please select at least one product to move', 'warning');
+        return;
+      }
+      
+      const data = getData();
+      const handles = Array.from(checkboxes).map(cb => cb.dataset.handle);
+      let movedCount = 0;
+      
+      data.products.forEach(p => {
+        if (handles.includes(p.handle)) {
+          p.category = toCategory;
+          movedCount++;
+        }
+      });
+      
+      saveData(data);
+      
+      // Refresh the view
+      loadProductsToMove();
+      loadCategoryOverview();
+      loadDashboard();
+      loadProducts();
+      
+      showToast(`Moved ${movedCount} product${movedCount !== 1 ? 's' : ''} to "${toCategory}"`, 'success');
+    }
+
+    // ============================================
+    // CSV Import
+    // ============================================
+    function initCSVImport() {
+      const dropZone = document.getElementById('dropZone');
+      const fileInput = document.getElementById('csvFile');
+
+      dropZone.addEventListener('click', () => fileInput.click());
+      
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('drag-over');
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        const file = e.dataTransfer.files[0];
+        if (file && file.name.endsWith('.csv')) {
+          processCSVFile(file);
+        } else {
+          showToast('Please upload a CSV file', 'error');
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) processCSVFile(file);
+      });
+    }
+
+    function processCSVFile(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target.result;
+        parseCSV(content);
+      };
+      reader.readAsText(file);
+    }
+
+    // Advanced CSV parser that handles multi-line fields and quotes
+    function parseCSVAdvanced(content) {
+      const rows = [];
+      let currentRow = [];
+      let currentField = '';
+      let inQuotes = false;
+      let i = 0;
+
+      while (i < content.length) {
+        const char = content[i];
+        const nextChar = content[i + 1];
+
+        if (inQuotes) {
+          if (char === '"' && nextChar === '"') {
+            // Escaped quote
+            currentField += '"';
+            i += 2;
+          } else if (char === '"') {
+            // End of quoted field
+            inQuotes = false;
+            i++;
+          } else {
+            currentField += char;
+            i++;
+          }
+        } else {
+          if (char === '"') {
+            // Start of quoted field
+            inQuotes = true;
+            i++;
+          } else if (char === ',') {
+            // End of field
+            currentRow.push(currentField.trim());
+            currentField = '';
+            i++;
+          } else if (char === '\n' || (char === '\r' && nextChar === '\n')) {
+            // End of row
+            currentRow.push(currentField.trim());
+            if (currentRow.some(f => f.length > 0)) {
+              rows.push(currentRow);
+            }
+            currentRow = [];
+            currentField = '';
+            i += char === '\r' ? 2 : 1;
+          } else if (char === '\r') {
+            // Carriage return alone
+            currentRow.push(currentField.trim());
+            if (currentRow.some(f => f.length > 0)) {
+              rows.push(currentRow);
+            }
+            currentRow = [];
+            currentField = '';
+            i++;
+          } else {
+            currentField += char;
+            i++;
+          }
+        }
+      }
+
+      // Don't forget last field and row
+      if (currentField.length > 0 || currentRow.length > 0) {
+        currentRow.push(currentField.trim());
+        if (currentRow.some(f => f.length > 0)) {
+          rows.push(currentRow);
+        }
+      }
+
+      return rows;
+    }
+
+    // Strip HTML tags from description
+    function stripHtml(html) {
+      if (!html) return '';
+      return html
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/p>/gi, '\n')
+        .replace(/<\/li>/gi, '\n')
+        .replace(/<li>/gi, '• ')
+        .replace(/<[^>]*>/g, '')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function parseCSV(content) {
+      const rows = parseCSVAdvanced(content);
+      
+      if (rows.length < 2) {
+        showToast('CSV file is empty or has no data rows', 'error');
+        return;
+      }
+
+      // Get headers (first row)
+      const headers = rows[0].map(h => h.toLowerCase().trim());
+      
+      // Find column indices
+      const colIndex = {
+        handle: headers.findIndex(h => h === 'handle'),
+        title: headers.findIndex(h => h === 'title'),
+        body: headers.findIndex(h => h.includes('body') || h.includes('description')),
+        price: headers.findIndex(h => h.includes('variant price') || h === 'price'),
+        image: headers.findIndex(h => h.includes('image src') || h === 'image'),
+        category: headers.findIndex(h => h.includes('product category') || h.includes('category') || h.includes('type')),
+        status: headers.findIndex(h => h === 'status')
+      };
+
+      console.log('Detected columns:', colIndex);
+
+      const results = [];
+      const data = getData();
+      let added = 0, duplicates = 0, errors = 0;
+      const seenHandles = new Set();
+
+      // Process each data row
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        
+        // Skip empty rows
+        if (!row || row.every(f => !f)) continue;
+
+        const getValue = (idx) => idx >= 0 ? (row[idx] || '').trim() : '';
+
+        const handle = getValue(colIndex.handle);
+        const title = getValue(colIndex.title);
+        const bodyHtml = getValue(colIndex.body);
+        const priceStr = getValue(colIndex.price);
+        const image = getValue(colIndex.image);
+        const category = getValue(colIndex.category);
+        const status = getValue(colIndex.status);
+
+        // Skip variants (rows with same handle as previous) - only import main product
+        if (handle && seenHandles.has(handle)) {
+          continue; // Skip variant rows
+        }
+        if (handle) {
+          seenHandles.add(handle);
+        }
+
+        // Validate required fields
+        if (!title) {
+          results.push({ type: 'error', message: `Row ${i}: Missing title` });
+          errors++;
+          continue;
+        }
+
+        // Parse price
+        let price = 0;
+        if (priceStr) {
+          price = parseFloat(priceStr.replace(/[^0-9.]/g, ''));
+          if (isNaN(price)) price = 0;
+        }
+
+        // Clean description
+        const description = stripHtml(bodyHtml);
+
+        // Check for duplicates by title
+        const existingProduct = data.products.find(p => 
+          p.title.toLowerCase() === title.toLowerCase() ||
+          (handle && p.handle === handle)
+        );
+
+        if (existingProduct) {
+          results.push({ type: 'duplicate', message: `Row ${i}: Duplicate "${title.substring(0, 50)}..."` });
+          duplicates++;
+          continue;
+        }
+
+        // Skip products without images
+        if (!image || image.trim() === '') {
+          results.push({ type: 'error', message: `Row ${i}: Skipped "${title.substring(0, 50)}..." - no image` });
+          errors++;
+          continue;
+        }
+
+        // Determine category
+        let productCategory = category || 'Miscellaneous';
+        
+        // Clean up category name
+        if (productCategory.includes('>')) {
+          productCategory = productCategory.split('>').pop().trim();
+        }
+
+        // Add category if not exists
+        if (productCategory && !data.categories.includes(productCategory)) {
+          data.categories.push(productCategory);
+        }
+
+        // Add product
+        data.products.push({
+          handle: handle || generateHandle(title) + '-' + generateId(),
+          title: title,
+          description: description,
+          price: price,
+          image: image,
+          category: productCategory
+        });
+
+        results.push({ type: 'success', message: `Row ${i}: Added "${title.substring(0, 50)}${title.length > 50 ? '...' : ''}"` });
+        added++;
+      }
+
+      saveData(data);
+      displayImportResults(results, added, duplicates, errors);
+      loadCategories();
+      loadProducts();
+      loadDashboard();
+      
+      // Store last import date
+      localStorage.setItem('lastImport', new Date().toISOString());
+    }
+
+    function displayImportResults(results, added, duplicates, errors) {
+      const container = document.getElementById('importResults');
+      const list = document.getElementById('importResultsList');
+
+      list.innerHTML = results.map(r => `
+        <div class="import-item ${r.type}">
+          <span>${r.type === 'success' ? '✓' : r.type === 'error' ? '✗' : '⚠'}</span>
+          <span>${r.message}</span>
+        </div>
+      `).join('');
+
+      list.innerHTML = `
+        <div class="import-item success">
+          <strong>Summary:</strong> ${added} added, ${duplicates} duplicates skipped, ${errors} errors
+        </div>
+      ` + list.innerHTML;
+
+      container.style.display = 'block';
+      showToast(`Import complete: ${added} products added`, added > 0 ? 'success' : 'warning');
+    }
+
+    // ============================================
+    // Settings
+    // ============================================
+    function loadSettings() {
+      const settings = getSettings();
+      document.getElementById('siteTitle').value = settings.siteTitle || '';
+      document.getElementById('heroTitle').value = settings.heroTitle || '';
+      document.getElementById('heroSubtitle').value = settings.heroSubtitle || '';
+      document.getElementById('footerText').value = settings.footerText || '';
+      document.getElementById('heroBanner').value = settings.heroBanner || '';
+      document.getElementById('whatsappNumber').value = settings.whatsappNumber || '';
+    }
+
+    function saveSettings() {
+      const settings = {
+        siteTitle: document.getElementById('siteTitle').value,
+        heroTitle: document.getElementById('heroTitle').value,
+        heroSubtitle: document.getElementById('heroSubtitle').value,
+        footerText: document.getElementById('footerText').value,
+        heroBanner: document.getElementById('heroBanner').value,
+        whatsappNumber: document.getElementById('whatsappNumber').value
+      };
+      saveSettingsData(settings);
+      showToast('Settings saved successfully', 'success');
+    }
+
+    function exportData() {
+      const data = getData();
+      const settings = getSettings();
+      const exportObj = { ...data, settings };
+      
+      const blob = new Blob([JSON.stringify(exportObj, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'reno-romax-backup-' + new Date().toISOString().split('T')[0] + '.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Data exported successfully', 'success');
+    }
+
+    // Import Data from JSON file
+    function importData(file) {
+      if (!file) return;
+
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        try {
+          const importedData = JSON.parse(e.target.result);
+
+          // Validate structure
+          if (!importedData.products || !Array.isArray(importedData.products)) {
+            showToast('Invalid file: products array not found', 'error');
+            return;
+          }
+
+          // Confirm import
+          const productCount = importedData.products.length;
+          const categoryCount = importedData.categories ? importedData.categories.length : 0;
+
+          if (!confirm(`Import ${productCount} products and ${categoryCount} categories?\n\nThis will REPLACE all current data!`)) {
+            return;
+          }
+
+          // Prepare data to save
+          const dataToSave = {
+            categories: importedData.categories || [],
+            products: importedData.products.filter(p => p.image && p.image.trim() !== '')
+          };
+
+          // Save to localStorage
+          saveData(dataToSave);
+
+          // Import settings if present
+          if (importedData.settings) {
+            saveSettingsData(importedData.settings);
+          }
+
+          // Reload page data
+          loadDashboard();
+          loadCategories();
+          loadProducts();
+          loadSettings();
+
+          showToast(`Imported ${dataToSave.products.length} products successfully!`, 'success');
+
+        } catch (error) {
+          console.error('Import error:', error);
+          showToast('Error: Invalid JSON file', 'error');
+        }
+      };
+
+      reader.onerror = function() {
+        showToast('Error reading file', 'error');
+      };
+
+      reader.readAsText(file);
+
+      // Reset file input
+      document.getElementById('importFile').value = '';
+    }
+
+    function resetData() {
+      if (!confirm('Are you sure you want to reset all data? This cannot be undone.')) return;
+      if (!confirm('Really? All products and categories will be deleted!')) return;
+      
+      localStorage.removeItem(CONFIG.DATA_KEY);
+      localStorage.removeItem(CONFIG.SETTINGS_KEY);
+      loadDashboard();
+      loadCategories();
+      loadProducts();
+      loadSettings();
+      showToast('All data has been reset', 'warning');
+    }
+
+    // ============================================
+    // Supabase Integration
+    // ============================================
+    let supabaseConnected = false;
+
+    async function initSupabaseConnection() {
+      const indicator = document.getElementById('statusIndicator');
+      const text = document.getElementById('statusText');
+      const syncBtn = document.getElementById('syncBtn');
+      const syncBtnHint = document.getElementById('syncBtnHint');
+      
+      try {
+        // Load supabase-config.js if available
+        const script = document.createElement('script');
+        script.src = '/supabase-config.js';
+        
+        script.onload = async () => {
+          if (typeof window.SupabaseConfig !== 'undefined') {
+            supabaseConnected = await window.SupabaseConfig.init();
+          }
+          updateSupabaseStatus();
+        };
+        
+        script.onerror = () => {
+          updateSupabaseStatus();
+        };
+        
+        document.head.appendChild(script);
+      } catch (error) {
+        console.error('Supabase init error:', error);
+        updateSupabaseStatus();
+      }
+    }
+
+    function updateSupabaseStatus() {
+      const indicator = document.getElementById('statusIndicator');
+      const text = document.getElementById('statusText');
+      const syncBtn = document.getElementById('syncBtn');
+      const syncBtnHint = document.getElementById('syncBtnHint');
+
+      if (supabaseConnected) {
+        indicator.style.background = 'var(--success)';
+        text.innerHTML = '<strong>✅ Supabase Connected</strong> - Data is stored in the cloud';
+        syncBtn.disabled = false;
+        syncBtn.style.opacity = '1';
+        syncBtnHint.textContent = 'Нажмите, чтобы загрузить товары из localStorage в облако';
+      } else {
+        indicator.style.background = 'var(--warning)';
+        text.innerHTML = '<strong>⚠️ localStorage Mode</strong> - Data is stored in browser only. <a href="supabase-setup.html" style="color: var(--primary);">Setup Supabase</a>';
+        syncBtn.disabled = true;
+        syncBtn.style.opacity = '0.6';
+        syncBtnHint.innerHTML = '⚠️ <strong>Сначала настройте Supabase!</strong> Перейдите на страницу <a href="supabase-setup.html" style="color: var(--primary);">Setup Supabase</a>';
+      }
+    }
+
+    async function syncToSupabase() {
+      if (!supabaseConnected || typeof window.SupabaseConfig === 'undefined') {
+        showToast('❌ Supabase не настроен! Сначала настройте на странице Setup Supabase', 'error');
+        return;
+      }
+
+      const btn = document.getElementById('syncBtn');
+      const hint = document.getElementById('syncBtnHint');
+      
+      // Get local data count
+      const localData = getData();
+      const localCount = localData.products ? localData.products.length : 0;
+      
+      if (localCount === 0) {
+        showToast('Нет локальных данных для синхронизации', 'warning');
+        return;
+      }
+      
+      if (!confirm(`Загрузить ${localCount} товаров в Supabase?\n\nЭто заменит все существующие товары в облаке!`)) {
+        return;
+      }
+      
+      btn.disabled = true;
+      btn.innerHTML = '⏳ Синхронизация...';
+      hint.textContent = 'Пожалуйста, подождите...';
+
+      try {
+        const result = await window.SupabaseConfig.syncToSupabase();
+
+        if (result.success) {
+          showToast('✅ ' + result.message, 'success');
+          btn.innerHTML = '✅ Синхронизация завершена!';
+          hint.textContent = 'Товары успешно загружены в облако!';
+        } else {
+          showToast('❌ Ошибка: ' + result.message, 'error');
+          btn.innerHTML = '🔄 Sync Local Data to Supabase';
+          hint.textContent = 'Ошибка синхронизации. Попробуйте снова.';
+        }
+      } catch (error) {
+        showToast('❌ Ошибка: ' + error.message, 'error');
+        btn.innerHTML = '🔄 Sync Local Data to Supabase';
+      }
+
+      btn.disabled = false;
+      setTimeout(() => {
+        btn.innerHTML = '🔄 Sync Local Data to Supabase';
+        updateSupabaseStatus();
+      }, 3000);
+    }
+
+    // ============================================
+    // Initialize
+    // ============================================
+    document.addEventListener('DOMContentLoaded', function() {
+      checkAuth();
+      initNavigation();
+      initCSVImport();
+      initSupabaseConnection();
+
+      // Login form
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        if (!login(username, password)) {
+          document.getElementById('loginError').style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

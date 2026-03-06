@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supabase Setup | Reno-Romax-Pro</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #f97316;
+      --primary-dark: #ea580c;
+      --secondary: #253a46;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --supabase-green: #3ecf8e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .card h2 .step {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .btn {
+      padding: 0.875rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-supabase {
+      background: var(--supabase-green);
+      color: white;
+    }
+
+    .btn-supabase:hover {
+      background: #2ea872;
+    }
+
+    .btn-secondary {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      border: 2px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      font-family: monospace;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-group small {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .code-block .copy-btn {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .code-block .copy-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .alert {
+      padding: 1rem 1.25rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .alert-success {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: var(--success);
+    }
+
+    .alert-warning {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #b45309;
+    }
+
+    .alert-info {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #1d4ed8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .test-result {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: var(--bg-light);
+    }
+
+    .test-result.success {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .test-result.error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    ol, ul {
+      margin-left: 1.5rem;
+      line-height: 2;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1rem; }
+      .card { padding: 1.5rem; }
+      .header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1772142613/%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D1%8C%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_ba8xkx.jpg" alt="Logo">
+      <h1>☁️ Supabase Setup</h1>
+      <p>Настройка облачной базы данных для вашего сайта</p>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="card">
+      <h2><span class="step">1</span> Создайте аккаунт Supabase</h2>
+      <p style="margin-bottom: 1rem;">Supabase — это бесплатная PostgreSQL база данных в облаке.</p>
+      
+      <a href="https://supabase.com" target="_blank" class="btn btn-supabase">
+        <svg width="20" height="20" viewBox="0 0 109 113" fill="currentColor">
+          <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.559 55.9374L63.7076 110.284Z"/>
+          <path d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.46539 56.4175L45.317 2.07103Z"/>
+        </svg>
+        Открыть Supabase.com
+      </a>
+      
+      <div class="alert alert-info" style="margin-top: 1rem;">
+        <strong>Бесплатный план включает:</strong>
+        <ul style="margin: 0.5rem 0 0 1rem;">
+          <li>500 MB базы данных</li>
+          <li>1 GB файлового хранилища</li>
+          <li>Безлимитные API запросы</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card">
+      <h2><span class="step">2</span> Создайте новый проект</h2>
+      <ol>
+        <li>Нажмите <strong>"New Project"</strong></li>
+        <li>Название проекта: <code style="background: var(--bg-light); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">reno-romax-pro</code></li>
+        <li>Придумайте надёжный пароль для базы данных</li>
+        <li>Выберите регион ближе к вам</li>
+        <li>Нажмите <strong>"Create new project"</strong></li>
+        <li>Подождите ~2 минуты пока проект создастся</li>
+      </ol>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card">
+      <h2><span class="step">3</span> Получите API ключи</h2>
+      <ol>
+        <li>Перейдите в <strong>Settings</strong> → <strong>API</strong></li>
+        <li>Скопируйте <strong>Project URL</strong></li>
+        <li>Скопируйте <strong>anon public</strong> ключ</li>
+      </ol>
+      
+      <div style="margin-top: 1.5rem;">
+        <div class="form-group">
+          <label>Project URL</label>
+          <input type="text" id="supabaseUrl" placeholder="https://your-project.supabase.co">
+          <small>Пример: https://abcdefgh.supabase.co</small>
+        </div>
+        <div class="form-group">
+          <label>Anon Public Key</label>
+          <input type="text" id="supabaseKey" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
+          <small>Этот ключ безопасен для использования в frontend коде</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card">
+      <h2><span class="step">4</span> Создайте таблицы в базе данных</h2>
+      <p style="margin-bottom: 1rem;">Выполните этот SQL в Supabase SQL Editor:</p>
+      
+      <div class="code-block">
+        <button class="copy-btn" onclick="copySQL()">📋 Копировать</button>
+        <pre id="sqlCode">-- Таблица товаров
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  handle TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT,
+  price DECIMAL(10,2),
+  image TEXT,
+  category TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Таблица категорий
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Включить Row Level Security (RLS)
+ALTER TABLE products ENABLE ROW LEVEL SECURITY;
+ALTER TABLE categories ENABLE ROW LEVEL SECURITY;
+
+-- Разрешить публичное чтение
+CREATE POLICY "Allow public read" ON products FOR SELECT USING (true);
+CREATE POLICY "Allow public read" ON categories FOR SELECT USING (true);
+
+-- Разрешить публичную запись
+CREATE POLICY "Allow public insert" ON products FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public update" ON products FOR UPDATE USING (true);
+CREATE POLICY "Allow public delete" ON products FOR DELETE USING (true);
+
+CREATE POLICY "Allow public insert" ON categories FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public update" ON categories FOR UPDATE USING (true);
+CREATE POLICY "Allow public delete" ON categories FOR DELETE USING (true);
+
+-- Индексы для быстрого поиска
+CREATE INDEX idx_products_category ON products(category);
+CREATE INDEX idx_products_handle ON products(handle);</pre>
+      </div>
+      
+      <ol style="margin-top: 1rem;">
+        <li>Перейдите в <strong>SQL Editor</strong> в Supabase</li>
+        <li>Нажмите <strong>"New query"</strong></li>
+        <li>Вставьте SQL код выше</li>
+        <li>Нажмите <strong>"Run"</strong> (или Ctrl+Enter)</li>
+      </ol>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="card">
+      <h2><span class="step">5</span> Скачайте файл конфигурации</h2>
+      <p style="margin-bottom: 1rem;">Нажмите кнопку ниже, чтобы скачать готовый файл с вашими ключами:</p>
+      
+      <button class="btn btn-primary" onclick="downloadConfig()">
+        📥 Скачать supabase-config.js
+      </button>
+      
+      <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+        После скачивания замените файл <code>supabase-config.js</code> в папке вашего проекта.
+      </p>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="card">
+      <h2><span class="step">6</span> Загрузите данные в облако</h2>
+      <p style="margin-bottom: 1rem;">После обновления конфигурации:</p>
+      
+      <ol>
+        <li>Загрузите файлы на Netlify</li>
+        <li>Откройте <a href="admin.html" style="color: var(--primary);">Admin Panel</a></li>
+        <li>Перейдите в <strong>Settings</strong></li>
+        <li>Нажмите <strong>"🔄 Sync Local Data to Supabase"</strong></li>
+      </ol>
+    </div>
+
+    <!-- Test Connection -->
+    <div class="card">
+      <h2>🔌 Проверить подключение</h2>
+      <p style="margin-bottom: 1rem;">Проверьте подключение к Supabase перед загрузкой:</p>
+      
+      <button class="btn btn-secondary" onclick="testConnection()">
+        🔍 Проверить подключение
+      </button>
+      
+      <div id="testResult" class="test-result" style="display: none;"></div>
+    </div>
+
+    <!-- Nav Links -->
+    <div class="nav-links">
+      <a href="index.html">← Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="admin.html">Админ-панель</a>
+    </div>
+  </div>
+
+  <script>
+    function copySQL() {
+      const sql = document.getElementById('sqlCode').textContent;
+      navigator.clipboard.writeText(sql).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✓ Скопировано!';
+        setTimeout(() => btn.textContent = '📋 Копировать', 2000);
+      });
+    }
+
+    function downloadConfig() {
+      const url = document.getElementById('supabaseUrl').value.trim();
+      const key = document.getElementById('supabaseKey').value.trim();
+      
+      if (!url || !key) {
+        alert('Пожалуйста, введите ваш Supabase URL и Key!');
+        return;
+      }
+      
+      // Get full config from server
+      fetch('/supabase-config.js')
+        .then(r => r.text())
+        .then(fullConfig => {
+          const updatedConfig = fullConfig
+            .replace("const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';", `const SUPABASE_URL = '${url}';`)
+            .replace("const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';", `const SUPABASE_ANON_KEY = '${key}';`);
+          
+          const blob = new Blob([updatedConfig], { type: 'application/javascript' });
+          const downloadUrl = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = downloadUrl;
+          a.download = 'supabase-config.js';
+          a.click();
+          URL.revokeObjectURL(downloadUrl);
+          
+          alert('✅ Файл скачан! Замените supabase-config.js в папке вашего проекта.');
+        })
+        .catch(() => {
+          alert('Ошибка загрузки конфигурации. Попробуйте позже.');
+        });
+    }
+
+    async function testConnection() {
+      const url = document.getElementById('supabaseUrl').value.trim();
+      const key = document.getElementById('supabaseKey').value.trim();
+      const resultDiv = document.getElementById('testResult');
+      
+      if (!url || !key) {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'test-result error';
+        resultDiv.innerHTML = '❌ Пожалуйста, введите ваш Supabase URL и Key!';
+        return;
+      }
+      
+      resultDiv.style.display = 'block';
+      resultDiv.className = 'test-result';
+      resultDiv.innerHTML = '⏳ Проверка подключения...';
+      
+      try {
+        if (typeof window.supabase === 'undefined') {
+          await new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+          });
+        }
+        
+        const client = window.supabase.createClient(url, key);
+        const { data, error } = await client.from('products').select('count');
+        
+        if (error) {
+          if (error.message.includes('relation') || error.message.includes('does not exist')) {
+            resultDiv.className = 'test-result error';
+            resultDiv.innerHTML = `
+              ❌ <strong>Таблицы не найдены!</strong><br><br>
+              Пожалуйста, выполните SQL из шага 4 в Supabase SQL Editor для создания таблиц.
+            `;
+          } else {
+            throw error;
+          }
+        } else {
+          resultDiv.className = 'test-result success';
+          resultDiv.innerHTML = `
+            ✅ <strong>Подключение успешно!</strong><br><br>
+            Ваша база данных Supabase готова. Скачайте файл конфигурации и замените его в проекте.
+          `;
+        }
+      } catch (error) {
+        resultDiv.className = 'test-result error';
+        resultDiv.innerHTML = `❌ <strong>Ошибка подключения:</strong><br>${error.message}`;
+      }
+    }
+  </script>
+</body>
+</html>
