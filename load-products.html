@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load Products Data | Reno-Romax-Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 600px;
+      width: 100%;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    h1 {
+      color: #1f2937;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 2rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: #f3f4f6;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+    }
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #4f46e5;
+    }
+    .stat-label {
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    .btn {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #374151;
+    }
+    .btn-secondary:hover {
+      background: #d1d5db;
+    }
+    .success {
+      display: none;
+      padding: 1.5rem;
+      background: #d1fae5;
+      border-radius: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .success h2 {
+      color: #065f46;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .success p {
+      color: #047857;
+    }
+    .actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .actions .btn {
+      margin-bottom: 0;
+    }
+    .loading {
+      display: none;
+      margin: 2rem 0;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #e5e7eb;
+      border-top-color: #4f46e5;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Load Products Data</h1>
+    <p class="subtitle">Import all 208 products into your catalog</p>
+    
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-value">208</div>
+        <div class="stat-label">Products Ready</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">68</div>
+        <div class="stat-label">Categories</div>
+      </div>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Loading products into localStorage...</p>
+    </div>
+
+    <button class="btn btn-primary" id="loadBtn" onclick="loadProducts()">
+      Load All Products
+    </button>
+
+    <div class="success" id="success">
+      <h2>Products Loaded Successfully!</h2>
+      <p id="successText">All 208 products have been saved to your browser.</p>
+      <div class="actions">
+        <a href="catalog.html" class="btn btn-primary" style="text-decoration: none;">View Catalog</a>
+        <a href="admin.html" class="btn btn-secondary" style="text-decoration: none;">Go to Admin</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function loadProducts() {
+      const btn = document.getElementById('loadBtn');
+      const loading = document.getElementById('loading');
+      const success = document.getElementById('success');
+      
+      btn.style.display = 'none';
+      loading.style.display = 'block';
+      
+      try {
+        // Fetch the products data
+        const response = await fetch('products-data.json');
+        const data = await response.json();
+        
+        console.log('Loaded data:', data);
+        
+        // Save to localStorage
+        localStorage.setItem('reno_romax_data', JSON.stringify(data));
+        
+        // Verify
+        const stored = localStorage.getItem('reno_romax_data');
+        const storedData = JSON.parse(stored);
+        
+        console.log('Stored data:', storedData);
+        
+        loading.style.display = 'none';
+        success.style.display = 'block';
+        
+        document.getElementById('successText').textContent = 
+          `Successfully loaded ${storedData.products.length} products and ${storedData.categories.length} categories!`;
+        
+      } catch (error) {
+        console.error('Error loading products:', error);
+        loading.style.display = 'none';
+        btn.style.display = 'block';
+        btn.textContent = 'Error - Try Again';
+        alert('Error loading products: ' + error.message);
+      }
+    }
+  </script>
+</body>
+</html>

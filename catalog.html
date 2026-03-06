@@ -67,8 +67,196 @@
     .header-left {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
       flex: 1;
+    }
+
+    /* Hamburger Button */
+    .hamburger-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--secondary);
+      transition: all 0.2s;
+      border-radius: 50%;
+    }
+
+    .hamburger-btn:hover {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+
+    /* Sidebar Menu */
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 320px;
+      max-width: 85vw;
+      height: 100vh;
+      background: white;
+      z-index: 1001;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-light);
+    }
+
+    .sidebar-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .sidebar-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .sidebar-close:hover {
+      color: var(--primary);
+      background: var(--border);
+    }
+
+    .sidebar-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem 0;
+    }
+
+    .sidebar-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-category {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .sidebar-category:hover {
+      background: var(--bg-light);
+      color: var(--primary);
+    }
+
+    .sidebar-category.active {
+      background: linear-gradient(90deg, rgba(249, 115, 22, 0.1) 0%, transparent 100%);
+      color: var(--primary);
+      border-left: 3px solid var(--primary);
+      padding-left: calc(1.5rem - 3px);
+    }
+
+    .sidebar-category-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    .sidebar-category-text {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .sidebar-category-count {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-light);
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+    }
+
+    .sidebar-category.active .sidebar-category-count {
+      background: var(--primary);
+      color: white;
+    }
+
+    .sidebar-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-light);
+    }
+
+    .sidebar-footer a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .sidebar-footer a:hover {
+      color: var(--primary);
     }
 
     /* Header Categories Navigation */
@@ -900,12 +1088,22 @@
   <!-- Header -->
   <header class="header">
     <div class="header-container">
-      <button class="search-icon-btn" onclick="toggleSearch()" title="Search">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.3-4.3"></path>
-        </svg>
-      </button>
+      <div class="header-left">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()" title="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <button class="search-icon-btn" onclick="toggleSearch()" title="Search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+        </button>
+      </div>
       <a href="index.html" class="back-link">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M19 12H5M12 19l-7-7 7-7"/>
@@ -918,6 +1116,50 @@
       <input type="text" id="searchInput" placeholder="Search products..." style="width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 0.5rem; font-size: 1rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
     </div>
   </header>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Categories</span>
+      <button class="sidebar-close" onclick="toggleSidebar()" title="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="sidebar-content" id="sidebarContent">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">All Categories</div>
+        <button class="sidebar-category active" onclick="selectCategoryFromSidebar('all')">
+          <svg class="sidebar-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span class="sidebar-category-text">All Products</span>
+          <span class="sidebar-category-count" id="sidebarAllCount">0</span>
+        </button>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Browse by Category</div>
+        <div id="sidebarCategories">
+          <!-- Categories will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <a href="index.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </aside>
 
   <!-- Hero Section with Banner -->
   <section class="hero" style="padding: 2rem 1.5rem;">
@@ -939,8 +1181,8 @@
     </div>
   </section>
 
-  <!-- Categories Section with Images -->
-  <section class="categories-section">
+  <!-- Categories Section with Images - Hidden (moved to sidebar menu) -->
+  <section class="categories-section" style="display: none;">
     <h2 class="categories-section-title">Browse by Category</h2>
     <div class="categories-grid" id="categoriesGrid">
       <!-- Categories will be loaded by JavaScript -->
@@ -1081,6 +1323,79 @@
   </style>
 
   <script>
+    // Toggle Sidebar
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      // Prevent body scroll when sidebar is open
+      document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Select category from sidebar
+    function selectCategoryFromSidebar(category) {
+      // Update active state in sidebar
+      document.querySelectorAll('.sidebar-category').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
+      
+      // Close sidebar
+      toggleSidebar();
+      
+      // Filter products
+      if (category === 'all') {
+        showAllProducts();
+      } else {
+        filterByCategory(category);
+      }
+    }
+
+    // Render categories in sidebar
+    function renderSidebarCategories() {
+      const container = document.getElementById('sidebarCategories');
+      if (!container || !productsData.length) return;
+      
+      // Get unique categories with counts
+      const categoryMap = new Map();
+      productsData.forEach(product => {
+        if (product.category) {
+          const count = categoryMap.get(product.category) || 0;
+          categoryMap.set(product.category, count + 1);
+        }
+      });
+      
+      // Sort categories alphabetically
+      const sortedCategories = Array.from(categoryMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+      
+      // Update all products count
+      const allCount = document.getElementById('sidebarAllCount');
+      if (allCount) {
+        allCount.textContent = productsData.length;
+      }
+      
+      // Generate HTML
+      let html = '';
+      sortedCategories.forEach(([category, count]) => {
+        const shortName = category.split('>').pop().trim();
+        html += `
+          <button class="sidebar-category" onclick="selectCategoryFromSidebar('${category.replace(/'/g, "\\'")}')">
+            <svg class="sidebar-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 1v6m0 6v6m4.22-10.22l4.24-4.24M6.34 6.34L2.1 2.1m17.8 17.8l-4.24-4.24M6.34 17.66l-4.24 4.24M23 12h-6m-6 0H1m20.24-4.24l-4.24 4.24M6.34 6.34l-4.24-4.24"></path>
+            </svg>
+            <span class="sidebar-category-text" title="${category}">${shortName}</span>
+            <span class="sidebar-category-count">${count}</span>
+          </button>
+        `;
+      });
+      
+      container.innerHTML = html;
+    }
+
     // Toggle Search Bar
     function toggleSearch() {
       const searchBar = document.getElementById('searchBar');
@@ -1250,19 +1565,19 @@
         .trim();
     }
     
-    // Load products from API (CSV data)
-    async function loadProductsFromAPI() {
+    // Load products from JSON file (primary source for deployment)
+    async function loadProductsFromJSON() {
       try {
-        console.log('Loading products from API...');
-        const response = await fetch('/api/products');
+        console.log('Loading products from JSON file...');
+        const response = await fetch('products-data.json');
         const data = await response.json();
         
-        if (data.success && data.products && data.products.length > 0) {
-          console.log('Loaded', data.products.length, 'products from API');
+        if (data.products && data.products.length > 0) {
+          console.log('Loaded', data.products.length, 'products from JSON file');
           return data.products;
         }
       } catch (e) {
-        console.error('Error loading from API:', e);
+        console.error('Error loading from JSON file:', e);
       }
       return null;
     }
@@ -1271,20 +1586,27 @@
     async function initializeProductsData() {
       console.log('=== Initializing products data ===');
 
-      // Priority: 1) localStorage (admin changes), 2) API (CSV), 3) default data
+      // Priority: 1) JSON file (deployment source), 2) localStorage (admin changes), 3) default data
       let allProducts = null;
 
-      // Try localStorage first (where admin saves products)
-      const stored = loadProductsFromStorage();
-      if (stored && stored.length > 0) {
-        console.log('Loaded from localStorage (admin data):', stored.length, 'products');
-        allProducts = stored;
+      // Try JSON file first (for deployment persistence)
+      const jsonProducts = await loadProductsFromJSON();
+      if (jsonProducts && jsonProducts.length > 0) {
+        console.log('Loaded from JSON file:', jsonProducts.length, 'products');
+        allProducts = jsonProducts;
+        
+        // Also save to localStorage for admin editing capability
+        const data = {
+          categories: [...new Set(jsonProducts.map(p => p.category).filter(Boolean))],
+          products: jsonProducts
+        };
+        localStorage.setItem('reno_romax_data', JSON.stringify(data));
       } else {
-        // Fallback to API (CSV file)
-        const apiProducts = await loadProductsFromAPI();
-        if (apiProducts && apiProducts.length > 0) {
-          console.log('Loaded from API (CSV):', apiProducts.length, 'products');
-          allProducts = apiProducts;
+        // Fallback to localStorage (where admin saves products)
+        const stored = loadProductsFromStorage();
+        if (stored && stored.length > 0) {
+          console.log('Loaded from localStorage (admin data):', stored.length, 'products');
+          allProducts = stored;
         } else {
           // Final fallback to default data
           console.log('Using default products data');
@@ -1308,6 +1630,7 @@
       // Initialize page after products are loaded
       renderCarousel();
       renderCategoriesGrid();
+      renderSidebarCategories();
       showAllProducts();
       initializeFilters();
       initializeSearch();
