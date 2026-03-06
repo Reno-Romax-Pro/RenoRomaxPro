@@ -1354,22 +1354,26 @@
       }
     }
 
+    // Fixed category list for sidebar
+    const FIXED_CATEGORIES = [
+      'Shower Sets',
+      'Bathroom Faucets',
+      'Kitchen Faucets',
+      'Bathroom Accessories',
+      'Bathtubs and Faucets',
+      'Toilets',
+      'Led Mirrors',
+      'Vanities',
+      'Pex/Fittings/Valves/ABS',
+      'Silicones',
+      'Drains',
+      'Miscellaneous'
+    ];
+
     // Render categories in sidebar
     function renderSidebarCategories() {
       const container = document.getElementById('sidebarCategories');
       if (!container || !productsData.length) return;
-      
-      // Get unique categories with counts
-      const categoryMap = new Map();
-      productsData.forEach(product => {
-        if (product.category) {
-          const count = categoryMap.get(product.category) || 0;
-          categoryMap.set(product.category, count + 1);
-        }
-      });
-      
-      // Sort categories alphabetically
-      const sortedCategories = Array.from(categoryMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
       
       // Update all products count
       const allCount = document.getElementById('sidebarAllCount');
@@ -1377,20 +1381,56 @@
         allCount.textContent = productsData.length;
       }
       
-      // Generate HTML
+      // Count products for each fixed category
+      const categoryCounts = {};
+      FIXED_CATEGORIES.forEach(cat => {
+        categoryCounts[cat] = 0;
+      });
+      
+      productsData.forEach(product => {
+        if (product.category) {
+          // Try to match product category to fixed categories
+          const productCatLower = product.category.toLowerCase();
+          let matched = false;
+          for (const fixedCat of FIXED_CATEGORIES) {
+            const fixedCatLower = fixedCat.toLowerCase();
+            // Check if product category contains or matches the fixed category
+            if (productCatLower.includes(fixedCatLower) || 
+                (fixedCat === 'Bathroom Accessories' && productCatLower.includes('accessories')) ||
+                (fixedCat === 'Led Mirrors' && (productCatLower.includes('mirror') || productCatLower.includes('led'))) ||
+                (fixedCat === 'Bathtubs and Faucets' && (productCatLower.includes('bathtub') || productCatLower.includes('tub'))) ||
+                (fixedCat === 'Pex/Fittings/Valves/ABS' && (productCatLower.includes('pex') || productCatLower.includes('fitting') || productCatLower.includes('valve'))) ||
+                (fixedCat === 'Bathroom Faucets' && productCatLower.includes('faucet') && !productCatLower.includes('kitchen')) ||
+                (fixedCat === 'Kitchen Faucets' && productCatLower.includes('kitchen'))) {
+              categoryCounts[fixedCat]++;
+              matched = true;
+              break;
+            }
+          }
+          // If no match found, count as Miscellaneous
+          if (!matched) {
+            categoryCounts['Miscellaneous']++;
+          }
+        }
+      });
+      
+      // Generate HTML for fixed categories
       let html = '';
-      sortedCategories.forEach(([category, count]) => {
-        const shortName = category.split('>').pop().trim();
-        html += `
-          <button class="sidebar-category" onclick="selectCategoryFromSidebar('${category.replace(/'/g, "\\'")}')">
-            <svg class="sidebar-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M12 1v6m0 6v6m4.22-10.22l4.24-4.24M6.34 6.34L2.1 2.1m17.8 17.8l-4.24-4.24M6.34 17.66l-4.24 4.24M23 12h-6m-6 0H1m20.24-4.24l-4.24 4.24M6.34 6.34l-4.24-4.24"></path>
-            </svg>
-            <span class="sidebar-category-text" title="${category}">${shortName}</span>
-            <span class="sidebar-category-count">${count}</span>
-          </button>
-        `;
+      FIXED_CATEGORIES.forEach(category => {
+        const count = categoryCounts[category] || 0;
+        // Only show categories that have products
+        if (count > 0 || category === 'Miscellaneous') {
+          html += `
+            <button class="sidebar-category" onclick="selectCategoryFromSidebar('${category.replace(/'/g, "\\'")}')">
+              <svg class="sidebar-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m4.22-10.22l4.24-4.24M6.34 6.34L2.1 2.1m17.8 17.8l-4.24-4.24M6.34 17.66l-4.24 4.24M23 12h-6m-6 0H1m20.24-4.24l-4.24 4.24M6.34 6.34l-4.24-4.24"></path>
+              </svg>
+              <span class="sidebar-category-text">${category}</span>
+              <span class="sidebar-category-count">${count}</span>
+            </button>
+          `;
+        }
       });
       
       container.innerHTML = html;
@@ -1754,7 +1794,6 @@
     function filterByCategory(categoryName) {
       console.log('Filtering by category:', categoryName);
       
-      const normalizedFilter = normalizeCategory(categoryName);
       const grid = document.getElementById('allProductsGrid');
       const header = document.getElementById('currentCategoryHeader');
       const title = document.getElementById('currentCategoryTitle');
@@ -1768,10 +1807,42 @@
         }
       });
       
-      // Filter products
+      // Filter products based on fixed category matching
       const filteredProducts = productsData.filter(product => {
-        const productCat = normalizeCategory(product.category || '');
-        return productCat.includes(normalizedFilter) || normalizedFilter.includes(productCat);
+        if (!product.category) return categoryName === 'Miscellaneous';
+        
+        const productCatLower = product.category.toLowerCase();
+        const categoryNameLower = categoryName.toLowerCase();
+        
+        // Check if product matches the selected fixed category
+        if (categoryName === 'Shower Sets') {
+          return productCatLower.includes('shower');
+        } else if (categoryName === 'Bathroom Faucets') {
+          return productCatLower.includes('faucet') && !productCatLower.includes('kitchen');
+        } else if (categoryName === 'Kitchen Faucets') {
+          return productCatLower.includes('kitchen');
+        } else if (categoryName === 'Bathroom Accessories') {
+          return productCatLower.includes('accessories');
+        } else if (categoryName === 'Bathtubs and Faucets') {
+          return productCatLower.includes('bathtub') || productCatLower.includes('tub');
+        } else if (categoryName === 'Toilets') {
+          return productCatLower.includes('toilet');
+        } else if (categoryName === 'Led Mirrors') {
+          return productCatLower.includes('mirror') || productCatLower.includes('led');
+        } else if (categoryName === 'Vanities') {
+          return productCatLower.includes('vanity');
+        } else if (categoryName === 'Pex/Fittings/Valves/ABS') {
+          return productCatLower.includes('pex') || productCatLower.includes('fitting') || productCatLower.includes('valve');
+        } else if (categoryName === 'Silicones') {
+          return productCatLower.includes('silicone');
+        } else if (categoryName === 'Drains') {
+          return productCatLower.includes('drain');
+        } else if (categoryName === 'Miscellaneous') {
+          // Check if it doesn't match any other category
+          const otherCategories = ['shower', 'faucet', 'kitchen', 'accessories', 'bathtub', 'tub', 'toilet', 'mirror', 'led', 'vanity', 'pex', 'fitting', 'valve', 'silicone', 'drain'];
+          return !otherCategories.some(cat => productCatLower.includes(cat));
+        }
+        return false;
       });
       
       // Show header
