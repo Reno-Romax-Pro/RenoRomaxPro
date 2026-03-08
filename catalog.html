@@ -1165,10 +1165,6 @@
   <section class="hero" style="padding: 2rem 1.5rem;">
     <div style="position: relative; max-width: 1200px; margin: 0 auto; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
       <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1772159803/upscaled_1180_egj7zm.png" alt="Reno-Romax-Pro Banner" style="display: block; width: 100%; height: auto;">
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); text-align: center;">
-        <h1 style="color: white; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Premium Sanitary Ware Solutions</h1>
-        <p style="color: white; font-size: 1.1rem; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Discover our extensive collection of high-quality bathroom and kitchen products at wholesale prices.</p>
-      </div>
     </div>
   </section>
 
@@ -1178,6 +1174,14 @@
       <div class="carousel-track" id="carouselTrack">
         <!-- Carousel slides will be loaded by JavaScript -->
       </div>
+    </div>
+  </section>
+
+  <!-- Hero Text Section -->
+  <section style="background: linear-gradient(135deg, #253a46 0%, #1e293b 100%); padding: 3rem 1.5rem; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h1 style="color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Premium Sanitary Ware Solutions</h1>
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; line-height: 1.6;">Discover our extensive collection of high-quality bathroom and kitchen products at wholesale prices.</p>
     </div>
   </section>
 
@@ -1401,7 +1405,8 @@
                 (fixedCat === 'Bathtubs and Faucets' && (productCatLower.includes('bathtub') || productCatLower.includes('tub'))) ||
                 (fixedCat === 'Pex/Fittings/Valves/ABS' && (productCatLower.includes('pex') || productCatLower.includes('fitting') || productCatLower.includes('valve'))) ||
                 (fixedCat === 'Bathroom Faucets' && productCatLower.includes('faucet') && !productCatLower.includes('kitchen')) ||
-                (fixedCat === 'Kitchen Faucets' && productCatLower.includes('kitchen'))) {
+                (fixedCat === 'Kitchen Faucets' && productCatLower.includes('kitchen')) ||
+                (fixedCat === 'Silicones' && productCatLower.includes('silicone'))) {
               categoryCounts[fixedCat]++;
               matched = true;
               break;
@@ -1418,19 +1423,17 @@
       let html = '';
       FIXED_CATEGORIES.forEach(category => {
         const count = categoryCounts[category] || 0;
-        // Only show categories that have products
-        if (count > 0 || category === 'Miscellaneous') {
-          html += `
-            <button class="sidebar-category" onclick="selectCategoryFromSidebar('${category.replace(/'/g, "\\'")}')">
-              <svg class="sidebar-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M12 1v6m0 6v6m4.22-10.22l4.24-4.24M6.34 6.34L2.1 2.1m17.8 17.8l-4.24-4.24M6.34 17.66l-4.24 4.24M23 12h-6m-6 0H1m20.24-4.24l-4.24 4.24M6.34 6.34l-4.24-4.24"></path>
-              </svg>
-              <span class="sidebar-category-text">${category}</span>
-              <span class="sidebar-category-count">${count}</span>
-            </button>
-          `;
-        }
+        // Show all categories (even with 0 count)
+        html += `
+          <button class="sidebar-category" onclick="selectCategoryFromSidebar('${category.replace(/'/g, "\\'")}')">
+            <svg class="sidebar-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 1v6m0 6v6m4.22-10.22l4.24-4.24M6.34 6.34L2.1 2.1m17.8 17.8l-4.24-4.24M6.34 17.66l-4.24 4.24M23 12h-6m-6 0H1m20.24-4.24l-4.24 4.24M6.34 6.34l-4.24-4.24"></path>
+            </svg>
+            <span class="sidebar-category-text">${category}</span>
+            <span class="sidebar-category-count">${count}</span>
+          </button>
+        `;
       });
       
       container.innerHTML = html;
