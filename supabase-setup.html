@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Supabase Setup | Reno-Romax-Pro</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+  <link rel="manifest" href="/manifest.json" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -25,7 +26,11 @@
       --supabase-green: #3ecf8e;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -59,7 +64,7 @@
     }
 
     .header p {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .card {
@@ -67,7 +72,7 @@
       border-radius: 1rem;
       padding: 2rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     }
 
     .card h2 {
@@ -182,7 +187,7 @@
       position: absolute;
       top: 0.75rem;
       right: 0.75rem;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       border: none;
       color: white;
       padding: 0.5rem 0.75rem;
@@ -192,7 +197,7 @@
     }
 
     .code-block .copy-btn:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .alert {
@@ -227,7 +232,7 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -253,22 +258,34 @@
       border: 1px solid rgba(239, 68, 68, 0.3);
     }
 
-    ol, ul {
+    ol,
+    ul {
       margin-left: 1.5rem;
       line-height: 2;
     }
 
     @media (max-width: 640px) {
-      body { padding: 1rem; }
-      .card { padding: 1.5rem; }
-      .header h1 { font-size: 1.5rem; }
+      body {
+        padding: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="header">
-      <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1772142613/%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D1%8C%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_ba8xkx.jpg" alt="Logo">
+      <img
+        src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1772142613/%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D1%8C%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_ba8xkx.jpg"
+        alt="Logo">
       <h1>☁️ Supabase Setup</h1>
       <p>Настройка облачной базы данных для вашего сайта</p>
     </div>
@@ -277,15 +294,17 @@
     <div class="card">
       <h2><span class="step">1</span> Создайте аккаунт Supabase</h2>
       <p style="margin-bottom: 1rem;">Supabase — это бесплатная PostgreSQL база данных в облаке.</p>
-      
+
       <a href="https://supabase.com" target="_blank" class="btn btn-supabase">
         <svg width="20" height="20" viewBox="0 0 109 113" fill="currentColor">
-          <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.559 55.9374L63.7076 110.284Z"/>
-          <path d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.46539 56.4175L45.317 2.07103Z"/>
+          <path
+            d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.559 55.9374L63.7076 110.284Z" />
+          <path
+            d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.46539 56.4175L45.317 2.07103Z" />
         </svg>
         Открыть Supabase.com
       </a>
-      
+
       <div class="alert alert-info" style="margin-top: 1rem;">
         <strong>Бесплатный план включает:</strong>
         <ul style="margin: 0.5rem 0 0 1rem;">
@@ -301,7 +320,9 @@
       <h2><span class="step">2</span> Создайте новый проект</h2>
       <ol>
         <li>Нажмите <strong>"New Project"</strong></li>
-        <li>Название проекта: <code style="background: var(--bg-light); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">reno-romax-pro</code></li>
+        <li>Название проекта: <code
+            style="background: var(--bg-light); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">reno-romax-pro</code>
+        </li>
         <li>Придумайте надёжный пароль для базы данных</li>
         <li>Выберите регион ближе к вам</li>
         <li>Нажмите <strong>"Create new project"</strong></li>
@@ -317,7 +338,7 @@
         <li>Скопируйте <strong>Project URL</strong></li>
         <li>Скопируйте <strong>anon public</strong> ключ</li>
       </ol>
-      
+
       <div style="margin-top: 1.5rem;">
         <div class="form-group">
           <label>Project URL</label>
@@ -336,7 +357,7 @@
     <div class="card">
       <h2><span class="step">4</span> Создайте таблицы в базе данных</h2>
       <p style="margin-bottom: 1rem;">Выполните этот SQL в Supabase SQL Editor:</p>
-      
+
       <div class="code-block">
         <button class="copy-btn" onclick="copySQL()">📋 Копировать</button>
         <pre id="sqlCode">-- Таблица товаров
@@ -380,7 +401,7 @@ CREATE POLICY "Allow public delete" ON categories FOR DELETE USING (true);
 CREATE INDEX idx_products_category ON products(category);
 CREATE INDEX idx_products_handle ON products(handle);</pre>
       </div>
-      
+
       <ol style="margin-top: 1rem;">
         <li>Перейдите в <strong>SQL Editor</strong> в Supabase</li>
         <li>Нажмите <strong>"New query"</strong></li>
@@ -393,11 +414,11 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
     <div class="card">
       <h2><span class="step">5</span> Скачайте файл конфигурации</h2>
       <p style="margin-bottom: 1rem;">Нажмите кнопку ниже, чтобы скачать готовый файл с вашими ключами:</p>
-      
+
       <button class="btn btn-primary" onclick="downloadConfig()">
         📥 Скачать supabase-config.js
       </button>
-      
+
       <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
         После скачивания замените файл <code>supabase-config.js</code> в папке вашего проекта.
       </p>
@@ -407,7 +428,7 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
     <div class="card">
       <h2><span class="step">6</span> Загрузите данные в облако</h2>
       <p style="margin-bottom: 1rem;">После обновления конфигурации:</p>
-      
+
       <ol>
         <li>Загрузите файлы на Netlify</li>
         <li>Откройте <a href="admin.html" style="color: var(--primary);">Admin Panel</a></li>
@@ -420,11 +441,11 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
     <div class="card">
       <h2>🔌 Проверить подключение</h2>
       <p style="margin-bottom: 1rem;">Проверьте подключение к Supabase перед загрузкой:</p>
-      
+
       <button class="btn btn-secondary" onclick="testConnection()">
         🔍 Проверить подключение
       </button>
-      
+
       <div id="testResult" class="test-result" style="display: none;"></div>
     </div>
 
@@ -449,12 +470,12 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
     function downloadConfig() {
       const url = document.getElementById('supabaseUrl').value.trim();
       const key = document.getElementById('supabaseKey').value.trim();
-      
+
       if (!url || !key) {
         alert('Пожалуйста, введите ваш Supabase URL и Key!');
         return;
       }
-      
+
       // Get full config from server
       fetch('/supabase-config.js')
         .then(r => r.text())
@@ -462,7 +483,7 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
           const updatedConfig = fullConfig
             .replace("const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';", `const SUPABASE_URL = '${url}';`)
             .replace("const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';", `const SUPABASE_ANON_KEY = '${key}';`);
-          
+
           const blob = new Blob([updatedConfig], { type: 'application/javascript' });
           const downloadUrl = URL.createObjectURL(blob);
           const a = document.createElement('a');
@@ -470,7 +491,7 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
           a.download = 'supabase-config.js';
           a.click();
           URL.revokeObjectURL(downloadUrl);
-          
+
           alert('✅ Файл скачан! Замените supabase-config.js в папке вашего проекта.');
         })
         .catch(() => {
@@ -482,18 +503,18 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
       const url = document.getElementById('supabaseUrl').value.trim();
       const key = document.getElementById('supabaseKey').value.trim();
       const resultDiv = document.getElementById('testResult');
-      
+
       if (!url || !key) {
         resultDiv.style.display = 'block';
         resultDiv.className = 'test-result error';
         resultDiv.innerHTML = '❌ Пожалуйста, введите ваш Supabase URL и Key!';
         return;
       }
-      
+
       resultDiv.style.display = 'block';
       resultDiv.className = 'test-result';
       resultDiv.innerHTML = '⏳ Проверка подключения...';
-      
+
       try {
         if (typeof window.supabase === 'undefined') {
           await new Promise((resolve, reject) => {
@@ -504,10 +525,10 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
             document.head.appendChild(script);
           });
         }
-        
+
         const client = window.supabase.createClient(url, key);
         const { data, error } = await client.from('products').select('count');
-        
+
         if (error) {
           if (error.message.includes('relation') || error.message.includes('does not exist')) {
             resultDiv.className = 'test-result error';
@@ -532,4 +553,5 @@ CREATE INDEX idx_products_handle ON products(handle);</pre>
     }
   </script>
 </body>
+
 </html>

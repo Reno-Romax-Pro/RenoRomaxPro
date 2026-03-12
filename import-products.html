@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Import Products from CSV | Reno-Romax-Pro</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -21,14 +27,16 @@
       justify-content: center;
       padding: 2rem;
     }
+
     .container {
       background: white;
       border-radius: 1rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       max-width: 800px;
       width: 100%;
       padding: 2.5rem;
     }
+
     h1 {
       color: #1f2937;
       font-size: 1.875rem;
@@ -36,32 +44,38 @@
       margin-bottom: 0.5rem;
       text-align: center;
     }
+
     .subtitle {
       color: #6b7280;
       text-align: center;
       margin-bottom: 2rem;
     }
+
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin-bottom: 2rem;
     }
+
     .stat-box {
       background: #f3f4f6;
       padding: 1rem;
       border-radius: 0.75rem;
       text-align: center;
     }
+
     .stat-value {
       font-size: 2rem;
       font-weight: 700;
       color: #4f46e5;
     }
+
     .stat-label {
       color: #6b7280;
       font-size: 0.875rem;
     }
+
     .btn {
       width: 100%;
       padding: 1rem 2rem;
@@ -72,40 +86,48 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+
     .btn-primary {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
     }
+
     .btn-primary:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
     }
+
     .btn-primary:disabled {
       opacity: 0.6;
       cursor: not-allowed;
     }
+
     .progress-container {
       margin-top: 2rem;
       display: none;
     }
+
     .progress-bar {
       height: 12px;
       background: #e5e7eb;
       border-radius: 6px;
       overflow: hidden;
     }
+
     .progress-fill {
       height: 100%;
       background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
       width: 0%;
       transition: width 0.3s ease;
     }
+
     .progress-text {
       text-align: center;
       margin-top: 0.75rem;
       color: #4b5563;
       font-weight: 500;
     }
+
     .log {
       margin-top: 1.5rem;
       padding: 1rem;
@@ -117,25 +139,39 @@
       font-size: 0.875rem;
       display: none;
     }
+
     .log-entry {
       padding: 0.25rem 0;
       border-bottom: 1px solid #e5e7eb;
     }
-    .log-success { color: #059669; }
-    .log-error { color: #dc2626; }
-    .log-info { color: #4b5563; }
+
+    .log-success {
+      color: #059669;
+    }
+
+    .log-error {
+      color: #dc2626;
+    }
+
+    .log-info {
+      color: #4b5563;
+    }
+
     .actions {
       display: flex;
       gap: 1rem;
       margin-top: 1.5rem;
     }
+
     .btn-secondary {
       background: #e5e7eb;
       color: #374151;
     }
+
     .btn-secondary:hover {
       background: #d1d5db;
     }
+
     .success-message {
       display: none;
       text-align: center;
@@ -144,21 +180,24 @@
       border-radius: 0.75rem;
       margin-top: 1.5rem;
     }
+
     .success-message h2 {
       color: #065f46;
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
+
     .success-message p {
       color: #047857;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Import Products from CSV</h1>
     <p class="subtitle">Import all 208 products from products.csv into your catalog</p>
-    
+
     <div class="stats">
       <div class="stat-box">
         <div class="stat-value" id="csvCount">-</div>
@@ -191,8 +230,10 @@
       <h2>Import Complete!</h2>
       <p id="successText"></p>
       <div class="actions" style="justify-content: center; margin-top: 1.5rem;">
-        <a href="catalog.html" class="btn btn-primary" style="width: auto; text-decoration: none; display: inline-block;">View Catalog</a>
-        <a href="admin.html" class="btn btn-secondary" style="width: auto; text-decoration: none; display: inline-block;">Go to Admin</a>
+        <a href="catalog.html" class="btn btn-primary"
+          style="width: auto; text-decoration: none; display: inline-block;">View Catalog</a>
+        <a href="admin.html" class="btn btn-secondary"
+          style="width: auto; text-decoration: none; display: inline-block;">Go to Admin</a>
       </div>
     </div>
   </div>
@@ -202,7 +243,7 @@
     let storedProducts = [];
 
     // Load and display stats on page load
-    window.onload = async function() {
+    window.onload = async function () {
       await loadStats();
     };
 
@@ -212,7 +253,7 @@
         const response = await fetch('products.csv');
         const csvText = await response.text();
         csvProducts = parseCSV(csvText);
-        
+
         // Get stored products
         const stored = localStorage.getItem('reno_romax_data');
         if (stored) {
@@ -224,7 +265,7 @@
         document.getElementById('csvCount').textContent = csvProducts.length;
         document.getElementById('currentCount').textContent = storedProducts.length;
         document.getElementById('toImport').textContent = csvProducts.length;
-        
+
         log(`Found ${csvProducts.length} products in CSV file`, 'info');
         log(`Currently have ${storedProducts.length} products stored`, 'info');
       } catch (error) {
@@ -291,7 +332,7 @@
       if (rows.length < 2) return [];
 
       const headers = rows[0].map(h => h.toLowerCase().trim());
-      
+
       const colIndex = {
         handle: headers.findIndex(h => h === 'handle'),
         title: headers.findIndex(h => h === 'title'),
@@ -303,7 +344,7 @@
       };
 
       const products = [];
-      
+
       for (let i = 1; i < rows.length; i++) {
         const row = rows[i];
         if (row.length < 3) continue;
@@ -357,7 +398,7 @@
       const btn = document.getElementById('importBtn');
       const progressContainer = document.getElementById('progressContainer');
       const logDiv = document.getElementById('log');
-      
+
       btn.disabled = true;
       btn.textContent = 'Importing...';
       progressContainer.style.display = 'block';
@@ -373,7 +414,7 @@
       // Get existing data or create new
       const stored = localStorage.getItem('reno_romax_data');
       const data = stored ? JSON.parse(stored) : { categories: [], products: [] };
-      
+
       // Create a map of existing products
       const existingMap = new Map(data.products.map(p => [p.handle, p]));
 
@@ -381,7 +422,7 @@
       const batchSize = 10;
       for (let i = 0; i < productsWithImages.length; i += batchSize) {
         const batch = productsWithImages.slice(i, i + batchSize);
-        
+
         for (const product of batch) {
           try {
             existingMap.set(product.handle, product);
@@ -404,7 +445,7 @@
 
       // Convert map back to array
       data.products = Array.from(existingMap.values());
-      
+
       // Extract unique categories
       const categories = [...new Set(data.products.map(p => p.category).filter(Boolean))];
       data.categories = categories;
@@ -418,7 +459,7 @@
       // Show success message
       document.getElementById('successMessage').style.display = 'block';
       document.getElementById('successText').textContent = `Successfully imported ${imported} products! Your catalog now has ${data.products.length} products.`;
-      
+
       btn.textContent = 'Import Complete';
     }
 
@@ -432,4 +473,5 @@
     }
   </script>
 </body>
+
 </html>

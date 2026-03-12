@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Panel | Reno-Romax-Pro</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --primary: #f97316;
@@ -27,7 +29,11 @@
       --warning: #f59e0b;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -50,7 +56,7 @@
       background: white;
       padding: 2.5rem;
       border-radius: 1rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       width: 100%;
       max-width: 400px;
     }
@@ -88,7 +94,9 @@
       color: var(--text-dark);
     }
 
-    .form-group input, .form-group select, .form-group textarea {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
       width: 100%;
       padding: 0.75rem 1rem;
       border: 2px solid var(--border);
@@ -97,7 +105,9 @@
       transition: border-color 0.2s;
     }
 
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
       outline: none;
       border-color: var(--primary);
     }
@@ -189,7 +199,7 @@
 
     .sidebar-header {
       padding: 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -215,14 +225,15 @@
       align-items: center;
       gap: 0.75rem;
       padding: 0.875rem 1.5rem;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
       transition: all 0.2s;
       cursor: pointer;
     }
 
-    .nav-item:hover, .nav-item.active {
-      background: rgba(255,255,255,0.1);
+    .nav-item:hover,
+    .nav-item.active {
+      background: rgba(255, 255, 255, 0.1);
       color: white;
     }
 
@@ -237,7 +248,7 @@
 
     .sidebar-footer {
       padding: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       margin-top: auto;
     }
 
@@ -254,7 +265,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -279,7 +290,7 @@
     .card {
       background: white;
       border-radius: 0.75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       margin-bottom: 1.5rem;
     }
 
@@ -312,7 +323,7 @@
       background: white;
       padding: 1.5rem;
       border-radius: 0.75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .stat-card h4 {
@@ -341,7 +352,8 @@
       border-collapse: collapse;
     }
 
-    th, td {
+    th,
+    td {
       padding: 0.875rem 1rem;
       text-align: left;
       border-bottom: 1px solid var(--border);
@@ -407,7 +419,7 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       display: none;
       align-items: center;
       justify-content: center;
@@ -484,7 +496,7 @@
       background: white;
       border-radius: 0.75rem;
       padding: 1.25rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       border: 2px solid transparent;
       transition: all 0.2s;
     }
@@ -595,7 +607,7 @@
       padding: 1rem 1.5rem;
       border-radius: 0.5rem;
       margin-bottom: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       animation: slideIn 0.3s ease;
     }
 
@@ -616,6 +628,7 @@
         transform: translateX(100%);
         opacity: 0;
       }
+
       to {
         transform: translateX(0);
         opacity: 1;
@@ -681,12 +694,13 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Login Page -->
   <div class="login-container" id="loginPage">
     <div class="login-box">
       <div class="login-logo">
-        <img src="https://i.postimg.cc/jjm6Z2RL/logo.png" alt="Logo">
+        <img src="logo.jpg" alt="Logo">
         <h1>Admin Panel</h1>
         <p>Reno-Romax-Pro</p>
       </div>
@@ -713,7 +727,7 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <img src="https://i.postimg.cc/jjm6Z2RL/logo.png" alt="Logo">
+        <img src="logo.jpg" alt="Logo">
         <h2>Reno-Romax-Pro</h2>
       </div>
       <nav class="sidebar-nav">
@@ -762,14 +776,17 @@
         <a class="nav-item" data-section="settings">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="3"></circle>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
           </svg>
           Settings
         </a>
       </nav>
       <div class="sidebar-footer">
         <button class="btn btn-secondary btn-block" onclick="logout()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
             <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -906,8 +923,10 @@
               </div>
               <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-light); border-radius: 0.5rem;">
                 <h4 style="margin-bottom: 0.5rem;">Supported CSV Formats:</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Shopify Export:</strong> Handle, Title, Body (HTML), Variant Price, Image Src, Product Category</p>
-                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Simple format:</strong> name, description, price, image, category</p>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Shopify Export:</strong> Handle, Title,
+                  Body (HTML), Variant Price, Image Src, Product Category</p>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Simple format:</strong> name, description,
+                  price, image, category</p>
                 <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
                   Multi-line descriptions in quotes are supported. Variants are automatically skipped.
                 </p>
@@ -945,25 +964,27 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="form-group">
                 <label><strong>Select Products to Move:</strong></label>
                 <div style="margin-bottom: 0.5rem;">
                   <button class="btn btn-secondary btn-sm" onclick="selectAllProductsToMove()">Select All</button>
                   <button class="btn btn-secondary btn-sm" onclick="deselectAllProductsToMove()">Deselect All</button>
                 </div>
-                <div id="productsToMoveList" style="max-height: 400px; overflow-y: auto; border: 2px solid var(--border); border-radius: 0.5rem; padding: 0.5rem; min-height: 100px;">
-                  <p style="color: var(--text-muted); text-align: center; padding: 2rem;">Select a source category to see products</p>
+                <div id="productsToMoveList"
+                  style="max-height: 400px; overflow-y: auto; border: 2px solid var(--border); border-radius: 0.5rem; padding: 0.5rem; min-height: 100px;">
+                  <p style="color: var(--text-muted); text-align: center; padding: 2rem;">Select a source category to
+                    see products</p>
                 </div>
               </div>
-              
+
               <div style="display: flex; gap: 1rem; align-items: center;">
                 <button class="btn btn-primary" onclick="moveSelectedProducts()">Move Selected Products</button>
                 <span id="selectedCount" style="color: var(--text-muted);">0 products selected</span>
               </div>
             </div>
           </div>
-          
+
           <div class="card">
             <div class="card-header">
               <h3>Quick Category Overview</h3>
@@ -1038,23 +1059,28 @@
               <a href="supabase-setup.html" class="btn btn-secondary btn-sm">⚙️ Setup Supabase</a>
             </div>
             <div class="card-body">
-              <div id="supabaseStatus" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: var(--bg-light); border-radius: 0.5rem; margin-bottom: 1rem;">
-                <span id="statusIndicator" style="width: 12px; height: 12px; border-radius: 50%; background: var(--warning);"></span>
+              <div id="supabaseStatus"
+                style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: var(--bg-light); border-radius: 0.5rem; margin-bottom: 1rem;">
+                <span id="statusIndicator"
+                  style="width: 12px; height: 12px; border-radius: 50%; background: var(--warning);"></span>
                 <span id="statusText">Checking database connection...</span>
               </div>
-              
+
               <!-- Sync Button - Always Visible -->
-              <div style="background: rgba(249, 115, 22, 0.05); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 0.5rem; padding: 1rem;">
+              <div
+                style="background: rgba(249, 115, 22, 0.05); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 0.5rem; padding: 1rem;">
                 <button class="btn btn-primary" onclick="syncToSupabase()" id="syncBtn" style="width: 100%;">
                   🔄 Sync Local Data to Supabase
                 </button>
-                <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;" id="syncBtnHint">
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;"
+                  id="syncBtnHint">
                   Загрузить товары из localStorage в облачную базу данных
                 </p>
               </div>
-              
+
               <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
-                <strong>💡 Совет:</strong> Сначала настройте Supabase на странице <a href="supabase-setup.html" style="color: var(--primary);">Setup Supabase</a>, затем нажмите кнопку синхронизации.
+                <strong>💡 Совет:</strong> Сначала настройте Supabase на странице <a href="supabase-setup.html"
+                  style="color: var(--primary);">Setup Supabase</a>, затем нажмите кнопку синхронизации.
               </p>
             </div>
           </div>
@@ -1066,8 +1092,10 @@
             <div class="card-body">
               <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                 <button class="btn btn-secondary" onclick="exportData()">Export Data (JSON)</button>
-                <button class="btn btn-success" onclick="document.getElementById('importFile').click()">Import Data (JSON)</button>
-                <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importData(this.files[0])">
+                <button class="btn btn-success" onclick="document.getElementById('importFile').click()">Import Data
+                  (JSON)</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;"
+                  onchange="importData(this.files[0])">
                 <button class="btn btn-danger" onclick="resetData()">Reset All Data</button>
               </div>
               <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
@@ -1077,9 +1105,11 @@
             </div>
           </div>
 
-          <div style="position: sticky; bottom: 0; background: var(--bg-light); padding: 1rem; margin: 0 -1.5rem -1.5rem; border-top: 1px solid var(--border); display: flex; gap: 1rem; justify-content: flex-end;">
+          <div
+            style="position: sticky; bottom: 0; background: var(--bg-light); padding: 1rem; margin: 0 -1.5rem -1.5rem; border-top: 1px solid var(--border); display: flex; gap: 1rem; justify-content: flex-end;">
             <button class="btn btn-primary" onclick="saveAllChanges()" style="padding: 0.875rem 2rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
                 <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                 <polyline points="17 21 17 13 7 13 7 21"></polyline>
                 <polyline points="7 3 7 8 15 8"></polyline>
@@ -1237,12 +1267,12 @@
       data.products = data.products.filter(p => p.image && p.image.trim() !== '');
       const afterCount = data.products.length;
       const removed = beforeCount - afterCount;
-      
+
       if (removed > 0) {
         saveData(data);
         console.log(`Removed ${removed} products without images`);
       }
-      
+
       return removed;
     }
 
@@ -1284,11 +1314,11 @@
       loadCategories();
       loadProducts();
       loadSettings();
-      
+
       // Ensure Save All Changes button works
       const saveBtn = document.querySelector('button[onclick="saveAllChanges()"]');
       if (saveBtn) {
-        saveBtn.onclick = function(e) {
+        saveBtn.onclick = function (e) {
           e.preventDefault();
           e.stopPropagation();
           saveAllChanges();
@@ -1301,7 +1331,7 @@
       // Check for custom password first
       const customPassword = localStorage.getItem('admin_custom_password');
       const validPassword = customPassword || CONFIG.DEFAULT_PASS;
-      
+
       if (username === CONFIG.DEFAULT_USER && password === validPassword) {
         localStorage.setItem(CONFIG.AUTH_KEY, 'true');
         showAdminPanel();
@@ -1314,36 +1344,36 @@
       const currentPass = document.getElementById('currentPassword').value;
       const newPass = document.getElementById('newPassword').value;
       const confirmPass = document.getElementById('confirmPassword').value;
-      
+
       // Get current valid password
       const customPassword = localStorage.getItem('admin_custom_password');
       const validPassword = customPassword || CONFIG.DEFAULT_PASS;
-      
+
       // Validate
       if (!currentPass || !newPass || !confirmPass) {
         showToast('Please fill in all fields', 'error');
         return;
       }
-      
+
       if (currentPass !== validPassword) {
         showToast('Current password is incorrect', 'error');
         return;
       }
-      
+
       if (newPass.length < 6) {
         showToast('New password must be at least 6 characters', 'error');
         return;
       }
-      
+
       if (newPass !== confirmPass) {
         showToast('New passwords do not match', 'error');
         return;
       }
-      
+
       // Save new password
       localStorage.setItem('admin_custom_password', newPass);
       showToast('Password changed successfully!', 'success');
-      
+
       // Clear fields
       document.getElementById('currentPassword').value = '';
       document.getElementById('newPassword').value = '';
@@ -1362,11 +1392,11 @@
           whatsappNumber: document.getElementById('whatsappNumber').value
         };
         saveSettingsData(settings);
-        
+
         // Also ensure products data is saved
         const data = getData();
         saveData(data);
-        
+
         showToast('All changes saved successfully!', 'success');
         console.log('Save All Changes executed successfully');
       } catch (error) {
@@ -1386,7 +1416,7 @@
     function initNavigation() {
       const navItems = document.querySelectorAll('.nav-item');
       navItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
           const section = this.dataset.section;
           if (section) {
             navItems.forEach(n => n.classList.remove('active'));
@@ -1400,7 +1430,7 @@
     function showSection(sectionName) {
       const sections = document.querySelectorAll('.section-page');
       sections.forEach(s => s.classList.remove('active'));
-      
+
       const targetSection = document.getElementById(sectionName + 'Section');
       if (targetSection) {
         targetSection.classList.add('active');
@@ -1415,7 +1445,7 @@
         settings: 'Settings'
       };
       document.getElementById('pageTitle').textContent = titles[sectionName] || 'Dashboard';
-      
+
       // Load move section data when shown
       if (sectionName === 'move') {
         loadMoveSection();
@@ -1427,10 +1457,10 @@
     // ============================================
     function loadDashboard() {
       const data = getData();
-      
+
       document.getElementById('totalProducts').textContent = data.products.length;
       document.getElementById('totalCategories').textContent = data.categories.length;
-      
+
       const totalValue = data.products.reduce((sum, p) => sum + (parseFloat(p.price) || 0), 0);
       document.getElementById('totalValue').textContent = '$' + totalValue.toFixed(2);
 
@@ -1488,20 +1518,20 @@
       const data = getData();
 
       let filtered = data.products;
-      
+
       if (search) {
-        filtered = filtered.filter(p => 
-          p.title.toLowerCase().includes(search) || 
+        filtered = filtered.filter(p =>
+          p.title.toLowerCase().includes(search) ||
           (p.description && p.description.toLowerCase().includes(search))
         );
       }
-      
+
       if (category) {
         // Filter by fixed category matching
         filtered = filtered.filter(p => {
           if (!p.category) return category === 'Miscellaneous';
           const productCatLower = p.category.toLowerCase();
-          
+
           if (category === 'Shower Sets') return productCatLower.includes('shower');
           if (category === 'Bathroom Faucets') return productCatLower.includes('faucet') && !productCatLower.includes('kitchen');
           if (category === 'Kitchen Faucets') return productCatLower.includes('kitchen');
@@ -1526,12 +1556,12 @@
 
     function filterProductsByCategory(categoryName) {
       const data = getData();
-      
+
       // Filter products by fixed category
       const filtered = data.products.filter(p => {
         if (!p.category) return categoryName === 'Miscellaneous';
         const productCatLower = p.category.toLowerCase();
-        
+
         if (categoryName === 'Shower Sets') return productCatLower.includes('shower');
         if (categoryName === 'Bathroom Faucets') return productCatLower.includes('faucet') && !productCatLower.includes('kitchen');
         if (categoryName === 'Kitchen Faucets') return productCatLower.includes('kitchen');
@@ -1549,7 +1579,7 @@
         }
         return false;
       });
-      
+
       renderProductsTable(filtered);
       // Update the page title
       document.getElementById('pageTitle').textContent = categoryName + ' Products';
@@ -1632,7 +1662,7 @@
 
     function deleteProduct(handle) {
       if (!confirm('Are you sure you want to delete this product?')) return;
-      
+
       const data = getData();
       data.products = data.products.filter(p => p.handle !== handle);
       saveData(data);
@@ -1646,7 +1676,7 @@
     // ============================================
     function initDragAndDrop() {
       const rows = document.querySelectorAll('.product-row');
-      
+
       rows.forEach(row => {
         row.addEventListener('dragstart', handleDragStart);
         row.addEventListener('dragend', handleDragEnd);
@@ -1685,7 +1715,7 @@
     function handleDrop(e) {
       e.preventDefault();
       this.classList.remove('drag-over');
-      
+
       if (this === draggedItem) return;
 
       const data = getData();
@@ -1699,7 +1729,7 @@
         // Swap categories (move dragged product to target's category)
         const targetCategory = data.products[targetIndex].category;
         data.products[draggedIndex].category = targetCategory;
-        
+
         saveData(data);
         loadProducts();
         showToast('Product moved to ' + targetCategory, 'success');
@@ -1736,7 +1766,7 @@
         const count = data.products.filter(p => {
           if (!p.category) return cat === 'Miscellaneous';
           const productCatLower = p.category.toLowerCase();
-          
+
           // Match products to fixed categories
           if (cat === 'Shower Sets') return productCatLower.includes('shower');
           if (cat === 'Bathroom Faucets') return productCatLower.includes('faucet') && !productCatLower.includes('kitchen');
@@ -1755,7 +1785,7 @@
           }
           return false;
         }).length;
-        
+
         return `
           <div class="category-card">
             <h4>${cat}</h4>
@@ -1780,14 +1810,14 @@
     function openCategoryModal(index = null) {
       document.getElementById('categoryModalTitle').textContent = index !== null ? 'Edit Category' : 'Add Category';
       document.getElementById('categoryId').value = index !== null ? index : '';
-      
+
       if (index !== null) {
         const data = getData();
         document.getElementById('categoryName').value = data.categories[index];
       } else {
         document.getElementById('categoryName').value = '';
       }
-      
+
       document.getElementById('categoryModal').classList.add('active');
     }
 
@@ -1838,15 +1868,15 @@
 
     function deleteCategory(index) {
       if (!confirm('Are you sure you want to delete this category? Products in this category will be moved to "Miscellaneous".')) return;
-      
+
       const data = getData();
       const catName = data.categories[index];
-      
+
       // Move products to Miscellaneous
       data.products.forEach(p => {
         if (p.category === catName) p.category = 'Miscellaneous';
       });
-      
+
       data.categories.splice(index, 1);
       saveData(data);
       loadCategories();
@@ -1862,16 +1892,16 @@
       const data = getData();
       const fromSelect = document.getElementById('moveFromCategory');
       const toSelect = document.getElementById('moveToCategory');
-      
+
       // Populate category dropdowns
       const options = data.categories.map(c => `<option value="${c}">${c}</option>`).join('');
       fromSelect.innerHTML = '<option value="">Select source category</option>' + options;
       toSelect.innerHTML = '<option value="">Select target category</option>' + options;
-      
+
       // Reset products list
       document.getElementById('productsToMoveList').innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">Select a source category to see products</p>';
       document.getElementById('selectedCount').textContent = '0 products selected';
-      
+
       // Load category overview
       loadCategoryOverview();
     }
@@ -1879,7 +1909,7 @@
     function loadCategoryOverview() {
       const data = getData();
       const overview = document.getElementById('categoryOverview');
-      
+
       overview.innerHTML = data.categories.map(cat => {
         const count = data.products.filter(p => p.category === cat).length;
         return `
@@ -1904,22 +1934,22 @@
     function loadProductsToMove() {
       const fromCategory = document.getElementById('moveFromCategory').value;
       const list = document.getElementById('productsToMoveList');
-      
+
       if (!fromCategory) {
         list.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">Select a source category to see products</p>';
         updateSelectedCount();
         return;
       }
-      
+
       const data = getData();
       const products = data.products.filter(p => p.category === fromCategory);
-      
+
       if (products.length === 0) {
         list.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">No products in this category</p>';
         updateSelectedCount();
         return;
       }
-      
+
       list.innerHTML = products.map(p => `
         <label class="product-move-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s;">
           <input type="checkbox" class="product-checkbox" data-handle="${p.handle}" onchange="updateSelectedCount()" style="width: 18px; height: 18px; cursor: pointer;">
@@ -1930,7 +1960,7 @@
           </div>
         </label>
       `).join('');
-      
+
       updateSelectedCount();
     }
 
@@ -1952,47 +1982,47 @@
     function moveSelectedProducts() {
       const fromCategory = document.getElementById('moveFromCategory').value;
       const toCategory = document.getElementById('moveToCategory').value;
-      
+
       if (!fromCategory) {
         showToast('Please select a source category', 'error');
         return;
       }
-      
+
       if (!toCategory) {
         showToast('Please select a target category', 'error');
         return;
       }
-      
+
       if (fromCategory === toCategory) {
         showToast('Source and target categories must be different', 'warning');
         return;
       }
-      
+
       const checkboxes = document.querySelectorAll('.product-checkbox:checked');
       if (checkboxes.length === 0) {
         showToast('Please select at least one product to move', 'warning');
         return;
       }
-      
+
       const data = getData();
       const handles = Array.from(checkboxes).map(cb => cb.dataset.handle);
       let movedCount = 0;
-      
+
       data.products.forEach(p => {
         if (handles.includes(p.handle)) {
           p.category = toCategory;
           movedCount++;
         }
       });
-      
+
       saveData(data);
-      
+
       // Refresh the view
       loadProductsToMove();
       loadCategoryOverview();
       loadDashboard();
       loadProducts();
-      
+
       showToast(`Moved ${movedCount} product${movedCount !== 1 ? 's' : ''} to "${toCategory}"`, 'success');
     }
 
@@ -2004,7 +2034,7 @@
       const fileInput = document.getElementById('csvFile');
 
       dropZone.addEventListener('click', () => fileInput.click());
-      
+
       dropZone.addEventListener('dragover', (e) => {
         e.preventDefault();
         dropZone.classList.add('drag-over');
@@ -2132,7 +2162,7 @@
 
     function parseCSV(content) {
       const rows = parseCSVAdvanced(content);
-      
+
       if (rows.length < 2) {
         showToast('CSV file is empty or has no data rows', 'error');
         return;
@@ -2140,7 +2170,7 @@
 
       // Get headers (first row)
       const headers = rows[0].map(h => h.toLowerCase().trim());
-      
+
       // Find column indices
       const colIndex = {
         handle: headers.findIndex(h => h === 'handle'),
@@ -2162,7 +2192,7 @@
       // Process each data row
       for (let i = 1; i < rows.length; i++) {
         const row = rows[i];
-        
+
         // Skip empty rows
         if (!row || row.every(f => !f)) continue;
 
@@ -2202,7 +2232,7 @@
         const description = stripHtml(bodyHtml);
 
         // Check for duplicates by title
-        const existingProduct = data.products.find(p => 
+        const existingProduct = data.products.find(p =>
           p.title.toLowerCase() === title.toLowerCase() ||
           (handle && p.handle === handle)
         );
@@ -2222,7 +2252,7 @@
 
         // Determine category
         let productCategory = category || 'Miscellaneous';
-        
+
         // Clean up category name
         if (productCategory.includes('>')) {
           productCategory = productCategory.split('>').pop().trim();
@@ -2252,7 +2282,7 @@
       loadCategories();
       loadProducts();
       loadDashboard();
-      
+
       // Store last import date
       localStorage.setItem('lastImport', new Date().toISOString());
     }
@@ -2308,7 +2338,7 @@
       const data = getData();
       const settings = getSettings();
       const exportObj = { ...data, settings };
-      
+
       const blob = new Blob([JSON.stringify(exportObj, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -2325,7 +2355,7 @@
 
       const reader = new FileReader();
 
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         try {
           const importedData = JSON.parse(e.target.result);
 
@@ -2371,7 +2401,7 @@
         }
       };
 
-      reader.onerror = function() {
+      reader.onerror = function () {
         showToast('Error reading file', 'error');
       };
 
@@ -2384,7 +2414,7 @@
     function resetData() {
       if (!confirm('Are you sure you want to reset all data? This cannot be undone.')) return;
       if (!confirm('Really? All products and categories will be deleted!')) return;
-      
+
       localStorage.removeItem(CONFIG.DATA_KEY);
       localStorage.removeItem(CONFIG.SETTINGS_KEY);
       loadDashboard();
@@ -2404,23 +2434,23 @@
       const text = document.getElementById('statusText');
       const syncBtn = document.getElementById('syncBtn');
       const syncBtnHint = document.getElementById('syncBtnHint');
-      
+
       try {
         // Load supabase-config.js if available
         const script = document.createElement('script');
         script.src = '/supabase-config.js';
-        
+
         script.onload = async () => {
           if (typeof window.SupabaseConfig !== 'undefined') {
             supabaseConnected = await window.SupabaseConfig.init();
           }
           updateSupabaseStatus();
         };
-        
+
         script.onerror = () => {
           updateSupabaseStatus();
         };
-        
+
         document.head.appendChild(script);
       } catch (error) {
         console.error('Supabase init error:', error);
@@ -2457,20 +2487,20 @@
 
       const btn = document.getElementById('syncBtn');
       const hint = document.getElementById('syncBtnHint');
-      
+
       // Get local data count
       const localData = getData();
       const localCount = localData.products ? localData.products.length : 0;
-      
+
       if (localCount === 0) {
         showToast('Нет локальных данных для синхронизации', 'warning');
         return;
       }
-      
+
       if (!confirm(`Загрузить ${localCount} товаров в Supabase?\n\nЭто заменит все существующие товары в облаке!`)) {
         return;
       }
-      
+
       btn.disabled = true;
       btn.innerHTML = '⏳ Синхронизация...';
       hint.textContent = 'Пожалуйста, подождите...';
@@ -2502,18 +2532,18 @@
     // ============================================
     // Initialize
     // ============================================
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       checkAuth();
       initNavigation();
       initCSVImport();
       initSupabaseConnection();
 
       // Login form
-      document.getElementById('loginForm').addEventListener('submit', function(e) {
+      document.getElementById('loginForm').addEventListener('submit', function (e) {
         e.preventDefault();
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        
+
         if (!login(username, password)) {
           document.getElementById('loginError').style.display = 'block';
         }
@@ -2521,4 +2551,5 @@
     });
   </script>
 </body>
+
 </html>

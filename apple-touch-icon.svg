@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
   <defs>
     <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:1" />
@@ -6,11 +6,11 @@
     </linearGradient>
   </defs>
   <!-- Orange circle background -->
-  <circle cx="256" cy="256" r="256" fill="url(#orangeGradient)"/>
+  <circle cx="90" cy="90" r="90" fill="url(#orangeGradient)"/>
   <!-- Letter R - same color as header/footer -->
-  <text x="256" y="340" 
+  <text x="90" y="125" 
         font-family="Arial, Helvetica, sans-serif" 
-        font-size="320" 
+        font-size="115" 
         font-weight="bold" 
         text-anchor="middle" 
         fill="#253a46">R</text>

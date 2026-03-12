@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Catalog | Reno-Romax-Pro</title>
-  <meta name="description" content="Browse our complete catalog of 208+ renovation materials, fixtures, and finishing touches. Same categories as FaucetWorld." />
-  
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <meta name="description"
+    content="Browse our complete catalog of 208+ renovation materials, fixtures, and finishing touches. Same categories as FaucetWorld." />
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  
+
   <style>
     :root {
       --primary: #f97316;
@@ -28,7 +31,11 @@
       --border: #e2e8f0;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -40,7 +47,7 @@
     /* Header */
     .header {
       background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -345,8 +352,8 @@
       white-space: nowrap;
     }
 
-    .back-link:hover { 
-      color: var(--primary); 
+    .back-link:hover {
+      color: var(--primary);
     }
 
     /* Categories Grid Section */
@@ -364,7 +371,8 @@
       margin-bottom: 1.5rem;
     }
 
-    .categories-grid, #categoriesGrid {
+    .categories-grid,
+    #categoriesGrid {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -425,7 +433,7 @@
       background: var(--bg-light);
       border-radius: 0.75rem;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       transition: all 0.3s ease;
       cursor: pointer;
       text-decoration: none;
@@ -435,7 +443,7 @@
 
     .category-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .category-card.active {
@@ -575,7 +583,9 @@
       transition: color 0.2s;
     }
 
-    .back-link:hover { color: var(--primary); }
+    .back-link:hover {
+      color: var(--primary);
+    }
 
     /* Hero Section */
     .hero {
@@ -613,12 +623,12 @@
       border-radius: 3rem;
       font-size: 1rem;
       background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .search-input:focus {
       outline: none;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .search-icon {
@@ -639,8 +649,8 @@
 
     .filter-btn {
       padding: 0.5rem 1rem;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       color: white;
       border-radius: 2rem;
       font-size: 0.875rem;
@@ -648,7 +658,8 @@
       transition: all 0.2s;
     }
 
-    .filter-btn:hover, .filter-btn.active {
+    .filter-btn:hover,
+    .filter-btn.active {
       background: var(--primary);
       border-color: var(--primary);
     }
@@ -747,7 +758,7 @@
       background: white;
       border-radius: 1rem;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       transition: transform 0.3s, box-shadow 0.3s;
       display: flex;
       flex-direction: column;
@@ -755,7 +766,7 @@
 
     .product-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     }
 
     .product-card.hidden {
@@ -857,7 +868,7 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0, 0, 0, 0.8);
       display: none;
       align-items: center;
       justify-content: center;
@@ -886,7 +897,7 @@
       width: 40px;
       height: 40px;
       border: none;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -896,7 +907,7 @@
       color: var(--text-dark);
       transition: all 0.2s;
       z-index: 10;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
     .modal-close:hover {
@@ -1164,6 +1175,7 @@
       0% {
         transform: translateX(0);
       }
+
       100% {
         transform: translateX(-50%);
       }
@@ -1174,6 +1186,7 @@
         transform: translateX(100%);
         opacity: 0;
       }
+
       to {
         transform: translateX(0);
         opacity: 1;
@@ -1185,6 +1198,7 @@
         transform: translateX(0);
         opacity: 1;
       }
+
       to {
         transform: translateX(100%);
         opacity: 0;
@@ -1225,7 +1239,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
       color: white;
       padding: 1.5rem 0.5rem 0.5rem;
       font-weight: 600;
@@ -1244,9 +1258,11 @@
         width: 240px;
         height: 240px;
       }
+
       .carousel-track {
         gap: 0.75rem;
       }
+
       .carousel-container::before,
       .carousel-container::after {
         width: 40px;
@@ -1255,14 +1271,26 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
+      .hero h1 {
+        font-size: 2rem;
+      }
 
-      .category-title-row { flex-direction: column; align-items: flex-start; }
-      .products-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .category-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      }
     }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header class="header">
@@ -1270,29 +1298,30 @@
       <div class="header-left">
         <!-- Hamburger Menu Button -->
         <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()" title="Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
         <button class="search-icon-btn" onclick="toggleSearch()" title="Search">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <path d="m21 21-4.3-4.3"></path>
           </svg>
         </button>
       </div>
-      <a href="index.html" class="back-link">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        Back to Home
+      <a href="index.html" class="back-link" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--secondary); font-weight: 700;">
+        <img src="logo.jpg" alt="Reno-Romax-Pro Logo" class="logo-img" style="width: 32px; height: 32px; border-radius: 0.25rem; object-fit: cover;" />
+        Reno-Romax-Pro
       </a>
       <div class="header-right">
         <!-- Cart Icon -->
         <button class="cart-icon-btn" onclick="openCartModal()" title="View Cart">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -1303,7 +1332,9 @@
     </div>
     <!-- Search Bar (Hidden by default) -->
     <div id="searchBar" style="display: none; padding: 0 1.5rem 1rem; max-width: 1400px; margin: 0 auto;">
-      <input type="text" id="searchInput" placeholder="Search products..." style="width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 0.5rem; font-size: 1rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
+      <input type="text" id="searchInput" placeholder="Search products..."
+        style="width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 0.5rem; font-size: 1rem; outline: none; transition: border-color 0.2s;"
+        onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
     </div>
   </header>
 
@@ -1313,7 +1344,8 @@
     <div class="sidebar-header">
       <span class="sidebar-title">Categories</span>
       <button class="sidebar-close" onclick="toggleSidebar()" title="Close">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
@@ -1342,10 +1374,7 @@
     </div>
     <div class="sidebar-footer">
       <a href="index.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-          <polyline points="9 22 9 12 15 12 15 22"></polyline>
-        </svg>
+        <img src="logo.jpg" alt="Reno-Romax-Pro Logo" class="logo-img" style="width: 24px; height: 24px; border-radius: 0.25rem; object-fit: cover;" />
         Back to Home
       </a>
     </div>
@@ -1353,8 +1382,10 @@
 
   <!-- Hero Section with Banner -->
   <section class="hero" style="padding: 2rem 1.5rem;">
-    <div style="position: relative; max-width: 1200px; margin: 0 auto; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-      <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1772159803/upscaled_1180_egj7zm.png" alt="Reno-Romax-Pro Banner" style="display: block; width: 100%; height: auto;">
+    <div
+      style="position: relative; max-width: 1200px; margin: 0 auto; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+      <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1772159803/upscaled_1180_egj7zm.png"
+        alt="Reno-Romax-Pro Banner" style="display: block; width: 100%; height: auto;">
     </div>
   </section>
 
@@ -1368,10 +1399,13 @@
   </section>
 
   <!-- Hero Text Section -->
-  <section style="background: linear-gradient(135deg, #253a46 0%, #1e293b 100%); padding: 3rem 1.5rem; text-align: center;">
+  <section
+    style="background: linear-gradient(135deg, #253a46 0%, #1e293b 100%); padding: 3rem 1.5rem; text-align: center;">
     <div style="max-width: 800px; margin: 0 auto;">
-      <h1 style="color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Premium Sanitary Ware Solutions</h1>
-      <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; line-height: 1.6;">Discover our extensive collection of high-quality bathroom and kitchen products at wholesale prices.</p>
+      <h1 style="color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Premium Sanitary Ware
+        Solutions</h1>
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; line-height: 1.6;">Discover our extensive collection
+        of high-quality bathroom and kitchen products at wholesale prices.</p>
     </div>
   </section>
 
@@ -1409,7 +1443,7 @@
         <!-- Products will be loaded by JavaScript -->
       </div>
     </section>
-    
+
     <div class="no-results hidden" id="noResults">
       <h3>No products found</h3>
       <p>Try adjusting your search or filter criteria</p>
@@ -1451,9 +1485,12 @@
   <footer class="footer">
     <p>&copy; 2026 Reno-Romax-Pro. All rights reserved.</p>
     <a href="admin.html" class="admin-gear" title="Admin Panel">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="3"></circle>
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        <path
+          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+        </path>
       </svg>
     </a>
   </footer>
@@ -1464,9 +1501,10 @@
       align-items: center;
       justify-content: center;
       margin-top: 1rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       transition: all 0.3s ease;
     }
+
     .admin-gear:hover {
       color: var(--primary);
       transform: scale(1.2) rotate(45deg);
@@ -1475,7 +1513,8 @@
 
   <!-- Scroll to Top Button -->
   <button id="scrollToTop" onclick="scrollToTopSmooth()" class="scroll-top-btn" aria-label="Scroll to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
@@ -1530,6 +1569,7 @@
         bottom: 20px;
         right: 20px;
       }
+
       .scroll-top-btn svg {
         width: 20px;
         height: 20px;
@@ -1542,10 +1582,10 @@
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('sidebarOverlay');
-      
+
       sidebar.classList.toggle('active');
       overlay.classList.toggle('active');
-      
+
       // Prevent body scroll when sidebar is open
       document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
     }
@@ -1557,10 +1597,10 @@
         btn.classList.remove('active');
       });
       event.currentTarget.classList.add('active');
-      
+
       // Close sidebar
       toggleSidebar();
-      
+
       // Filter products
       if (category === 'all') {
         showAllProducts();
@@ -1589,27 +1629,27 @@
     function renderSidebarCategories() {
       const container = document.getElementById('sidebarCategories');
       if (!container || !productsData.length) return;
-      
+
       // Update all products count
       const allCount = document.getElementById('sidebarAllCount');
       if (allCount) {
         allCount.textContent = productsData.length;
       }
-      
+
       // Count products for each fixed category
       const categoryCounts = {};
       FIXED_CATEGORIES.forEach(cat => {
         categoryCounts[cat] = 0;
       });
-      
+
       productsData.forEach(product => {
         if (product.category) {
           const productCatLower = product.category.toLowerCase();
           let matched = false;
-          
+
           // Check each fixed category with specific matching logic
           // Order matters - more specific matches should come first
-          
+
           if (productCatLower.includes('kitchen') && productCatLower.includes('faucet')) {
             categoryCounts['Kitchen Faucets']++;
             matched = true;
@@ -1644,7 +1684,7 @@
             categoryCounts['Drains']++;
             matched = true;
           }
-          
+
           // If no match found, count as Miscellaneous
           if (!matched) {
             categoryCounts['Miscellaneous']++;
@@ -1654,7 +1694,7 @@
           categoryCounts['Miscellaneous']++;
         }
       });
-      
+
       // Generate HTML for fixed categories
       let html = '';
       FIXED_CATEGORIES.forEach(category => {
@@ -1671,7 +1711,7 @@
           </button>
         `;
       });
-      
+
       container.innerHTML = html;
     }
 
@@ -1679,7 +1719,7 @@
     function toggleSearch() {
       const searchBar = document.getElementById('searchBar');
       const searchInput = document.getElementById('searchInput');
-      
+
       if (searchBar.style.display === 'none') {
         searchBar.style.display = 'block';
         searchInput.focus();
@@ -1723,7 +1763,7 @@
 
     // Load products from localStorage or use default data
     const STORAGE_KEY = 'reno_romax_data';
-    
+
     function loadProductsFromStorage() {
       try {
         const stored = localStorage.getItem(STORAGE_KEY);
@@ -1733,19 +1773,19 @@
             // Filter out products without valid images (must be a non-empty URL)
             const beforeCount = data.products.length;
             data.products = data.products.filter(p => {
-              const hasValidImage = p.image && 
-                                    typeof p.image === 'string' && 
-                                    p.image.trim() !== '' && 
-                                    (p.image.startsWith('http://') || p.image.startsWith('https://'));
+              const hasValidImage = p.image &&
+                typeof p.image === 'string' &&
+                p.image.trim() !== '' &&
+                (p.image.startsWith('http://') || p.image.startsWith('https://'));
               return hasValidImage;
             });
-            
+
             if (data.products.length !== beforeCount) {
               // Save cleaned data back to localStorage
               localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
               console.log('Removed', beforeCount - data.products.length, 'products without valid images');
             }
-            
+
             console.log('Loaded', data.products.length, 'products from localStorage');
             return data.products;
           }
@@ -1760,83 +1800,83 @@
 
     // Default product data (fallback)
     const defaultProductsData = [
-      {"title":"10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer Brushed Gold","price":254.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1768439823527.jpg?v=1768439850","description":"TOP QUALITY: This shower combo set contains only top-quality selected metal parts. The faucet body, 10 inch ultra-thin pressurized Rain shower head, 59 inches shower hose, wall mounted shower arm, shower holder, hand shower.","category":"Shower sets","handle":"10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer-brushed-gold"},
-      {"title":"10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Brushed Gold","price":324.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1768439823882.jpg?v=1768439856","description":"TOP QUALITY: This shower combo set contains only top-quality selected metal parts. Complete with tub spout for bathtub installations.","category":"Shower sets","handle":"10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-brushed-gold"},
-      {"title":"10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer Rose Gold","price":269.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653223178.jpg?v=1768438205","description":"Beautiful rose gold finish with all premium metal parts included.","category":"Shower sets","handle":"10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer-rose-gold"},
-      {"title":"10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Rose Gold","price":339.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653682473.jpg?v=1768438683","description":"Premium rose gold finish with tub spout included.","category":"Shower sets","handle":"10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-rose-gold"},
-      {"title":"10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer Matt Black","price":249.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708652957616.jpg?v=1768438205","description":"Modern matte black finish for contemporary bathrooms.","category":"Shower sets","handle":"10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer-matt-black"},
-      {"title":"10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Matt Black","price":324.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653678139.jpg?v=1768438683","description":"Matte black finish with tub spout for bathtub.","category":"Shower sets","handle":"10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-black"},
-      {"title":"10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer","price":244.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708652955321.jpg?v=1768438205","description":"Chrome finish with all essential components included.","category":"Shower sets","handle":"10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer"},
-      {"title":"10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Chrome","price":324.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653673714.jpg?v=1767146796","description":"Classic chrome finish with tub spout.","category":"Shower sets","handle":"10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-chrome"},
-      {"title":"Thermostatic Vanity Faucets 4 colors","price":124.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/1600724208783.png?v=1708923006","description":"Single Hole, Single Handle Bathroom Faucet with Push Button Switch. Available in Black, Chrome, Brushed Gold, Brushed Nickel.","category":"Bathroom Faucets","handle":"thermostatic-vanity-faucets-4-colors"},
-      {"title":"Widespread Faucet Crystal 2-Handle Bathroom Faucet with 3 Holes","price":199.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20250617-211503.jpg?v=1750209880","description":"This 3-hole deck-mounted bathroom faucet uses Korean high-quality brass valves, which are durable. Very beautiful effluent water effect.","category":"Bathroom Faucets","handle":"widespread-faucet-crystal-2-handle-bathroom-faucet-with-3-holes"},
-      {"title":"Widespread Faucet 2-Handle Bathroom Faucet with 3 Holes","price":164.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20250617-205302.jpg?v=1750208322","description":"3-hole deck-mounted bathroom faucet with advanced plating technology, durable and colorfast.","category":"Bathroom Faucets","handle":"widespread-faucet-2-handle-bathroom-faucet-with-3-holes-1"},
-      {"title":"Vanity Faucets Single Hole (4 Colors)","price":94.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/541A0240.jpg?v=1717815537","description":"Single Hole, Single Handle, Bathroom Faucets. Available in Chrome, Black, Brushed Gold, Brushed Nickel.","category":"Bathroom Faucets","handle":"untitled-jun7_22-40"},
-      {"title":"Vanity Faucet Modern New Design 5 colors","price":219.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20230818-223647.jpg?v=1709590491","description":"Single Hole Lavatory Faucets. Available in Chrome, Brushed Nickel, Black, Brushed Gold, Rose Gold.","category":"Bathroom Faucets","handle":"vanity-faucets-5-colors"},
-      {"title":"Modern Vanity Faucets 4 colors","price":144.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Screenshot-20230901_215608_Amazon_Shopping.jpg?v=1708746175","description":"Single Hole, Single Handle, Bathroom Faucets. Available in Black, Chrome, Brushed Gold, Brushed Nickel.","category":"Bathroom Faucets","handle":"modern-vanity-faucets-4-colors"},
-      {"title":"Waterfall Vanity Faucets 4 colors","price":94.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/1704593759949.png?v=1708747626","description":"Single Hole, Single Handle, Vanity Faucets. Available in Black, Chrome, Brushed Nickel, Brushed Gold.","category":"Bathroom Faucets","handle":"waterfall-vanity-faucets-4-colors"},
-      {"title":"Drinking Water Faucet for Kitchen Sink, Lead-Free, Reverse Osmosis Faucet","price":69.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_42b03fce-61bb-49e0-98aa-52d5dd00094c.jpg?v=1738350369","description":"Upgrade your kitchen with our Lead-Free Drinking Water Faucet! Designed for your sink, this Reverse Osmosis Faucet provides 100% clean and safe drinking water.","category":"Kitchen Faucets","handle":"drinking-water-faucet-for-kitchen-sink-lead-free-reverse-osmosis-faucet"},
-      {"title":"Soap Dispenser for Kitchen Sink","price":24.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_d383df6b-c6f2-4f8c-9174-baa303f682aa.png?v=1738348614","description":"This soap dispenser is a convenient addition to any kitchen sink. Made from durable stainless steel material, available in chrome, brushed nickel, black, and brushed gold.","category":"Kitchen Faucets","handle":"soap-dispenser-for-kitchen-sink"},
-      {"title":"Pull Out Kitchen Faucets (5) Colors","price":184.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20241114-230149.jpg?v=1731643366","description":"NEW Design Pull Out Kitchen Faucets Single Hole Single Handle with dual function spray head.","category":"Kitchen Faucets","handle":"pull-out-kitchen-faucets-4-colors"},
-      {"title":"Pot Filler Foldable Wall Mounted (4 colors)","price":139.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20250128-165931.jpg?v=1738350660","description":"Pot Filler Faucet: 100% High Quality Brass Material. Available in Matte Black, Chrome, Brushed Nickel, Brushed Gold.","category":"Kitchen Faucets","handle":"wall-mounted-pot-filler-4-colors"},
-      {"title":"Freestanding Bathtub Drain Rough-in Kit","price":99.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_350ac216-e622-4f20-a9e5-04b02da9dc91.webp?v=1770877727","description":"High Compatibility: This freestanding tub drain kit is designed to work with all freestanding, floor mounted, and island bathtubs.","category":"Bathtubs and Faucets","handle":"freestanding-bathtub-drain-rough-in-kit"},
-      {"title":"Freestanding Bathtub 67","price":799.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_93261b7d-2069-4bee-9970-82a4624b956d.png?v=1770876474","description":"In Store Pick Up ONLY. Freestanding Bathtub 67\" CUPC Certified Grade 1 Coating. Faucet NOT Included.","category":"Bathtubs and Faucets","handle":"freestanding-bathtub-67"},
-      {"title":"Freestanding Bathtub 60","price":749.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_563c224f-b19b-4b4c-ab1b-a7022b0b46a9.png?v=1770876214","description":"In Store Pick Up ONLY. Freestanding Bathtub 60\" CUPC Certified Grade 1 Coating. Faucet NOT Included.","category":"Bathtubs and Faucets","handle":"freestanding-bathtub-61"},
-      {"title":"Freestanding Bathtub 60","price":749.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_d7d65b0e-3499-45c3-a444-a85400df1983.png?v=1770875884","description":"In Store Pick Up ONLY. Freestanding Bathtub 60\" CUPC Certified Grade 1 Coating.","category":"Bathtubs and Faucets","handle":"freestanding-bathtub-60"},
-      {"title":"30'' Solid Wood Vanity with Quartz Countertop - White/Grey","price":555.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20220407185018LG1DD_jpeg-1.jpg?v=1719527480","description":"Style: Modern Shaker Design. Colour: Grey Shaker / White. Materials: Solid Wood (A-Grade). Soft-close Mechanism.","category":"Vanities 24,30,36,42,48,54,60,72,84\"","handle":"30-solid-wood-vanity-with-quartz-countertop-white-grey"},
-      {"title":"36'' Solid Wood Vanity with Quartz Countertop - White/Grey","price":655.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20230327152937W8CJF_jpeg-1.jpg?v=1719527175","description":"Features: Style: Double Shaker Design. Colour: White Shaker / GREY. Materials: Solid Wood (A-Grade).","category":"Vanities 24,30,36,42,48,54,60,72,84\"","handle":"36-solid-wood-vanity-with-quartz-countertop-white-grey"},
-      {"title":"42'' Solid Wood Vanity with Quartz Countertop - White/Grey","price":715.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20220407184543G287K_jpeg-1.jpg?v=1719526529","description":"Style: Double Shaker Design. Colour: White Shaker. Materials: Solid Wood (A-Grade). Soft-close Mechanism.","category":"Vanities 24,30,36,42,48,54,60,72,84\"","handle":"42-solid-wood-vanity-with-quartz-countertop-white-grey"},
-      {"title":"54'' Solid Wood Vanity with Quartz Countertop - White/Grey","price":1085.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20230327162258APAGA_jpeg.jpg?v=1719526122","description":"STYLE: DOUBLE EDGE SHAKER. COLOUR: WHITE SHAKER / GREY. MATERIALS: SOLID WOOD (A GRADE).","category":"Vanities 24,30,36,42,48,54,60,72,84\"","handle":"54-solid-wood-vanity-with-quartz-countertop-white-gret"},
-      {"title":"60'' Solid Wood Vanity with Quartz Countertop Double Sink - White/Grey","price":1260.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-202303271639055781Y_jpeg.jpg?v=1719525763","description":"STYLE: DOUBLE EDGE SHAKER. COLOUR: WHITE. MATERIALS: SOLID WOOD (A-GRADE). Double Sink.","category":"Vanities 24,30,36,42,48,54,60,72,84\"","handle":"60-solid-wood-vanity-with-quartz-countertop-double-sink-white-grey"},
-      {"title":"72\" Solid Wood Vanity with Quartz Countertop Double Sink - White/Grey","price":1385.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-202303271655176S79D_jpeg.jpg?v=1719524956","description":"STYLE: DOUBLE EDGE SHAKER. COLOUR: WHITE/GREY. MATERIALS: SOLID WOOD (A-GRADE). Double Sink.","category":"Vanities 24,30,36,42,48,54,60,72,84\"","handle":"72-solid-wood-vanity-with-quartz-countertop-double-sink-white-grey"},
-      {"title":"24\" Solid Wood Vanity with Quartz Countertop - White/Grey","price":445.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20220416160701WBLJ3_jpg-1.jpg?v=1714363879","description":"Features: Style: Double Edge Shaker. Colour: White, Grey. Materials: Solid Wood (A-Grade).","category":"Vanities 24,30,36,42,48,54,60,72,84\"","handle":"untitled-apr29_00-02"},
-      {"title":"Smart Toilet-High Version","price":799.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/K2-1-01_01.jpg?v=1764117186","description":"In Store Pick Up Only. High Version with Foot touch flushing, In-built aromatherapy, Female washing, Hip Cleaning, Massage washing, Self-cleaning nozzle.","category":"Toilets","handle":"smart-toilet-high-version"},
-      {"title":"Dual-Flush Elongated One Piece Toilet Bowl - Soft Close Seat","price":189.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_aa2db69f-cf9e-41d7-83c7-292e869f67d4.png?v=1763496456","description":"In Store Pick Up Only. DUAL-FLUSH TECHNOLOGY - High-efficiency dual flush - 1/1.6 GPF conserves water.","category":"Toilets","handle":"dual-flush-elongated-one-piece-toilet-bowl-soft-close-seat-with-high-efficiency-dual-flush-in-white"},
-      {"title":"Modern Smart Toilet Black","price":899.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_19bdc7d5-e129-4dbd-b60c-e9c2fe19e5a4.jpg?v=1720662698","description":"In Store Pick Up Only. Modern black smart toilet design.","category":"Toilets","handle":"modern-smart-toilet-black-2024-design"},
-      {"title":"Wall Mounted Toilet + Frame","price":599.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240410-WA0020.jpg?v=1714102535","description":"Wall Mounted Toilet + Frame. In Store Pick Up Only.","category":"Toilets","handle":"untitled-apr25_23-27"},
-      {"title":"Modern Matt Black, Ceramic Toilet Dual Flush","price":299.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Screenshot-20240312_095238_Facebook.jpg?v=1714101586","description":"In Store Pick Up Only. Modern matte black ceramic toilet with dual flush.","category":"Toilets","handle":"modern-matt-black-ceramic-toilet-dual-flush"},
-      {"title":"Modern One Piece Elongated Ceramic Toilet Dual Flush","price":224.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/2-1-scaled.webp?v=1714094907","description":"High Performance One Piece Toilet. In Store Pick Up Only. Dual flush and water saving.","category":"Toilets","handle":"untitled-apr25_21-18"},
-      {"title":"One Piece Ceramic Toilets Dual Flush","price":189.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/1728014414273.png?v=1728014502","description":"In Store Pick Up Only. 4L/6L DUAL SIPHONIC ONE-PIECE TOILET, CUPC CERTIFIED.","category":"Toilets","handle":"one-piece-toilet"},
-      {"title":"Smart Toilets * PICKUP IN STORE ONLY *","price":788.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/FB-IMG_1706758948313_569919b6-088a-4dba-84db-d41803d33e48.jpg?v=1713492732","description":"Dimensions(Inch) D/W/H 26*15*20. Automatic flip, Foot sensor to open cover, LED indicating screen.","category":"Toilets","handle":"smart-toilet"},
-      {"title":"Heated Smart Toilet Seat","price":294.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_543fee66-da12-47c4-b951-fa2bbfb27ef6.png?v=1708311465","description":"Heated Smart Toilet Seat, Warm Air Drying, Bidet Toilet Attachment, IPX4 Waterproof Energy Saving.","category":"Toilets","handle":"heated-smart-toilet-seat"},
-      {"title":"4\" Round Slim Pot Lights Dimmable - 5CCT","price":5.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_c70372b0-45aa-4107-9a2a-a403edec56b5.png?v=1771339418","description":"1/2\" Ultra Slim Panel - Fits in Tight Ceiling Space. Air Tight & Type IC Rated. ETL, cETL Certified.","category":"LED Mirrors/Pot Lights","handle":"4-round-slim-pot-lights-dimmable-5cct"},
-      {"title":"LED Mirror 36\"X32\" In Store Pick Up ONLY","price":159.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_dab88daf-4ca6-4889-adb7-c5ec9df7a6d5.jpg?v=1764116941","description":"Front Lighting Technology, Copper Free Mirror, Aluminum Back Support Frame, Built in Demister, Radar Sensor.","category":"LED Mirrors/Pot Lights","handle":"led-mirror-36x32"},
-      {"title":"LED Mirrors 28\"X32\" In Store Pick Up ONLY","price":149.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_5a6e3a67-db5c-436f-8566-bff835cee4f6.jpg?v=1764116645","description":"Front Lighting Technology, Copper Free Mirror, Aluminum Back Support Frame, Built in Demister.","category":"LED Mirrors/Pot Lights","handle":"led-mirrors-28x32"},
-      {"title":"LED MIRROR 24\"X32\" In Store Pick Up ONLY","price":129.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/24X32LEDMIRROR.jpg?v=1764116429","description":"Front Lighting Technology, Copper Free Mirror, Aluminum Back Support Frame, Built in Demister.","category":"LED Mirrors/Pot Lights","handle":"led-mirror-24x32"},
-      {"title":"24\" Tile Insert Linear Drains Black/Brushed Nickel","price":94.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0014.jpg?v=1728693481","description":"24\" Tile Insert Linear Drains, 304 stainless steel, Drain Base Included, Complete Set.","category":"Drains","handle":"24-tile-insert-linear-drains-black-nickel"},
-      {"title":"6x6 Square Drains 3 colors","price":49.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0017.jpg?v=1728692139","description":"Drain Base included, Complete sets in Black/Gold/Silver.","category":"Drains","handle":"6x6-square-drains-3-colors"},
-      {"title":"Linear Drain 36\" 3 colors","price":145.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0008_178e2c4b-64dc-4c6f-81c1-032012db353d.jpg?v=1728662734","description":"Linear Drain 36\" 304 stainless steel. Drain Base Included. Available in Brushed Nickel, Black, Gold.","category":"Drains","handle":"linear-drain-36-3-colors"},
-      {"title":"Linear Drain 32\" 3 colors","price":124.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0010_478ee5fc-2537-4f98-9822-bf7fec4c63bb.jpg?v=1728662551","description":"Linear Drain 32\" 304 stainless steel. Drain Base Included.","category":"Drains","handle":"linear-drain-32-3-colors"},
-      {"title":"Linear Drain 24\" 3 colors","price":94.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0010.jpg?v=1728607365","description":"Linear Drains 24 inches, 304 stainless steel material. Available in Brushed Nickel, Black, Gold.","category":"Drains","handle":"linear-drain-24-3-colors"},
-      {"title":"ABS Shower Drain Chrome","price":18.00,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-Shower-Drains-Square-and-Round-1.jpg?v=1716865937","description":"ABS Shower Drain 4\" adjustable stainless steel strainer, meets cUPC standards.","category":"Drains","handle":"abs-shower-drain"},
-      {"title":"Pop Up Drain With Overflow","price":24.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20220824-WA0009.jpg?v=1714764380","description":"Pop up drain with anti clogging basket, Brass material.","category":"Drains","handle":"pop-up-drain-with-overflow"},
-      {"title":"PEX Offset Crimp Tool ½in","price":94.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/191051-1-B.jpg?v=1729176616","description":"Long handle with rubber grip for added comfort. Comes with Go/No Go sizing gauge.","category":"Pex/Fittings/Valves/ABS","handle":"pex-offset-crimp-tool-in"},
-      {"title":"PEX Combo Crimp Tool ½in & ¾in","price":119.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/191050-1-B.jpg?v=1729176431","description":"One Crimping tool for ø18 (1/2in) and ø24 (3/4in). Length: 15-3/4in (40cm).","category":"Pex/Fittings/Valves/ABS","handle":"pex-combo-crimp-tool-in-in"},
-      {"title":"PEX-PVC Pipe Cutter 1-5/16in (33mm)","price":11.20,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/191048-3-B.jpg?v=1729176280","description":"PEX-PVC Pipe Cutter 1-5/16in (33mm).","category":"Pex/Fittings/Valves/ABS","handle":"pex-pvc-pipe-cutter-1-5-16in-33mm"},
-      {"title":"Quarter Turn PEX Angled Stop Valve","price":5.54,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-Quarter-Turn-Chrome-Plated-Angle-Supply-Stop-Ball-Valve-1.jpg?v=1716856634","description":"Quarter Turn Angled Supply Stop. Size: 1/2\" PEX x 1/2\" PEX. Chrome plated, solid brass body.","category":"Pex/Fittings/Valves/ABS","handle":"quarter-turn-pex-angled-stop-valve"},
-      {"title":"Quarter Turn PEX x OD Comp Straight Stop Valve","price":5.54,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-PEX-x-OD-Comp-Quarter-Turn-Chrome-Plated-Straight-Supply-Stop-Ball-Valve-1.0.jpg?v=1716856364","description":"Quarter Turn Straight Supply Stop PEX x OD Comp. Chrome plated, solid brass body.","category":"Pex/Fittings/Valves/ABS","handle":"quarter-turn-pex-x-od-comp-straight-stop-valve"},
-      {"title":"PEX Straight Stop Valve","price":4.43,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-PEX-x-PEX-Quarter-Turn-Chrome-Plated-Straight-Supply-Stop-Ball-Valve-1.1.jpg?v=1715741731","description":"Quarter Turn Straight Supply Stop. Size: 1/2\" PEX x 1/2\" PEX. Chrome plated, solid brass body.","category":"Pex/Fittings/Valves/ABS","handle":"pex-straight-stop-valve"},
-      {"title":"PEX PIPE ½ X 100FT WHITE (COLD)","price":29.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/150885-1-B.jpg?v=1714710153","description":"Suitable for potable water supply applications. Maximum working pressure: 160psi @ 73.4°F.","category":"Pex/Fittings/Valves/ABS","handle":"pex-pipe-x-100ft-white-cold"},
-      {"title":"PEX PIPE ½ X 100FT RED (HOT)","price":29.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/150980-1-B.jpg?v=1714709927","description":"Suitable for potable water supply applications. Maximum working pressure: 160psi @ 73.4°F.","category":"Pex/Fittings/Valves/ABS","handle":"pex-pipe-x-100ft-red-hot"},
-      {"title":"Caulking Gun 9","price":9.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/160002-1-B.jpg?v=1729175748","description":"Chrome plated body, Half barrel design for secure cartridge hold, Seal punch, Strong welded construction.","category":"Silicones","handle":"caulking-gun-9"},
-      {"title":"DYNAFLEX 230 ELASTOMERIC SEALANT 300ML WHITE","price":6.45,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/274082-1-B.jpg?v=1728012528","description":"Interior/exterior use. Silicone tough with superior flexibility. Paint ready in 2 hours. 100% waterproof.","category":"Silicones","handle":"dynaflex-230-elastomeric-sealant-300ml-white"},
-      {"title":"GORILLA WOOD GLUE 18OZ / 532ML","price":12.71,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/562052-1-B.jpg?v=1720145521","description":"GORILLA WOOD GLUE 18OZ / 532ML.","category":"Silicones","handle":"gorilla-wood-glue-18oz-532ml"},
-      {"title":"ALEX FAST DRY WHITE CAULKING - 20 MINUTES PAINT READY","price":3.45,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/278425-1-B.jpg?v=1714707543","description":"Paintable in 20 Minutes. Spray Paint Immediately. Pro Painter Formula. Crack Resistant. Waterproof Seal.","category":"Silicones","handle":"untitled-may2_23-29"},
-      {"title":"VENTILATION FAN C-110","price":96.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Image-20240321150740-1.jpg?v=1738087759","description":"110 CFM Air Volume. 1.0 Sones. Super Quiet. Energy Efficient. Power consumption 30 watts.","category":"Miscellaneous","handle":"ventilation-fan-c-110"},
-      {"title":"DOOR LOCK LEVER PASSAGE MATTE BLACK","price":26.50,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/100223-1-B.jpg?v=1733882442","description":"Fit 35-45mm door thickness. Reversible for left or right-handed doors. Meets ANSI Grade 3 standard.","category":"Miscellaneous","handle":"door-lock-lever-passage-matte-black"},
-      {"title":"HEAVY DUTY ALUMINUM DOOR CLOSER 45-90LB","price":35.54,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/100676-1-T.jpg?v=1728012727","description":"UL/cUL listed. Used for door 32in X 72in (45-90lbs). Non handed. Surface mounted. Hold open feature available.","category":"Miscellaneous","handle":"heavy-duty-aluminum-door-closer-45-90lb-20-40kg"},
-      {"title":"3PC BATHROOM HARDWARE WALLMOUNT SETS","price":49.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20241115-120435.jpg?v=1731690645","description":"3PC SERENITY BATHROOM HARDWARE WALLMOUNT SET.","category":"Miscellaneous","handle":"3pcbathroom-hardware-wallmount-sets"},
-      {"title":"Paperless Drywall Tape 2-1/16 x 250ft","price":6.62,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/FDW8652-U-1-B_1.jpg?v=1729176102","description":"76% stronger than paper tape. Open-fiber design eliminates blisters, bubbles, and dry spots.","category":"Miscellaneous","handle":"paperless-drywall-tape-2-1-16-x-250ft"},
-      {"title":"TAPE MEASURE 16FT (5M) X 3/4IN METRIC/IMPERIAL","price":5.99,"image":"https://cdn.shopify.com/s/files/1/0459/9621/2377/files/390033-1-B.jpg?v=1717029703","description":"Fractional EZ-Mark facilitates reading. Stud markings every 16in. High-contrast graduations.","category":"Miscellaneous","handle":"tape-measure-16ft-5m-x-3-4in-metric-imperial"}
+      { "title": "10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer Brushed Gold", "price": 254.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1768439823527.jpg?v=1768439850", "description": "TOP QUALITY: This shower combo set contains only top-quality selected metal parts. The faucet body, 10 inch ultra-thin pressurized Rain shower head, 59 inches shower hose, wall mounted shower arm, shower holder, hand shower.", "category": "Shower sets", "handle": "10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer-brushed-gold" },
+      { "title": "10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Brushed Gold", "price": 324.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1768439823882.jpg?v=1768439856", "description": "TOP QUALITY: This shower combo set contains only top-quality selected metal parts. Complete with tub spout for bathtub installations.", "category": "Shower sets", "handle": "10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-brushed-gold" },
+      { "title": "10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer Rose Gold", "price": 269.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653223178.jpg?v=1768438205", "description": "Beautiful rose gold finish with all premium metal parts included.", "category": "Shower sets", "handle": "10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer-rose-gold" },
+      { "title": "10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Rose Gold", "price": 339.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653682473.jpg?v=1768438683", "description": "Premium rose gold finish with tub spout included.", "category": "Shower sets", "handle": "10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-rose-gold" },
+      { "title": "10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer Matt Black", "price": 249.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708652957616.jpg?v=1768438205", "description": "Modern matte black finish for contemporary bathrooms.", "category": "Shower sets", "handle": "10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer-matt-black" },
+      { "title": "10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Matt Black", "price": 324.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653678139.jpg?v=1768438683", "description": "Matte black finish with tub spout for bathtub.", "category": "Shower sets", "handle": "10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-black" },
+      { "title": "10\" Wall Mounted 2 Way Pressure Balance Rainfall Shower System with Handheld Sprayer", "price": 244.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708652955321.jpg?v=1768438205", "description": "Chrome finish with all essential components included.", "category": "Shower sets", "handle": "10-wall-mounted-2-way-pressure-balance-rainfall-shower-system-with-handheld-sprayer" },
+      { "title": "10\" Wall Mounted 3 Way Pressure Balance Rainfall Shower System with Tub Spout Chrome", "price": 324.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Photo-1708653673714.jpg?v=1767146796", "description": "Classic chrome finish with tub spout.", "category": "Shower sets", "handle": "10-wall-mounted-3-way-pressure-balance-rainfall-shower-system-with-tub-spout-chrome" },
+      { "title": "Thermostatic Vanity Faucets 4 colors", "price": 124.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/1600724208783.png?v=1708923006", "description": "Single Hole, Single Handle Bathroom Faucet with Push Button Switch. Available in Black, Chrome, Brushed Gold, Brushed Nickel.", "category": "Bathroom Faucets", "handle": "thermostatic-vanity-faucets-4-colors" },
+      { "title": "Widespread Faucet Crystal 2-Handle Bathroom Faucet with 3 Holes", "price": 199.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20250617-211503.jpg?v=1750209880", "description": "This 3-hole deck-mounted bathroom faucet uses Korean high-quality brass valves, which are durable. Very beautiful effluent water effect.", "category": "Bathroom Faucets", "handle": "widespread-faucet-crystal-2-handle-bathroom-faucet-with-3-holes" },
+      { "title": "Widespread Faucet 2-Handle Bathroom Faucet with 3 Holes", "price": 164.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20250617-205302.jpg?v=1750208322", "description": "3-hole deck-mounted bathroom faucet with advanced plating technology, durable and colorfast.", "category": "Bathroom Faucets", "handle": "widespread-faucet-2-handle-bathroom-faucet-with-3-holes-1" },
+      { "title": "Vanity Faucets Single Hole (4 Colors)", "price": 94.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/541A0240.jpg?v=1717815537", "description": "Single Hole, Single Handle, Bathroom Faucets. Available in Chrome, Black, Brushed Gold, Brushed Nickel.", "category": "Bathroom Faucets", "handle": "untitled-jun7_22-40" },
+      { "title": "Vanity Faucet Modern New Design 5 colors", "price": 219.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20230818-223647.jpg?v=1709590491", "description": "Single Hole Lavatory Faucets. Available in Chrome, Brushed Nickel, Black, Brushed Gold, Rose Gold.", "category": "Bathroom Faucets", "handle": "vanity-faucets-5-colors" },
+      { "title": "Modern Vanity Faucets 4 colors", "price": 144.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Screenshot-20230901_215608_Amazon_Shopping.jpg?v=1708746175", "description": "Single Hole, Single Handle, Bathroom Faucets. Available in Black, Chrome, Brushed Gold, Brushed Nickel.", "category": "Bathroom Faucets", "handle": "modern-vanity-faucets-4-colors" },
+      { "title": "Waterfall Vanity Faucets 4 colors", "price": 94.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/1704593759949.png?v=1708747626", "description": "Single Hole, Single Handle, Vanity Faucets. Available in Black, Chrome, Brushed Nickel, Brushed Gold.", "category": "Bathroom Faucets", "handle": "waterfall-vanity-faucets-4-colors" },
+      { "title": "Drinking Water Faucet for Kitchen Sink, Lead-Free, Reverse Osmosis Faucet", "price": 69.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_42b03fce-61bb-49e0-98aa-52d5dd00094c.jpg?v=1738350369", "description": "Upgrade your kitchen with our Lead-Free Drinking Water Faucet! Designed for your sink, this Reverse Osmosis Faucet provides 100% clean and safe drinking water.", "category": "Kitchen Faucets", "handle": "drinking-water-faucet-for-kitchen-sink-lead-free-reverse-osmosis-faucet" },
+      { "title": "Soap Dispenser for Kitchen Sink", "price": 24.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_d383df6b-c6f2-4f8c-9174-baa303f682aa.png?v=1738348614", "description": "This soap dispenser is a convenient addition to any kitchen sink. Made from durable stainless steel material, available in chrome, brushed nickel, black, and brushed gold.", "category": "Kitchen Faucets", "handle": "soap-dispenser-for-kitchen-sink" },
+      { "title": "Pull Out Kitchen Faucets (5) Colors", "price": 184.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20241114-230149.jpg?v=1731643366", "description": "NEW Design Pull Out Kitchen Faucets Single Hole Single Handle with dual function spray head.", "category": "Kitchen Faucets", "handle": "pull-out-kitchen-faucets-4-colors" },
+      { "title": "Pot Filler Foldable Wall Mounted (4 colors)", "price": 139.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20250128-165931.jpg?v=1738350660", "description": "Pot Filler Faucet: 100% High Quality Brass Material. Available in Matte Black, Chrome, Brushed Nickel, Brushed Gold.", "category": "Kitchen Faucets", "handle": "wall-mounted-pot-filler-4-colors" },
+      { "title": "Freestanding Bathtub Drain Rough-in Kit", "price": 99.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_350ac216-e622-4f20-a9e5-04b02da9dc91.webp?v=1770877727", "description": "High Compatibility: This freestanding tub drain kit is designed to work with all freestanding, floor mounted, and island bathtubs.", "category": "Bathtubs and Faucets", "handle": "freestanding-bathtub-drain-rough-in-kit" },
+      { "title": "Freestanding Bathtub 67", "price": 799.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_93261b7d-2069-4bee-9970-82a4624b956d.png?v=1770876474", "description": "In Store Pick Up ONLY. Freestanding Bathtub 67\" CUPC Certified Grade 1 Coating. Faucet NOT Included.", "category": "Bathtubs and Faucets", "handle": "freestanding-bathtub-67" },
+      { "title": "Freestanding Bathtub 60", "price": 749.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_563c224f-b19b-4b4c-ab1b-a7022b0b46a9.png?v=1770876214", "description": "In Store Pick Up ONLY. Freestanding Bathtub 60\" CUPC Certified Grade 1 Coating. Faucet NOT Included.", "category": "Bathtubs and Faucets", "handle": "freestanding-bathtub-61" },
+      { "title": "Freestanding Bathtub 60", "price": 749.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_d7d65b0e-3499-45c3-a444-a85400df1983.png?v=1770875884", "description": "In Store Pick Up ONLY. Freestanding Bathtub 60\" CUPC Certified Grade 1 Coating.", "category": "Bathtubs and Faucets", "handle": "freestanding-bathtub-60" },
+      { "title": "30'' Solid Wood Vanity with Quartz Countertop - White/Grey", "price": 555.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20220407185018LG1DD_jpeg-1.jpg?v=1719527480", "description": "Style: Modern Shaker Design. Colour: Grey Shaker / White. Materials: Solid Wood (A-Grade). Soft-close Mechanism.", "category": "Vanities 24,30,36,42,48,54,60,72,84\"", "handle": "30-solid-wood-vanity-with-quartz-countertop-white-grey" },
+      { "title": "36'' Solid Wood Vanity with Quartz Countertop - White/Grey", "price": 655.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20230327152937W8CJF_jpeg-1.jpg?v=1719527175", "description": "Features: Style: Double Shaker Design. Colour: White Shaker / GREY. Materials: Solid Wood (A-Grade).", "category": "Vanities 24,30,36,42,48,54,60,72,84\"", "handle": "36-solid-wood-vanity-with-quartz-countertop-white-grey" },
+      { "title": "42'' Solid Wood Vanity with Quartz Countertop - White/Grey", "price": 715.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20220407184543G287K_jpeg-1.jpg?v=1719526529", "description": "Style: Double Shaker Design. Colour: White Shaker. Materials: Solid Wood (A-Grade). Soft-close Mechanism.", "category": "Vanities 24,30,36,42,48,54,60,72,84\"", "handle": "42-solid-wood-vanity-with-quartz-countertop-white-grey" },
+      { "title": "54'' Solid Wood Vanity with Quartz Countertop - White/Grey", "price": 1085.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20230327162258APAGA_jpeg.jpg?v=1719526122", "description": "STYLE: DOUBLE EDGE SHAKER. COLOUR: WHITE SHAKER / GREY. MATERIALS: SOLID WOOD (A GRADE).", "category": "Vanities 24,30,36,42,48,54,60,72,84\"", "handle": "54-solid-wood-vanity-with-quartz-countertop-white-gret" },
+      { "title": "60'' Solid Wood Vanity with Quartz Countertop Double Sink - White/Grey", "price": 1260.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-202303271639055781Y_jpeg.jpg?v=1719525763", "description": "STYLE: DOUBLE EDGE SHAKER. COLOUR: WHITE. MATERIALS: SOLID WOOD (A-GRADE). Double Sink.", "category": "Vanities 24,30,36,42,48,54,60,72,84\"", "handle": "60-solid-wood-vanity-with-quartz-countertop-double-sink-white-grey" },
+      { "title": "72\" Solid Wood Vanity with Quartz Countertop Double Sink - White/Grey", "price": 1385.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-202303271655176S79D_jpeg.jpg?v=1719524956", "description": "STYLE: DOUBLE EDGE SHAKER. COLOUR: WHITE/GREY. MATERIALS: SOLID WOOD (A-GRADE). Double Sink.", "category": "Vanities 24,30,36,42,48,54,60,72,84\"", "handle": "72-solid-wood-vanity-with-quartz-countertop-double-sink-white-grey" },
+      { "title": "24\" Solid Wood Vanity with Quartz Countertop - White/Grey", "price": 445.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/M-20220416160701WBLJ3_jpg-1.jpg?v=1714363879", "description": "Features: Style: Double Edge Shaker. Colour: White, Grey. Materials: Solid Wood (A-Grade).", "category": "Vanities 24,30,36,42,48,54,60,72,84\"", "handle": "untitled-apr29_00-02" },
+      { "title": "Smart Toilet-High Version", "price": 799.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/K2-1-01_01.jpg?v=1764117186", "description": "In Store Pick Up Only. High Version with Foot touch flushing, In-built aromatherapy, Female washing, Hip Cleaning, Massage washing, Self-cleaning nozzle.", "category": "Toilets", "handle": "smart-toilet-high-version" },
+      { "title": "Dual-Flush Elongated One Piece Toilet Bowl - Soft Close Seat", "price": 189.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_aa2db69f-cf9e-41d7-83c7-292e869f67d4.png?v=1763496456", "description": "In Store Pick Up Only. DUAL-FLUSH TECHNOLOGY - High-efficiency dual flush - 1/1.6 GPF conserves water.", "category": "Toilets", "handle": "dual-flush-elongated-one-piece-toilet-bowl-soft-close-seat-with-high-efficiency-dual-flush-in-white" },
+      { "title": "Modern Smart Toilet Black", "price": 899.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_19bdc7d5-e129-4dbd-b60c-e9c2fe19e5a4.jpg?v=1720662698", "description": "In Store Pick Up Only. Modern black smart toilet design.", "category": "Toilets", "handle": "modern-smart-toilet-black-2024-design" },
+      { "title": "Wall Mounted Toilet + Frame", "price": 599.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240410-WA0020.jpg?v=1714102535", "description": "Wall Mounted Toilet + Frame. In Store Pick Up Only.", "category": "Toilets", "handle": "untitled-apr25_23-27" },
+      { "title": "Modern Matt Black, Ceramic Toilet Dual Flush", "price": 299.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Screenshot-20240312_095238_Facebook.jpg?v=1714101586", "description": "In Store Pick Up Only. Modern matte black ceramic toilet with dual flush.", "category": "Toilets", "handle": "modern-matt-black-ceramic-toilet-dual-flush" },
+      { "title": "Modern One Piece Elongated Ceramic Toilet Dual Flush", "price": 224.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/2-1-scaled.webp?v=1714094907", "description": "High Performance One Piece Toilet. In Store Pick Up Only. Dual flush and water saving.", "category": "Toilets", "handle": "untitled-apr25_21-18" },
+      { "title": "One Piece Ceramic Toilets Dual Flush", "price": 189.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/1728014414273.png?v=1728014502", "description": "In Store Pick Up Only. 4L/6L DUAL SIPHONIC ONE-PIECE TOILET, CUPC CERTIFIED.", "category": "Toilets", "handle": "one-piece-toilet" },
+      { "title": "Smart Toilets * PICKUP IN STORE ONLY *", "price": 788.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/FB-IMG_1706758948313_569919b6-088a-4dba-84db-d41803d33e48.jpg?v=1713492732", "description": "Dimensions(Inch) D/W/H 26*15*20. Automatic flip, Foot sensor to open cover, LED indicating screen.", "category": "Toilets", "handle": "smart-toilet" },
+      { "title": "Heated Smart Toilet Seat", "price": 294.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_543fee66-da12-47c4-b951-fa2bbfb27ef6.png?v=1708311465", "description": "Heated Smart Toilet Seat, Warm Air Drying, Bidet Toilet Attachment, IPX4 Waterproof Energy Saving.", "category": "Toilets", "handle": "heated-smart-toilet-seat" },
+      { "title": "4\" Round Slim Pot Lights Dimmable - 5CCT", "price": 5.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_c70372b0-45aa-4107-9a2a-a403edec56b5.png?v=1771339418", "description": "1/2\" Ultra Slim Panel - Fits in Tight Ceiling Space. Air Tight & Type IC Rated. ETL, cETL Certified.", "category": "LED Mirrors/Pot Lights", "handle": "4-round-slim-pot-lights-dimmable-5cct" },
+      { "title": "LED Mirror 36\"X32\" In Store Pick Up ONLY", "price": 159.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_dab88daf-4ca6-4889-adb7-c5ec9df7a6d5.jpg?v=1764116941", "description": "Front Lighting Technology, Copper Free Mirror, Aluminum Back Support Frame, Built in Demister, Radar Sensor.", "category": "LED Mirrors/Pot Lights", "handle": "led-mirror-36x32" },
+      { "title": "LED Mirrors 28\"X32\" In Store Pick Up ONLY", "price": 149.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/rn-image_picker_lib_temp_5a6e3a67-db5c-436f-8566-bff835cee4f6.jpg?v=1764116645", "description": "Front Lighting Technology, Copper Free Mirror, Aluminum Back Support Frame, Built in Demister.", "category": "LED Mirrors/Pot Lights", "handle": "led-mirrors-28x32" },
+      { "title": "LED MIRROR 24\"X32\" In Store Pick Up ONLY", "price": 129.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/24X32LEDMIRROR.jpg?v=1764116429", "description": "Front Lighting Technology, Copper Free Mirror, Aluminum Back Support Frame, Built in Demister.", "category": "LED Mirrors/Pot Lights", "handle": "led-mirror-24x32" },
+      { "title": "24\" Tile Insert Linear Drains Black/Brushed Nickel", "price": 94.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0014.jpg?v=1728693481", "description": "24\" Tile Insert Linear Drains, 304 stainless steel, Drain Base Included, Complete Set.", "category": "Drains", "handle": "24-tile-insert-linear-drains-black-nickel" },
+      { "title": "6x6 Square Drains 3 colors", "price": 49.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0017.jpg?v=1728692139", "description": "Drain Base included, Complete sets in Black/Gold/Silver.", "category": "Drains", "handle": "6x6-square-drains-3-colors" },
+      { "title": "Linear Drain 36\" 3 colors", "price": 145.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0008_178e2c4b-64dc-4c6f-81c1-032012db353d.jpg?v=1728662734", "description": "Linear Drain 36\" 304 stainless steel. Drain Base Included. Available in Brushed Nickel, Black, Gold.", "category": "Drains", "handle": "linear-drain-36-3-colors" },
+      { "title": "Linear Drain 32\" 3 colors", "price": 124.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0010_478ee5fc-2537-4f98-9822-bf7fec4c63bb.jpg?v=1728662551", "description": "Linear Drain 32\" 304 stainless steel. Drain Base Included.", "category": "Drains", "handle": "linear-drain-32-3-colors" },
+      { "title": "Linear Drain 24\" 3 colors", "price": 94.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20240320-WA0010.jpg?v=1728607365", "description": "Linear Drains 24 inches, 304 stainless steel material. Available in Brushed Nickel, Black, Gold.", "category": "Drains", "handle": "linear-drain-24-3-colors" },
+      { "title": "ABS Shower Drain Chrome", "price": 18.00, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-Shower-Drains-Square-and-Round-1.jpg?v=1716865937", "description": "ABS Shower Drain 4\" adjustable stainless steel strainer, meets cUPC standards.", "category": "Drains", "handle": "abs-shower-drain" },
+      { "title": "Pop Up Drain With Overflow", "price": 24.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/IMG-20220824-WA0009.jpg?v=1714764380", "description": "Pop up drain with anti clogging basket, Brass material.", "category": "Drains", "handle": "pop-up-drain-with-overflow" },
+      { "title": "PEX Offset Crimp Tool ½in", "price": 94.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/191051-1-B.jpg?v=1729176616", "description": "Long handle with rubber grip for added comfort. Comes with Go/No Go sizing gauge.", "category": "Pex/Fittings/Valves/ABS", "handle": "pex-offset-crimp-tool-in" },
+      { "title": "PEX Combo Crimp Tool ½in & ¾in", "price": 119.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/191050-1-B.jpg?v=1729176431", "description": "One Crimping tool for ø18 (1/2in) and ø24 (3/4in). Length: 15-3/4in (40cm).", "category": "Pex/Fittings/Valves/ABS", "handle": "pex-combo-crimp-tool-in-in" },
+      { "title": "PEX-PVC Pipe Cutter 1-5/16in (33mm)", "price": 11.20, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/191048-3-B.jpg?v=1729176280", "description": "PEX-PVC Pipe Cutter 1-5/16in (33mm).", "category": "Pex/Fittings/Valves/ABS", "handle": "pex-pvc-pipe-cutter-1-5-16in-33mm" },
+      { "title": "Quarter Turn PEX Angled Stop Valve", "price": 5.54, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-Quarter-Turn-Chrome-Plated-Angle-Supply-Stop-Ball-Valve-1.jpg?v=1716856634", "description": "Quarter Turn Angled Supply Stop. Size: 1/2\" PEX x 1/2\" PEX. Chrome plated, solid brass body.", "category": "Pex/Fittings/Valves/ABS", "handle": "quarter-turn-pex-angled-stop-valve" },
+      { "title": "Quarter Turn PEX x OD Comp Straight Stop Valve", "price": 5.54, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-PEX-x-OD-Comp-Quarter-Turn-Chrome-Plated-Straight-Supply-Stop-Ball-Valve-1.0.jpg?v=1716856364", "description": "Quarter Turn Straight Supply Stop PEX x OD Comp. Chrome plated, solid brass body.", "category": "Pex/Fittings/Valves/ABS", "handle": "quarter-turn-pex-x-od-comp-straight-stop-valve" },
+      { "title": "PEX Straight Stop Valve", "price": 4.43, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/DN-Group-Enterprise-PEX-x-PEX-Quarter-Turn-Chrome-Plated-Straight-Supply-Stop-Ball-Valve-1.1.jpg?v=1715741731", "description": "Quarter Turn Straight Supply Stop. Size: 1/2\" PEX x 1/2\" PEX. Chrome plated, solid brass body.", "category": "Pex/Fittings/Valves/ABS", "handle": "pex-straight-stop-valve" },
+      { "title": "PEX PIPE ½ X 100FT WHITE (COLD)", "price": 29.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/150885-1-B.jpg?v=1714710153", "description": "Suitable for potable water supply applications. Maximum working pressure: 160psi @ 73.4°F.", "category": "Pex/Fittings/Valves/ABS", "handle": "pex-pipe-x-100ft-white-cold" },
+      { "title": "PEX PIPE ½ X 100FT RED (HOT)", "price": 29.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/150980-1-B.jpg?v=1714709927", "description": "Suitable for potable water supply applications. Maximum working pressure: 160psi @ 73.4°F.", "category": "Pex/Fittings/Valves/ABS", "handle": "pex-pipe-x-100ft-red-hot" },
+      { "title": "Caulking Gun 9", "price": 9.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/160002-1-B.jpg?v=1729175748", "description": "Chrome plated body, Half barrel design for secure cartridge hold, Seal punch, Strong welded construction.", "category": "Silicones", "handle": "caulking-gun-9" },
+      { "title": "DYNAFLEX 230 ELASTOMERIC SEALANT 300ML WHITE", "price": 6.45, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/274082-1-B.jpg?v=1728012528", "description": "Interior/exterior use. Silicone tough with superior flexibility. Paint ready in 2 hours. 100% waterproof.", "category": "Silicones", "handle": "dynaflex-230-elastomeric-sealant-300ml-white" },
+      { "title": "GORILLA WOOD GLUE 18OZ / 532ML", "price": 12.71, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/562052-1-B.jpg?v=1720145521", "description": "GORILLA WOOD GLUE 18OZ / 532ML.", "category": "Silicones", "handle": "gorilla-wood-glue-18oz-532ml" },
+      { "title": "ALEX FAST DRY WHITE CAULKING - 20 MINUTES PAINT READY", "price": 3.45, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/278425-1-B.jpg?v=1714707543", "description": "Paintable in 20 Minutes. Spray Paint Immediately. Pro Painter Formula. Crack Resistant. Waterproof Seal.", "category": "Silicones", "handle": "untitled-may2_23-29" },
+      { "title": "VENTILATION FAN C-110", "price": 96.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/Image-20240321150740-1.jpg?v=1738087759", "description": "110 CFM Air Volume. 1.0 Sones. Super Quiet. Energy Efficient. Power consumption 30 watts.", "category": "Miscellaneous", "handle": "ventilation-fan-c-110" },
+      { "title": "DOOR LOCK LEVER PASSAGE MATTE BLACK", "price": 26.50, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/100223-1-B.jpg?v=1733882442", "description": "Fit 35-45mm door thickness. Reversible for left or right-handed doors. Meets ANSI Grade 3 standard.", "category": "Miscellaneous", "handle": "door-lock-lever-passage-matte-black" },
+      { "title": "HEAVY DUTY ALUMINUM DOOR CLOSER 45-90LB", "price": 35.54, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/100676-1-T.jpg?v=1728012727", "description": "UL/cUL listed. Used for door 32in X 72in (45-90lbs). Non handed. Surface mounted. Hold open feature available.", "category": "Miscellaneous", "handle": "heavy-duty-aluminum-door-closer-45-90lb-20-40kg" },
+      { "title": "3PC BATHROOM HARDWARE WALLMOUNT SETS", "price": 49.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/20241115-120435.jpg?v=1731690645", "description": "3PC SERENITY BATHROOM HARDWARE WALLMOUNT SET.", "category": "Miscellaneous", "handle": "3pcbathroom-hardware-wallmount-sets" },
+      { "title": "Paperless Drywall Tape 2-1/16 x 250ft", "price": 6.62, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/FDW8652-U-1-B_1.jpg?v=1729176102", "description": "76% stronger than paper tape. Open-fiber design eliminates blisters, bubbles, and dry spots.", "category": "Miscellaneous", "handle": "paperless-drywall-tape-2-1-16-x-250ft" },
+      { "title": "TAPE MEASURE 16FT (5M) X 3/4IN METRIC/IMPERIAL", "price": 5.99, "image": "https://cdn.shopify.com/s/files/1/0459/9621/2377/files/390033-1-B.jpg?v=1717029703", "description": "Fractional EZ-Mark facilitates reading. Stud markings every 16in. High-contrast graduations.", "category": "Miscellaneous", "handle": "tape-measure-16ft-5m-x-3-4in-metric-imperial" }
     ];
 
     // Global products data variable
     let productsData = [];
-    
+
     // Shopping cart
     let shoppingCart = [];
     const CART_STORAGE_KEY = 'reno_romax_cart';
-    
+
     // Load cart from localStorage
     function loadCart() {
       const saved = localStorage.getItem(CART_STORAGE_KEY);
@@ -1849,18 +1889,18 @@
       }
       updateCartCount();
     }
-    
+
     // Save cart to localStorage
     function saveCart() {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(shoppingCart));
       updateCartCount();
     }
-    
+
     // Add to cart
     function addToCart(productHandle) {
       const product = productsData.find(p => p.handle === productHandle);
       if (!product) return;
-      
+
       // Check if already in cart
       const existing = shoppingCart.find(item => item.handle === productHandle);
       if (existing) {
@@ -1874,23 +1914,23 @@
           quantity: 1
         });
       }
-      
+
       saveCart();
       showToast(`${product.title} added to cart!`, 'success');
     }
-    
+
     // Remove from cart
     function removeFromCart(productHandle) {
       shoppingCart = shoppingCart.filter(item => item.handle !== productHandle);
       saveCart();
       renderCartModal();
     }
-    
+
     // Update cart item quantity
     function updateCartQuantity(productHandle, change) {
       const item = shoppingCart.find(item => item.handle === productHandle);
       if (!item) return;
-      
+
       item.quantity += change;
       if (item.quantity <= 0) {
         removeFromCart(productHandle);
@@ -1899,17 +1939,17 @@
         renderCartModal();
       }
     }
-    
+
     // Update cart count display
     function updateCartCount() {
       const countEl = document.getElementById('cartCount');
       if (!countEl) return;
-      
+
       const totalItems = shoppingCart.reduce((sum, item) => sum + item.quantity, 0);
       countEl.textContent = totalItems;
       countEl.style.display = totalItems > 0 ? 'flex' : 'none';
     }
-    
+
     // Show toast notification
     function showToast(message, type = 'info') {
       const colors = {
@@ -1918,7 +1958,7 @@
         warning: '#f59e0b',
         info: '#64748b'
       };
-      
+
       const toast = document.createElement('div');
       toast.style.cssText = `
         position: fixed;
@@ -1934,13 +1974,13 @@
       `;
       toast.textContent = message;
       document.body.appendChild(toast);
-      
+
       setTimeout(() => {
         toast.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => toast.remove(), 300);
       }, 3000);
     }
-    
+
     // Normalize category name for comparison (defined early as it's used by other functions)
     function normalizeCategory(cat) {
       if (!cat) return '';
@@ -1951,14 +1991,14 @@
         .replace(/\s+/g, ' ')
         .trim();
     }
-    
+
     // Load products from JSON file (primary source for deployment)
     async function loadProductsFromJSON() {
       try {
         console.log('Loading products from JSON file...');
         const response = await fetch('products-data.json');
         const data = await response.json();
-        
+
         if (data.products && data.products.length > 0) {
           console.log('Loaded', data.products.length, 'products from JSON file');
           return data.products;
@@ -1968,7 +2008,7 @@
       }
       return null;
     }
-    
+
     // Load products from localStorage or use default data
     async function initializeProductsData() {
       console.log('=== Initializing products data ===');
@@ -1981,7 +2021,7 @@
       if (jsonProducts && jsonProducts.length > 0) {
         console.log('Loaded from JSON file:', jsonProducts.length, 'products');
         allProducts = jsonProducts;
-        
+
         // Also save to localStorage for admin editing capability
         const data = {
           categories: [...new Set(jsonProducts.map(p => p.category).filter(Boolean))],
@@ -2030,14 +2070,14 @@
     function renderCarousel() {
       const track = document.getElementById('carouselTrack');
       if (!track || productsData.length === 0) return;
-      
+
       // Filter products with valid images
       const productsWithImages = productsData.filter(p => p.image && p.image.trim() !== '');
       console.log('Products with images for carousel:', productsWithImages.length);
-      
+
       // Generate slides HTML
       let slidesHTML = '';
-      
+
       // Add all product slides
       productsWithImages.forEach(product => {
         slidesHTML += `
@@ -2046,7 +2086,7 @@
           </div>
         `;
       });
-      
+
       // Duplicate for infinite scroll effect (add first 10 products again)
       const firstTen = productsWithImages.slice(0, 10);
       firstTen.forEach(product => {
@@ -2056,7 +2096,7 @@
           </div>
         `;
       });
-      
+
       track.innerHTML = slidesHTML;
       console.log('Carousel rendered with', productsWithImages.length, 'slides');
     }
@@ -2112,7 +2152,7 @@
       const header = document.getElementById('currentCategoryHeader');
       const title = document.getElementById('currentCategoryTitle');
       const count = document.getElementById('currentProductCount');
-      
+
       // Update active state on category cards
       document.querySelectorAll('.category-card').forEach(card => {
         card.classList.remove('active');
@@ -2120,12 +2160,12 @@
           card.classList.add('active');
         }
       });
-      
+
       // Show header
       header.style.display = 'block';
       title.textContent = 'All Products';
       count.textContent = productsData.length + ' products';
-      
+
       // Clear and render all products
       grid.innerHTML = '';
       productsData.forEach(product => {
@@ -2133,7 +2173,7 @@
           grid.appendChild(createProductCard(product));
         }
       });
-      
+
       // Scroll to products
       document.getElementById('allProductsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -2141,12 +2181,12 @@
     // Filter by category
     function filterByCategory(categoryName) {
       console.log('Filtering by category:', categoryName);
-      
+
       const grid = document.getElementById('allProductsGrid');
       const header = document.getElementById('currentCategoryHeader');
       const title = document.getElementById('currentCategoryTitle');
       const countEl = document.getElementById('currentProductCount');
-      
+
       // Update active state on category cards
       document.querySelectorAll('.category-card').forEach(card => {
         card.classList.remove('active');
@@ -2154,14 +2194,14 @@
           card.classList.add('active');
         }
       });
-      
+
       // Filter products based on fixed category matching
       const filteredProducts = productsData.filter(product => {
         if (!product.category) return categoryName === 'Miscellaneous';
-        
+
         const productCatLower = product.category.toLowerCase();
         const categoryNameLower = categoryName.toLowerCase();
-        
+
         // Check if product matches the selected fixed category
         if (categoryName === 'Shower Sets') {
           return productCatLower.includes('shower');
@@ -2192,16 +2232,16 @@
         }
         return false;
       });
-      
+
       // Show header
       header.style.display = 'block';
       title.textContent = categoryName;
       countEl.textContent = filteredProducts.length + ' products';
-      
+
       // Apply current sort and render products
       const sortValue = document.getElementById('sortSelect')?.value || 'default';
       const sortedProducts = sortProductList(filteredProducts, sortValue);
-      
+
       // Clear and render filtered products
       grid.innerHTML = '';
       if (sortedProducts.length === 0) {
@@ -2214,7 +2254,7 @@
           }
         });
       }
-      
+
       // Scroll to products
       document.getElementById('allProductsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -2222,12 +2262,12 @@
     // Sort products
     function sortProducts(sortValue) {
       console.log('Sorting products by:', sortValue);
-      
+
       const grid = document.getElementById('allProductsGrid');
       const currentCards = Array.from(grid.children);
-      
+
       if (currentCards.length === 0) return;
-      
+
       // Get current products from the grid
       let currentProducts = [];
       currentCards.forEach(card => {
@@ -2237,10 +2277,10 @@
           if (product) currentProducts.push(product);
         }
       });
-      
+
       // Sort products
       const sortedProducts = sortProductList(currentProducts, sortValue);
-      
+
       // Re-render
       grid.innerHTML = '';
       sortedProducts.forEach(product => {
@@ -2253,8 +2293,8 @@
     // Helper function to sort product list
     function sortProductList(products, sortValue) {
       const sorted = [...products];
-      
-      switch(sortValue) {
+
+      switch (sortValue) {
         case 'name-asc':
           sorted.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
           break;
@@ -2271,7 +2311,7 @@
           // Default - keep original order
           break;
       }
-      
+
       return sorted;
     }
 
@@ -2281,9 +2321,9 @@
       card.className = 'product-card';
       card.dataset.category = product.category;
       card.dataset.title = product.title.toLowerCase();
-      
+
       const price = product.price ? `$${product.price.toFixed(2)} CAD` : 'Contact for price';
-      
+
       card.innerHTML = `
         <div class="product-image" onclick="showProductDetails('${product.handle}')" style="cursor: pointer;">
           <img src="${product.image}" alt="${product.title}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'no-image\\'>No Image</div>';">
@@ -2297,16 +2337,16 @@
           </div>
         </div>
       `;
-      
+
       return card;
     }
 
     // Initialize category filters
     function initializeFilters() {
       const filterBtns = document.querySelectorAll('.filter-btn');
-      
+
       filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           filterBtns.forEach(b => b.classList.remove('active'));
           this.classList.add('active');
           filterProducts(this.dataset.filter);
@@ -2318,7 +2358,7 @@
     function filterProducts(category) {
       const productCards = document.querySelectorAll('.product-card');
       const categorySections = document.querySelectorAll('.category-section');
-      
+
       productCards.forEach(card => {
         if (category === 'all' || card.dataset.category === category) {
           card.classList.remove('hidden');
@@ -2347,11 +2387,11 @@
       const productCards = document.querySelectorAll('.product-card');
       const categorySections = document.querySelectorAll('.category-section');
       let visibleCount = 0;
-      
+
       productCards.forEach(card => {
         const title = card.dataset.title || '';
         const desc = card.querySelector('.product-desc')?.textContent.toLowerCase() || '';
-        
+
         if (!searchQuery || title.includes(searchQuery) || desc.includes(searchQuery)) {
           card.classList.remove('hidden');
           visibleCount++;
@@ -2383,17 +2423,17 @@
     function initializeSearch() {
       const searchInput = document.getElementById('searchInput');
       if (searchInput) {
-        searchInput.addEventListener('input', function() {
+        searchInput.addEventListener('input', function () {
           handleSearch(this.value);
         });
       }
     }
-    
+
     // Initialize scroll button - updated to use the new class-based visibility
     function initializeScrollButton() {
       const scrollBtn = document.getElementById('scrollToTop');
-      
-      window.addEventListener('scroll', function() {
+
+      window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
           scrollBtn.classList.add('visible');
         } else {
@@ -2405,8 +2445,8 @@
     // Initialize scroll button
     function initializeScrollButton() {
       const scrollBtn = document.getElementById('scrollToTop');
-      
-      window.addEventListener('scroll', function() {
+
+      window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
           scrollBtn.style.display = 'flex';
         } else {
@@ -2422,9 +2462,9 @@
 
       const modal = document.getElementById('productModal');
       const content = document.getElementById('modalContent');
-      
+
       const price = product.price ? '$' + product.price.toFixed(2) + ' CAD' : 'Contact for price';
-      
+
       content.innerHTML = `
         <div class="modal-image-container">
           ${product.image ? `<img src="${product.image}" alt="${product.title}" class="modal-image" onerror="this.style.display='none'">` : '<div style="padding: 2rem; color: #999;">No Image</div>'}
@@ -2439,7 +2479,7 @@
           </div>
         </div>
       `;
-      
+
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -2451,7 +2491,7 @@
     }
 
     // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         closeModal();
       }
@@ -2466,33 +2506,33 @@
         alert('Product not found');
         return;
       }
-      
+
       console.log('Product found:', product.title);
       const phoneNumber = '14377999960';
       const price = product.price ? '$' + product.price.toFixed(2) + ' CAD' : 'Contact for price';
-      
+
       const message = `*PRODUCT ORDER INQUIRY*\n\n` +
         `*Product Name:* ${product.title}\n` +
         `*Price:* ${price}\n` +
         `*Category:* ${product.category || 'N/A'}\n\n` +
         `I would like to order this product. Please provide availability and delivery options.\n\n` +
         `Thank you!`;
-      
+
       console.log('Opening WhatsApp with message:', message);
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
-      
+
       // Close modal after opening WhatsApp
       closeModal();
     }
 
     // Close modal on overlay click
-    document.getElementById('productModal').addEventListener('click', function(e) {
+    document.getElementById('productModal').addEventListener('click', function (e) {
       if (e.target === this) closeModal();
     });
 
     // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeModal();
     });
 
@@ -2512,22 +2552,22 @@
     function renderCartModal() {
       const container = document.getElementById('cartItems');
       const totalEl = document.getElementById('cartTotal');
-      
+
       if (!container || !totalEl) return;
-      
+
       if (shoppingCart.length === 0) {
         container.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
         totalEl.textContent = '$0.00 CAD';
         return;
       }
-      
+
       let html = '';
       let total = 0;
-      
+
       shoppingCart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        
+
         html += `
           <div class="cart-item">
             <img src="${item.image}" alt="${item.title}" class="cart-item-image" onerror="this.style.display='none'">
@@ -2544,7 +2584,7 @@
           </div>
         `;
       });
-      
+
       container.innerHTML = html;
       totalEl.textContent = `$${total.toFixed(2)} CAD`;
     }
@@ -2554,36 +2594,36 @@
         alert('Your cart is empty');
         return;
       }
-      
+
       const phoneNumber = '14377999960';
-      
+
       let message = '*SHOPPING CART ORDER INQUIRY*\n\n';
       let total = 0;
-      
+
       shoppingCart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        
+
         message += `${index + 1}. *${item.title}*\n`;
         message += `   Quantity: ${item.quantity}\n`;
         message += `   Price: $${item.price.toFixed(2)} CAD each\n`;
         message += `   Subtotal: $${itemTotal.toFixed(2)} CAD\n\n`;
       });
-      
+
       message += `\n*TOTAL: $${total.toFixed(2)} CAD*\n\n`;
       message += `I would like to order these items. Please provide availability and delivery options.\n\nThank you!`;
-      
+
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
     }
 
     // Close cart modal on overlay click
-    document.getElementById('cartModal').addEventListener('click', function(e) {
+    document.getElementById('cartModal').addEventListener('click', function (e) {
       if (e.target === this) closeCartModal();
     });
 
     // Close cart modal on Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         // Try to close product modal first
         const productModal = document.getElementById('productModal');
@@ -2600,4 +2640,5 @@
     });
   </script>
 </body>
+
 </html>
