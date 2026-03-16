@@ -22,7 +22,7 @@
   <meta name="ICBM" content="43.8561, -79.5085" />
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://reno-romax-pro.com/" />
+  <script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773690347511&amp;type=content-script&amp;dmn=chat.z.ai&amp;url=https%3A%2F%2Fchat.z.ai%2Fapi%2Fv1%2Fweb-dev%2Fworkspaces%2Ffiles%2Fcontent&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773690347511&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="canonical" href="https://reno-romax-pro.com/" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -289,12 +289,17 @@
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     html {
       overflow-x: hidden;
       width: 100%;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
     }
 
     body {
@@ -304,6 +309,9 @@
       overflow-x: hidden;
       width: 100%;
       line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      min-height: 0;
     }
 
     h1,
@@ -751,7 +759,8 @@
       max-height: 900px;
       width: 100%;
       overflow: hidden;
-      margin-top: 4.5rem;
+      margin-top: 0;
+      padding-top: 4.5rem;
     }
 
     .slider,
@@ -1115,7 +1124,6 @@
       font-weight: 600;
       text-transform: uppercase;
     }
-
 
     /* Before/After Gallery */
     .before-after-section {
@@ -2364,8 +2372,7 @@
   <header class="header">
     <div class="header-container">
       <a href="#home" class="logo">
-        <img src="logo.jpg" alt="Reno-Romax-Pro Logo"
-          class="logo-img" />
+        <img src="logo.jpg" alt="Reno-Romax-Pro Logo" class="logo-img" />
       </a>
       <nav class="nav">
         <ul class="nav-list">
@@ -2404,12 +2411,9 @@
       <li class="mobile-nav-item" id="servicesMenuItem">
         <a href="#services" class="mobile-nav-link" onclick="toggleServicesSubmenu(event)">Services</a>
         <ul class="mobile-submenu">
-          <li><a href="#kitchen-renovation" class="mobile-nav-link" onclick="closeMobileMenu()">Kitchen Renovation</a>
-          </li>
-          <li><a href="#bathroom-renovation" class="mobile-nav-link" onclick="closeMobileMenu()">Bathroom Renovation</a>
-          </li>
-          <li><a href="#basement-renovation" class="mobile-nav-link" onclick="closeMobileMenu()">Basement Renovation</a>
-          </li>
+          <li><a href="#kitchen-renovation" class="mobile-nav-link" onclick="closeMobileMenu()">Kitchen Renovation</a></li>
+          <li><a href="#bathroom-renovation" class="mobile-nav-link" onclick="closeMobileMenu()">Bathroom Renovation</a></li>
+          <li><a href="#basement-renovation" class="mobile-nav-link" onclick="closeMobileMenu()">Basement Renovation</a></li>
         </ul>
       </li>
       <li><a href="catalog.html" class="mobile-nav-link">Our Catalog</a></li>
@@ -2422,20 +2426,16 @@
     <div class="slider">
       <div class="slides">
         <div class="slide active">
-          <img src="https://i.postimg.cc/5ySGSPQL/photo-1600585154340-be6161a56a0c.jpg"
-            alt="Kitchen renovation before and after Toronto — Reno-Romax-Pro professional results" width="1200" height="800" />
+          <img src="https://i.postimg.cc/5ySGSPQL/photo-1600585154340-be6161a56a0c.jpg" alt="Kitchen renovation before and after Toronto — Reno-Romax-Pro professional results" width="1200" height="800" />
         </div>
         <div class="slide">
-          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=800&fit=crop"
-            alt="Bathroom remodel Toronto example — modern walk-in shower by Reno-Romax-Pro" loading="lazy" width="1200" height="800" />
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=800&fit=crop" alt="Bathroom remodel Toronto example — modern walk-in shower by Reno-Romax-Pro" loading="lazy" width="1200" height="800" />
         </div>
         <div class="slide">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop"
-            alt="Complete home renovation Toronto 2026 — before and after kitchen remodel" loading="lazy" width="1200" height="800" />
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop" alt="Complete home renovation Toronto 2026 — before and after kitchen remodel" loading="lazy" width="1200" height="800" />
         </div>
         <div class="slide">
-          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop"
-            alt="Basement renovation Toronto — finished basement by best renovation company" loading="lazy" width="1200" height="800" />
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop" alt="Basement renovation Toronto — finished basement by best renovation company" loading="lazy" width="1200" height="800" />
         </div>
       </div>
       <div class="hero-content fade-in">
@@ -2471,15 +2471,60 @@
     </div>
   </div>
 
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-container">
+      <div class="about-logo fade-in-left" oncontextmenu="return false;">
+        <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1773095008/%D0%94%D0%BB%D1%8F_%D1%81%D0%B0%D0%B9%D1%82%D0%B0._kg5nll.jpg" alt="Reno-Romax-Pro" class="about-logo-img" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" />
+      </div>
+      <div class="about-text fade-in-right">
+        <p><strong style="color: #f97316;">About Our Company</strong><br>At Reno-Romax-Pro, we bring years of experience in high-quality renovations and interior finishing. We pride ourselves on delivering excellence, on time and on budget. Whether it's a full home makeover or a small remodel, we treat every project with care and precision.</p>
+        <p>Our team of skilled professionals is dedicated to turning your vision into reality, with a commitment to quality craftsmanship and customer satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="services-bg">
+      <h2 class="fade-in">Our Services</h2>
+      <div class="services-slider">
+        <div class="services-viewport">
+          <div class="services-grid" id="servicesTrack">
+            <div class="services-slide">
+              <a href="#basement-renovation" class="service-card scale-in" id="basement-renovation">
+                <div class="service-content">
+                  <h3>Basement<br>Renovation</h3>
+                </div>
+              </a>
+            </div>
+            <div class="services-slide">
+              <a href="#kitchen-renovation" class="service-card scale-in" id="kitchen-renovation">
+                <div class="service-content">
+                  <h3>Kitchen<br>Renovation</h3>
+                </div>
+              </a>
+            </div>
+            <div class="services-slide">
+              <a href="#bathroom-renovation" class="service-card scale-in" id="bathroom-renovation">
+                <div class="service-content">
+                  <h3>Bathroom<br>Renovation</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Company Title Section -->
   <section class="company-title">
     <div class="container mx-auto px-4">
       <div class="company-logo-wrapper fade-in">
-        <img class="company-logo-img" src="logo.jpg"
-          alt="Reno-Romax-Pro Logo" />
+        <img class="company-logo-img" src="logo.jpg" alt="Reno-Romax-Pro Logo" />
       </div>
-      <p class="fade-in">Professional Renovation Services<br>Transform your space with our expert renovation and
-        interior finishing services</p>
+      <p class="fade-in">Professional Renovation Services<br>Transform your space with our expert renovation and interior finishing services</p>
     </div>
   </section>
 
@@ -2530,35 +2575,38 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <div class="services-bg">
-      <h2 class="fade-in">Our Services</h2>
-      <div class="services-slider">
-        <div class="services-viewport">
-          <div class="services-grid" id="servicesTrack">
-            <div class="services-slide">
-              <a href="#basement-renovation" class="service-card scale-in" id="basement-renovation">
-                <div class="service-content">
-                  <h3>Basement<br>Renovation</h3>
-                </div>
-              </a>
-            </div>
-            <div class="services-slide">
-              <a href="#kitchen-renovation" class="service-card scale-in" id="kitchen-renovation">
-                <div class="service-content">
-                  <h3>Kitchen<br>Renovation</h3>
-                </div>
-              </a>
-            </div>
-            <div class="services-slide">
-              <a href="#bathroom-renovation" class="service-card scale-in" id="bathroom-renovation">
-                <div class="service-content">
-                  <h3>Bathroom<br>Renovation</h3>
-                </div>
-              </a>
-            </div>
-          </div>
+  <!-- Before/After Gallery -->
+  <section class="before-after-section">
+    <div class="section-header fade-in">
+      <h2>Before & After</h2>
+      <p>See the amazing transformations we've achieved</p>
+    </div>
+    <div class="before-after-grid">
+      <div class="before-after-item fade-in-left" data-position="50">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&fit=crop" alt="Before" class="before-img">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&fit=crop" alt="After" class="after-img">
+        <div class="before-after-slider"></div>
+        <div class="before-after-labels">
+          <span class="ba-label">Before</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="before-after-item fade-in-left" data-position="50">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&fit=crop" alt="Before" class="before-img">
+        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=800&fit=crop" alt="After" class="after-img">
+        <div class="before-after-slider"></div>
+        <div class="before-after-labels">
+          <span class="ba-label">Before</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="before-after-item fade-in-left" data-position="50">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&fit=crop" alt="Before" class="before-img">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&fit=crop" alt="After" class="after-img">
+        <div class="before-after-slider"></div>
+        <div class="before-after-labels">
+          <span class="ba-label">Before</span>
+          <span class="ba-label">After</span>
         </div>
       </div>
     </div>
@@ -2577,11 +2625,8 @@
         </div>
       </div>
       <div class="portfolio-grid">
-        <div class="portfolio-card scale-in" data-category="bathroom" data-title="Modern Bathroom"
-          data-desc="Clean lines and bright lighting."
-          data-img="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1000&fit=crop">
-          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&fit=crop"
-            alt="Bathroom remodel Toronto example — modern walk-in shower by Reno-Romax-Pro" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in" data-category="bathroom" data-title="Modern Bathroom" data-desc="Clean lines and bright lighting." data-img="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1000&fit=crop">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&fit=crop" alt="Bathroom remodel Toronto example — modern walk-in shower by Reno-Romax-Pro" loading="lazy" width="600" height="400" />
           <div class="portfolio-meta">
             <div>
               <div class="portfolio-title-sm">Modern Bathroom</div>
@@ -2589,11 +2634,8 @@
             </div>
           </div>
         </div>
-        <div class="portfolio-card scale-in" data-category="kitchen" data-title="Elegant Kitchen"
-          data-desc="Sleek cabinetry and premium appliances."
-          data-img="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=1000&fit=crop">
-          <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=600&fit=crop"
-            alt="Kitchen renovation before and after Toronto — elegant kitchen remodel by Reno-Romax-Pro" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in" data-category="kitchen" data-title="Elegant Kitchen" data-desc="Sleek cabinetry and premium appliances." data-img="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=1000&fit=crop">
+          <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=600&fit=crop" alt="Kitchen renovation before and after Toronto — elegant kitchen remodel by Reno-Romax-Pro" loading="lazy" width="600" height="400" />
           <div class="portfolio-meta">
             <div>
               <div class="portfolio-title-sm">Elegant Kitchen</div>
@@ -2601,11 +2643,8 @@
             </div>
           </div>
         </div>
-        <div class="portfolio-card scale-in" data-category="kitchen" data-title="Modern Kitchen"
-          data-desc="Minimalist design with stone countertops."
-          data-img="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1000&fit=crop">
-          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&fit=crop"
-            alt="Kitchen renovation Toronto 2026 — minimalist modern kitchen by Reno-Romax-Pro" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in" data-category="kitchen" data-title="Modern Kitchen" data-desc="Minimalist design with stone countertops." data-img="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1000&fit=crop">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&fit=crop" alt="Kitchen renovation Toronto 2026 — minimalist modern kitchen by Reno-Romax-Pro" loading="lazy" width="600" height="400" />
           <div class="portfolio-meta">
             <div>
               <div class="portfolio-title-sm">Modern Kitchen</div>
@@ -2613,11 +2652,8 @@
             </div>
           </div>
         </div>
-        <div class="portfolio-card scale-in" data-category="bathroom" data-title="Spa Bathroom"
-          data-desc="Serene spa-inspired retreat."
-          data-img="https://images.unsplash.com/photo-1616594039964-c2c8bbf3dbd0?w=1000&fit=crop">
-          <img src="https://images.unsplash.com/photo-1616594039964-c2c8bbf3dbd0?w=600&fit=crop"
-            alt="Bathroom renovation Toronto — luxury spa bathroom remodel before and after" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in" data-category="bathroom" data-title="Spa Bathroom" data-desc="Serene spa-inspired retreat." data-img="https://images.unsplash.com/photo-1616594039964-c2c8bbf3dbd0?w=1000&fit=crop">
+          <img src="https://images.unsplash.com/photo-1616594039964-c2c8bbf3dbd0?w=600&fit=crop" alt="Bathroom renovation Toronto — luxury spa bathroom remodel before and after" loading="lazy" width="600" height="400" />
           <div class="portfolio-meta">
             <div>
               <div class="portfolio-title-sm">Spa Bathroom</div>
@@ -2625,11 +2661,8 @@
             </div>
           </div>
         </div>
-        <div class="portfolio-card scale-in" data-category="basement" data-title="Basement Lounge"
-          data-desc="Entertainment-ready lower level."
-          data-img="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&fit=crop">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&fit=crop"
-            alt="Basement renovation Toronto 2026 — finished entertainment room by best renovation company" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in" data-category="basement" data-title="Basement Lounge" data-desc="Entertainment-ready lower level." data-img="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&fit=crop">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&fit=crop" alt="Basement renovation Toronto 2026 — finished entertainment room by best renovation company" loading="lazy" width="600" height="400" />
           <div class="portfolio-meta">
             <div>
               <div class="portfolio-title-sm">Basement Lounge</div>
@@ -2639,12 +2672,8 @@
         </div>
 
         <!-- Video Cards Section -->
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_23_davxof.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_23_davxof.jpg"
-            alt="Bathroom renovation Toronto 2026 — video walkthrough of professional remodel" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_23_davxof.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_23_davxof.jpg" alt="Bathroom renovation Toronto 2026 — video walkthrough of professional remodel" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2655,12 +2684,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 2" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_22_irhzew.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_22_irhzew.jpg"
-            alt="Bathroom remodel Toronto example — before and after shower renovation video" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 2" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_22_irhzew.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108551/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_22_irhzew.jpg" alt="Bathroom remodel Toronto example — before and after shower renovation video" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2671,12 +2696,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 3" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_7_vomxxk.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_7_vomxxk.jpg"
-            alt="Bathroom Renovation Video 3" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 3" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_7_vomxxk.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_7_vomxxk.jpg" alt="Bathroom Renovation Video 3" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2687,12 +2708,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 4" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_21_vw4onf.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_21_vw4onf.jpg"
-            alt="Bathroom Renovation Video 4" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 4" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_21_vw4onf.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108552/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_21_vw4onf.jpg" alt="Bathroom Renovation Video 4" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2703,12 +2720,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 5" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_10_ujxr0a.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_10_ujxr0a.jpg"
-            alt="Bathroom Renovation Video 5" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 5" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108570/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_13_jmtwjw.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108570/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_13_jmtwjw.jpg" alt="Bathroom Renovation Video 5" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2719,12 +2732,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 6" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108567/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_20_qeeypi.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108567/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_20_qeeypi.jpg"
-            alt="Bathroom Renovation Video 6" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 6" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_5_yqaekd.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_5_yqaekd.jpg" alt="Bathroom Renovation Video 6" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2735,12 +2744,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 7" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108568/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_39_yohnds.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108568/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_39_yohnds.jpg"
-            alt="Bathroom Renovation Video 7" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 7" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773112193/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_26_gqjekg.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773112193/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_26_gqjekg.jpg" alt="Bathroom Renovation Video 7" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2751,12 +2756,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 8" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_5_yqaekd.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_5_yqaekd.jpg"
-            alt="Bathroom Renovation Video 8" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 8" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108585/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_27_wmt9mg.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108585/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_27_wmt9mg.jpg" alt="Bathroom Renovation Video 8" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2767,12 +2768,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 9" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108570/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_13_jmtwjw.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108570/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_13_jmtwjw.jpg"
-            alt="Bathroom Renovation Video 9" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 9" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108573/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_6_lkggzy.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108573/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_6_lkggzy.jpg" alt="Bathroom Renovation Video 9" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2783,12 +2780,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 10" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108572/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_19_fvfmqu.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108572/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_19_fvfmqu.jpg"
-            alt="Bathroom Renovation Video 10" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 10" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108593/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_uvmuqy.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108593/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_uvmuqy.jpg" alt="Bathroom Renovation Video 10" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2799,12 +2792,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 11" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108573/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_6_lkggzy.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108573/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_6_lkggzy.jpg"
-            alt="Bathroom Renovation Video 11" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 11" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773115798/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_8_lb36lk.mp4">
+          <img src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773115798/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_8_lb36lk.jpg" alt="Bathroom Renovation Video 11" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2815,12 +2804,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 12" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108573/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_17_begnwr.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108573/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_17_begnwr.jpg"
-            alt="Bathroom Renovation Video 12" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 12" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773205118/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_43_xulsts.mp4">
+          <img src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773205118/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_43_xulsts.jpg" alt="Bathroom Renovation Video 12" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2831,12 +2816,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 13" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108574/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_9_tpi9fd.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108574/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_9_tpi9fd.jpg"
-            alt="Bathroom Renovation Video 13" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 13" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773113888/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_37_nqja34.mp4">
+          <img src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773113888/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_37_nqja34.jpg" alt="Bathroom Renovation Video 13" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2847,12 +2828,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 14" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108582/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_11_bjlxpq.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108582/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_11_bjlxpq.jpg"
-            alt="Bathroom Renovation Video 14" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 14" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773113944/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_38_pheasr.mp4">
+          <img src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773113944/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_38_pheasr.jpg" alt="Bathroom Renovation Video 14" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2863,12 +2840,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 15" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108583/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_34_kemx2j.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108583/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_34_kemx2j.jpg"
-            alt="Bathroom Renovation Video 15" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 15" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773114763/bathroom_video_compressed_arljj1.mp4">
+          <img src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773114763/bathroom_video_compressed_arljj1.jpg" alt="Bathroom Renovation Video 15" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2879,12 +2852,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 16" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108585/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_27_wmt9mg.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108585/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_27_wmt9mg.jpg"
-            alt="Bathroom Renovation Video 16" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 16" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773115684/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_18_tq5mks.mp4">
+          <img src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773115684/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_18_tq5mks.jpg" alt="Bathroom Renovation Video 16" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2895,12 +2864,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 17" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108584/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_4_uorgtg.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108584/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_4_uorgtg.jpg"
-            alt="Bathroom Renovation Video 17" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 17" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108582/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_11_bjlxpq.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108582/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_11_bjlxpq.jpg" alt="Bathroom Renovation Video 17" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2911,12 +2876,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 18" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108593/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_uvmuqy.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108593/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_uvmuqy.jpg"
-            alt="Bathroom Renovation Video 18" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 18" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108572/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_19_fvfmqu.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108572/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_19_fvfmqu.jpg" alt="Bathroom Renovation Video 18" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2927,12 +2888,8 @@
           </div>
         </div>
 
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 19" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108568/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_35_qlxlzr.mp4">
-          <img
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108568/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_35_qlxlzr.jpg"
-            alt="Bathroom Renovation Video 19" loading="lazy" width="600" height="400" />
+        <div class="portfolio-card scale-in video-card" data-category="videos bathroom" data-title="Bathroom Renovation Video 19" data-desc="Watch our bathroom transformation." data-video="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_10_ujxr0a.mp4">
+          <img src="https://res.cloudinary.com/dg27n9d1b/video/upload/so_0,w_600,h_400,c_fill/v1773108569/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_10_ujxr0a.jpg" alt="Bathroom Renovation Video 19" loading="lazy" width="600" height="400" />
           <div class="play-icon"></div>
           <span class="video-category-badge">Bathroom</span>
           <div class="portfolio-meta">
@@ -2942,194 +2899,6 @@
             </div>
           </div>
         </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 20" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773114763/bathroom_video_compressed_arljj1.mp4">
-          <img
-            src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773114763/bathroom_video_compressed_arljj1.jpg"
-            alt="Bathroom Renovation Video 20" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Bathroom</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Bathroom Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 21" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773113982/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_34_bxn5xo.mp4">
-          <img
-            src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773113982/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_34_bxn5xo.jpg"
-            alt="Bathroom Renovation Video 21" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Bathroom</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Bathroom Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 22" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773113944/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_38_pheasr.mp4">
-          <img
-            src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773113944/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_38_pheasr.jpg"
-            alt="Bathroom Renovation Video 22" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Bathroom</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Bathroom Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 23" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773113888/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_37_nqja34.mp4">
-          <img
-            src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773113888/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_37_nqja34.jpg"
-            alt="Bathroom Renovation Video 23" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Bathroom</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Bathroom Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 24" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773115684/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_18_tq5mks.mp4">
-          <img
-            src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773115684/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_18_tq5mks.jpg"
-            alt="Bathroom Renovation Video 24" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Bathroom</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Bathroom Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos bathroom"
-          data-title="Bathroom Renovation Video 25" data-desc="Watch our bathroom transformation."
-          data-video="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773115798/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_8_lb36lk.mp4">
-          <img
-            src="https://res.cloudinary.com/dmkxk7wv3/video/upload/so_0,w_600,h_400,c_fill/v1773115798/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_8_lb36lk.jpg"
-            alt="Bathroom Renovation Video 25" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Bathroom</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Bathroom Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos" data-title="Kitchen Renovation Video"
-          data-desc="Watch our kitchen transformation." data-video="">
-          <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=600&fit=crop"
-            alt="Kitchen Renovation Video" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Kitchen</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Kitchen Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-card scale-in video-card" data-category="videos" data-title="Basement Renovation Video"
-          data-desc="Watch our basement transformation." data-video="">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&fit=crop"
-            alt="Basement Renovation Video" loading="lazy" width="600" height="400" />
-          <div class="play-icon"></div>
-          <span class="video-category-badge">Basement</span>
-          <div class="portfolio-meta">
-            <div>
-              <div class="portfolio-title-sm">Basement Renovation</div>
-              <div class="portfolio-tag">Video</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Before/After Gallery -->
-  <section class="before-after-section">
-    <div class="section-header fade-in">
-      <h2>Before & After</h2>
-      <p>See the amazing transformations we've achieved</p>
-    </div>
-    <div class="before-after-grid">
-      <div class="before-after-item fade-in-left" data-position="50">
-        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&fit=crop" alt="Before"
-          class="before-img">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&fit=crop" alt="After"
-          class="after-img">
-        <div class="before-after-slider"></div>
-        <div class="before-after-labels">
-          <span class="ba-label">Before</span>
-          <span class="ba-label">After</span>
-        </div>
-      </div>
-      <div class="before-after-item fade-in-right" data-position="50">
-        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&fit=crop" alt="Before"
-          class="before-img">
-        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&fit=crop" alt="After"
-          class="after-img">
-        <div class="before-after-slider"></div>
-        <div class="before-after-labels">
-          <span class="ba-label">Before</span>
-          <span class="ba-label">After</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="store" class="simple-section">
-    <h2 class="fade-in">Our Catalog</h2>
-    <p class="fade-in">Upgrade your home with our carefully curated collection of renovation, plumbing, and finishing
-      products — everything you need to create stunning kitchens, beautiful bathrooms, and flawless living spaces.</p>
-    <a href="catalog.html" class="btn-portfolio fade-in">Visit Our Catalog</a>
-    <div class="store-video fade-in">
-      <video
-        src="https://res.cloudinary.com/dg27n9d1b/video/upload/v1771904381/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_13_cllpwo.mp4"
-        autoplay muted loop playsinline aria-label="Reno-Romax-Pro store showcase video"></video>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container about-container">
-      <div class="about-logo fade-in-left" oncontextmenu="return false;">
-        <img
-          src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1773095008/%D0%94%D0%BB%D1%8F_%D1%81%D0%B0%D0%B9%D1%82%D0%B0._kg5nll.jpg"
-          alt="Reno-Romax-Pro" class="about-logo-img" oncontextmenu="return false;" ondragstart="return false;"
-          onselectstart="return false;" />
-      </div>
-      <div class="about-text fade-in-right">
-        <p><strong style="color: #f97316;">About Our Company</strong><br>At Reno-Romax-Pro, we bring years of experience
-          in high-quality renovations and interior finishing. We pride ourselves on delivering excellence, on time and
-          on budget. Whether it's a full home makeover or a small remodel, we treat every project with care and
-          precision.</p>
-        <p>Our team of skilled professionals is dedicated to turning your vision into reality, with a commitment to
-          quality craftsmanship and customer satisfaction.</p>
       </div>
     </div>
   </section>
@@ -3150,21 +2919,26 @@
             </button>
             <a class="btn btn-whatsapp" href="https://wa.me/message/YWSMYRONSBOCK1" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
               </svg>
               WhatsApp
             </a>
           </div>
           <p class="consultation-note">We accept calls from Monday to Friday from 10:00AM to 19:00 PM</p>
         </div>
-        <div class="consultation-image fade-in-right"
-          style="display: flex; align-items: center; justify-content: center;">
-          <video
-            src="https://res.cloudinary.com/dg27n9d1b/video/upload/v1771144454/video_2026-01-28_21-31-08_qcjr3l.mp4"
-            autoplay muted loop playsinline aria-label="Reno-Romax-Pro consultation video"></video>
+        <div class="consultation-image fade-in-right" style="display: flex; align-items: center; justify-content: center;">
+          <video src="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773693432/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_47_bz2t2g.mp4" autoplay muted loop playsinline aria-label="Reno-Romax-Pro consultation video"></video>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="store" class="simple-section">
+    <h2 class="fade-in">Our Catalog</h2>
+    <p class="fade-in">Upgrade your home with our carefully curated collection of renovation, plumbing, and finishing products — everything you need to create stunning kitchens, beautiful bathrooms, and flawless living spaces.</p>
+    <a href="catalog.html" class="btn-portfolio fade-in">Visit Our Catalog</a>
+    <div class="store-video fade-in">
+      <video src="https://res.cloudinary.com/dg27n9d1b/video/upload/v1771904381/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_13_cllpwo.mp4" autoplay muted loop playsinline aria-label="Reno-Romax-Pro store showcase video"></video>
     </div>
   </section>
 
@@ -3198,8 +2972,7 @@
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea id="formMessage" class="form-input form-textarea"
-            placeholder="Tell us about your project..."></textarea>
+          <textarea id="formMessage" class="form-input form-textarea" placeholder="Tell us about your project..."></textarea>
         </div>
         <button type="submit" class="btn-submit">Send Request</button>
       </form>
@@ -3244,7 +3017,6 @@
   </div>
 
 
-
   <!-- Testimonials Carousel -->
   <section class="testimonials-section">
     <div class="testimonials-header fade-in">
@@ -3257,11 +3029,9 @@
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"Reno-Romax-Pro transformed our outdated kitchen into a modern masterpiece.
-                The team was professional, punctual, and the quality of work exceeded our expectations!"</p>
+              <p class="testimonial-text">"Reno-Romax-Pro transformed our outdated kitchen into a modern masterpiece. The team was professional, punctual, and the quality of work exceeded our expectations!"</p>
               <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
-                  alt="Sarah M." class="testimonial-avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Sarah M." class="testimonial-avatar">
                 <div class="testimonial-info">
                   <h4>Sarah M.</h4><p>Kitchen Renovation, Toronto — <time datetime="2026-01">January 2026</time></p>
                 </div>
@@ -3271,11 +3041,9 @@
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"Outstanding basement renovation! They turned our dark, unused basement into a
-                beautiful living space. Highly recommend their services to anyone looking for quality work."</p>
+              <p class="testimonial-text">"Outstanding basement renovation! They turned our dark, unused basement into a beautiful living space. Highly recommend their services to anyone looking for quality work."</p>
               <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
-                  alt="Michael R." class="testimonial-avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Michael R." class="testimonial-avatar">
                 <div class="testimonial-info">
                   <h4>Michael R.</h4><p>Basement Renovation, Vaughan — <time datetime="2026-02">February 2026</time></p>
                 </div>
@@ -3285,11 +3053,9 @@
           <div class="testimonial-slide">
             <div class="testimonial-card">
               <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"From start to finish, the team was amazing. Our bathroom looks like it
-                belongs in a luxury hotel. The attention to detail is remarkable!"</p>
+              <p class="testimonial-text">"From start to finish, the team was amazing. Our bathroom looks like it belongs in a luxury hotel. The attention to detail is remarkable!"</p>
               <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
-                  alt="Jennifer L." class="testimonial-avatar">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Jennifer L." class="testimonial-avatar">
                 <div class="testimonial-info">
                   <h4>Jennifer L.</h4><p>Bathroom Renovation, Toronto — <time datetime="2026-02">February 2026</time></p>
                 </div>
@@ -3305,6 +3071,7 @@
       </div>
     </div>
   </section>
+
   <!-- Before & After Comparison Table (SEO + AI visibility) -->
   <section id="before-after" style="background: #f8fafc; padding: 4rem 1.5rem;" aria-label="Before and After Renovation Examples Toronto">
     <div style="max-width: 1100px; margin: 0 auto;">
@@ -3361,21 +3128,17 @@
     </div>
   </section>
 
-
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-logo">
         <a href="#home">
-          <img src="logo.jpg"
-            alt="Reno-Romax-Pro Logo" class="footer-logo-img" />
+          <img src="logo.jpg" alt="Reno-Romax-Pro Logo" class="footer-logo-img" />
         </a>
       </div>
       <div class="footer-info">
         <h4>Business Information</h4>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Maple,+Ontario,+Canada" target="_blank"
-            rel="noopener">Maple, Ontario, Canada</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=Maple,+Ontario,+Canada" target="_blank" rel="noopener">Maple, Ontario, Canada</a></p>
         <p><a href="mailto:reno-romax-pro@gmail.com">Email: reno-romax-pro@gmail.com</a></p>
         <p><a href="tel:+14377999960">Phone: +1 (437) 799-9960</a></p>
         <p><a href="privacy.html">Privacy Policy</a></p>
@@ -3383,11 +3146,9 @@
       <div class="footer-links">
         <h4>Follow Us</h4>
         <ul>
-          <li><a href="https://www.facebook.com/people/Reno-Romax-Pro/61575113914610/" target="_blank"
-              rel="noopener">Facebook</a></li>
+          <li><a href="https://www.facebook.com/people/Reno-Romax-Pro/61575113914610/" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="https://www.instagram.com/renoromaxpro/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.tiktok.com/@renoromaxpro?_r=1&_t=ZM-916qNUI07v1" target="_blank"
-              rel="noopener">TikTok</a></li>
+          <li><a href="https://www.tiktok.com/@renoromaxpro?_r=1&_t=ZM-916qNUI07v1" target="_blank" rel="noopener">TikTok</a></li>
           <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
         </ul>
       </div>
@@ -3407,8 +3168,7 @@
   <!-- Callback Button -->
   <button class="callback-btn" onclick="openCallbackForm()" aria-label="Request callback">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path
-        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   </button>
 
@@ -3451,25 +3211,18 @@
       // ===== IMAGE PROTECTION FOR ABOUT SECTION =====
       const protectedImg = document.querySelector('.about-logo-img');
       if (protectedImg) {
-        // Disable right-click context menu
         protectedImg.addEventListener('contextmenu', function (e) {
           e.preventDefault();
           return false;
         });
-
-        // Disable drag
         protectedImg.addEventListener('dragstart', function (e) {
           e.preventDefault();
           return false;
         });
-
-        // Disable select
         protectedImg.addEventListener('selectstart', function (e) {
           e.preventDefault();
           return false;
         });
-
-        // Disable copy
         protectedImg.addEventListener('copy', function (e) {
           e.preventDefault();
           return false;
@@ -3477,99 +3230,51 @@
       }
 
       // ===== GLOBAL KEYBOARD PROTECTION =====
-      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, PrintScreen
       document.addEventListener('keydown', function (e) {
-        // F12
-        if (e.key === 'F12') {
-          e.preventDefault();
-          return false;
-        }
-        // Ctrl+Shift+I (Developer Tools)
-        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-          e.preventDefault();
-          return false;
-        }
-        // Ctrl+Shift+J (Console)
-        if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-          e.preventDefault();
-          return false;
-        }
-        // Ctrl+U (View Source)
-        if (e.ctrlKey && e.key === 'u') {
-          e.preventDefault();
-          return false;
-        }
-        // Ctrl+S (Save)
-        if (e.ctrlKey && e.key === 's') {
-          e.preventDefault();
-          return false;
-        }
-        // PrintScreen
-        if (e.key === 'PrintScreen') {
-          e.preventDefault();
-          return false;
-        }
+        if (e.key === 'F12') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+        if (e.key === 'PrintScreen') { e.preventDefault(); return false; }
       });
-
-      // Keep "Our Store" section directly above "Our Services"
-      const storeSection = document.getElementById('store');
-      const servicesSection = document.getElementById('services');
-      if (storeSection && servicesSection && servicesSection.parentNode) {
-        servicesSection.parentNode.insertBefore(storeSection, servicesSection);
-      }
 
       // ===== SCROLL ANIMATIONS =====
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
+      const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); }
         });
       }, observerOptions);
-
-      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
-        observer.observe(el);
-      });
+      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => { observer.observe(el); });
 
       // ===== PARALLAX EFFECT =====
       window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const heroImages = document.querySelectorAll('.slide img');
-        heroImages.forEach(img => {
-          img.style.transform = `translateY(${scrolled * 0.3}px)`;
-        });
+        heroImages.forEach(img => { img.style.transform = `translateY(${scrolled * 0.3}px)`; });
       });
 
       // ===== COUNTDOWN TIMER =====
       const endDate = new Date();
       endDate.setDate(endDate.getDate() + 7);
-
       function updateCountdown() {
         const now = new Date().getTime();
         const distance = endDate.getTime() - now;
-
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
         document.getElementById('days').textContent = String(days).padStart(2, '0');
         document.getElementById('hours').textContent = String(hours).padStart(2, '0');
         document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
         document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
       }
-
       updateCountdown();
       setInterval(updateCountdown, 1000);
 
       // ===== STATS COUNTER =====
       const statValues = document.querySelectorAll('.stat-value[data-target]');
-
       const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -3579,7 +3284,6 @@
           }
         });
       }, { threshold: 0.5 });
-
       statValues.forEach(stat => counterObserver.observe(stat));
 
       function animateCounter(element, target) {
@@ -3601,7 +3305,6 @@
         const slider = item.querySelector('.before-after-slider');
         const afterImg = item.querySelector('.after-img');
         let isDragging = false;
-
         function updatePosition(x) {
           const rect = item.getBoundingClientRect();
           let position = ((x - rect.left) / rect.width) * 100;
@@ -3609,18 +3312,12 @@
           slider.style.left = position + '%';
           afterImg.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
         }
-
         slider.addEventListener('mousedown', () => isDragging = true);
         document.addEventListener('mouseup', () => isDragging = false);
-        document.addEventListener('mousemove', (e) => {
-          if (isDragging) updatePosition(e.clientX);
-        });
-
+        document.addEventListener('mousemove', (e) => { if (isDragging) updatePosition(e.clientX); });
         slider.addEventListener('touchstart', () => isDragging = true);
         document.addEventListener('touchend', () => isDragging = false);
-        document.addEventListener('touchmove', (e) => {
-          if (isDragging) updatePosition(e.touches[0].clientX);
-        });
+        document.addEventListener('touchmove', (e) => { if (isDragging) updatePosition(e.touches[0].clientX); });
       });
 
       // ===== TESTIMONIALS CAROUSEL =====
@@ -3628,19 +3325,12 @@
       const testimonialDots = document.querySelectorAll('.testimonial-dot');
       let currentTestimonial = 0;
       let testimonialInterval;
-
       function goToTestimonial(index) {
         currentTestimonial = index;
         testimonialSlides.style.transform = `translateX(-${index * 100}%)`;
-        testimonialDots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
+        testimonialDots.forEach((dot, i) => { dot.classList.toggle('active', i === index); });
       }
-
-      function nextTestimonial() {
-        goToTestimonial((currentTestimonial + 1) % 3);
-      }
-
+      function nextTestimonial() { goToTestimonial((currentTestimonial + 1) % 3); }
       testimonialDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           goToTestimonial(index);
@@ -3648,7 +3338,6 @@
           testimonialInterval = setInterval(nextTestimonial, 5000);
         });
       });
-
       testimonialInterval = setInterval(nextTestimonial, 5000);
 
       // ===== MOBILE MENU =====
@@ -3656,115 +3345,67 @@
       const mobileNav = document.getElementById('mobileNav');
       const mobileNavOverlay = document.getElementById('mobileNavOverlay');
       const header = document.querySelector('.header');
-
-      // Toggle mobile menu
       function toggleMenu() {
         mobileBtn.classList.toggle('active');
         mobileNav.classList.toggle('open');
         mobileNavOverlay.classList.toggle('open');
         document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
       }
-
-      // Close mobile menu
       function closeMobileMenu() {
         mobileBtn.classList.remove('active');
         mobileNav.classList.remove('open');
         mobileNavOverlay.classList.remove('open');
         document.body.style.overflow = '';
       }
-
-      // Toggle services submenu
       function toggleServicesSubmenu(event) {
         event.preventDefault();
         event.stopPropagation();
         const servicesItem = document.getElementById('servicesMenuItem');
-        if (servicesItem) {
-          servicesItem.classList.toggle('open');
-        }
+        if (servicesItem) { servicesItem.classList.toggle('open'); }
       }
-
-      // Make functions globally available for onclick
       window.closeMobileMenu = closeMobileMenu;
       window.toggleServicesSubmenu = toggleServicesSubmenu;
-
-      // Open menu on button click
       mobileBtn.addEventListener('click', toggleMenu);
-
-      // Close menu on overlay click
       mobileNavOverlay.addEventListener('click', closeMobileMenu);
-
-      // Close menu on escape key
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
-          closeMobileMenu();
-        }
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) { closeMobileMenu(); }
       });
-
-      // Close menu when clicking on any link (except Services parent)
       const mobileNavLinks = mobileNav.querySelectorAll('.mobile-nav-link');
       mobileNavLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-          // Don't close if clicking on Services parent (has submenu)
           const parent = link.closest('.mobile-nav-item');
-          if (parent && parent.querySelector('.mobile-submenu')) {
-            return; // Let toggleServicesSubmenu handle it
-          }
-          // Close menu for all other links
-          if (mobileNav.classList.contains('open')) {
-            closeMobileMenu();
-          }
+          if (parent && parent.querySelector('.mobile-submenu')) { return; }
+          if (mobileNav.classList.contains('open')) { closeMobileMenu(); }
         });
       });
-
-      // Close menu when clicking submenu links
       const submenuLinks = mobileNav.querySelectorAll('.mobile-submenu .mobile-nav-link');
       submenuLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (mobileNav.classList.contains('open')) {
-            closeMobileMenu();
-          }
+          if (mobileNav.classList.contains('open')) { closeMobileMenu(); }
         });
       });
 
       // ===== HEADER SCROLL & SCROLL TO TOP =====
       const scrollToTopBtn = document.getElementById('scrollToTop');
-
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-
-        if (window.scrollY > 400) {
-          scrollToTopBtn.classList.add('visible');
-        } else {
-          scrollToTopBtn.classList.remove('visible');
-        }
+        if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+        if (window.scrollY > 400) { scrollToTopBtn.classList.add('visible'); } else { scrollToTopBtn.classList.remove('visible'); }
       });
-
-      scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      scrollToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
       // ===== HERO SLIDER =====
       const slides = document.querySelectorAll('.slide');
       const dots = document.querySelectorAll('.dot');
-
       let currentSlide = 0;
       const totalSlides = slides.length;
-
       function goToSlide(n) {
         slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
+        dots[currentSlide]?.classList.remove('active');
         currentSlide = (n + totalSlides) % totalSlides;
         slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
+        dots[currentSlide]?.classList.add('active');
       }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => { goToSlide(index); });
-      });
+      dots.forEach((dot, index) => { dot.addEventListener('click', () => { goToSlide(index); }); });
 
       // ===== SERVICES SLIDER =====
       const servicesTrack = document.getElementById('servicesTrack');
@@ -3772,24 +3413,17 @@
       const totalServices = servicesSlides.length;
       let servicesIndex = 0;
       let servicesInterval;
-
       function updateServicesSlider(index) {
         if (!servicesTrack || !totalServices) return;
         servicesIndex = (index + totalServices) % totalServices;
         servicesTrack.style.transform = `translateX(-${servicesIndex * 100}%)`;
       }
-
       function startServicesAutoplay() {
         if (!servicesTrack || !totalServices) return;
         clearInterval(servicesInterval);
-        servicesInterval = setInterval(() => {
-          updateServicesSlider(servicesIndex + 1);
-        }, 4000);
+        servicesInterval = setInterval(() => { updateServicesSlider(servicesIndex + 1); }, 4000);
       }
-
-      if (servicesTrack && totalServices) {
-        startServicesAutoplay();
-      }
+      if (servicesTrack && totalServices) { startServicesAutoplay(); }
 
       // ===== SMOOTH SCROLLING =====
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -3818,21 +3452,16 @@
       const lightboxNext = lightbox.querySelector('[data-nav="next"]');
       let currentIndex = 0;
 
-      function hideAllPortfolioCards() {
-        portfolioCards.forEach(card => card.classList.add('is-hidden'));
-      }
-
+      function hideAllPortfolioCards() { portfolioCards.forEach(card => card.classList.add('is-hidden')); }
       function applyFilter(filter) {
         hideAllPortfolioCards();
         portfolioCards.forEach(card => {
           const category = card.getAttribute('data-category');
-          // Support multiple categories separated by space
           const categories = category ? category.split(' ') : [];
           const show = categories.includes(filter);
           card.classList.toggle('is-hidden', !show);
         });
       }
-
       filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
           filterButtons.forEach(b => b.classList.remove('active'));
@@ -3840,40 +3469,32 @@
           applyFilter(btn.dataset.filter);
         });
       });
-
       hideAllPortfolioCards();
 
       const lightboxVideo = document.getElementById('lightboxVideo');
-
       function openLightbox(index) {
         const card = portfolioCards[index];
         if (!card) return;
         currentIndex = index;
-
-        // Check if it's a video card
         const videoUrl = card.dataset.video;
         if (videoUrl && videoUrl.trim() !== '') {
-          // Show video in fullscreen mode
           lightbox.classList.add('video-mode');
           lightboxImg.style.display = 'none';
           lightboxVideo.style.display = 'block';
           lightboxVideo.src = videoUrl;
           lightboxVideo.play();
         } else {
-          // Show image mode
           lightbox.classList.remove('video-mode');
           lightboxImg.style.display = 'block';
           lightboxVideo.style.display = 'none';
           lightboxVideo.pause();
           lightboxImg.src = card.dataset.img;
         }
-
         lightboxTitle.textContent = card.dataset.title || '';
         lightboxDesc.textContent = card.dataset.desc || '';
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
-
       function closeLightbox() {
         lightbox.classList.remove('active');
         lightbox.classList.remove('video-mode');
@@ -3881,7 +3502,6 @@
         lightboxVideo.currentTime = 0;
         document.body.style.overflow = '';
       }
-
       function navigateLightbox(dir) {
         const visibleCards = Array.from(portfolioCards).filter(card => !card.classList.contains('hidden'));
         if (!visibleCards.length) return;
@@ -3893,16 +3513,11 @@
         currentIndex = Array.from(portfolioCards).indexOf(nextCard);
         openLightbox(currentIndex);
       }
-
-      portfolioCards.forEach((card, idx) => {
-        card.addEventListener('click', () => openLightbox(idx));
-      });
-
+      portfolioCards.forEach((card, idx) => { card.addEventListener('click', () => openLightbox(idx)); });
       lightboxClose.addEventListener('click', closeLightbox);
       lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
       lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(-1); });
       lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(1); });
-
       document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
         if (e.key === 'Escape') closeLightbox();
@@ -3911,19 +3526,10 @@
       });
 
       // ===== MODAL HANDLERS =====
-      document.getElementById('contactModal').addEventListener('click', function (e) {
-        if (e.target === this) closeContactForm();
-      });
-
-      document.getElementById('callbackModal').addEventListener('click', function (e) {
-        if (e.target === this) closeCallbackForm();
-      });
-
+      document.getElementById('contactModal').addEventListener('click', function (e) { if (e.target === this) closeContactForm(); });
+      document.getElementById('callbackModal').addEventListener('click', function (e) { if (e.target === this) closeCallbackForm(); });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          closeContactForm();
-          closeCallbackForm();
-        }
+        if (e.key === 'Escape') { closeContactForm(); closeCallbackForm(); }
       });
     });
 
@@ -3932,22 +3538,18 @@
       document.getElementById('contactModal').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeContactForm() {
       document.getElementById('contactModal').classList.remove('active');
       document.body.style.overflow = '';
     }
-
     function openCallbackForm() {
       document.getElementById('callbackModal').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeCallbackForm() {
       document.getElementById('callbackModal').classList.remove('active');
       document.body.style.overflow = '';
     }
-
     function submitContactForm(event) {
       event.preventDefault();
       const formData = {
@@ -3962,22 +3564,17 @@
       const requests = JSON.parse(localStorage.getItem('reno_requests') || '[]');
       requests.push(formData);
       localStorage.setItem('reno_requests', JSON.stringify(requests));
-
       emailjs.send('service_7p46q6m', 'template_9s77rxz', {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         service: formData.service,
         message: formData.message
-      }).catch((error) => {
-        console.error('EmailJS error:', error);
-      });
-
+      }).catch((error) => { console.error('EmailJS error:', error); });
       document.getElementById('contactForm').reset();
       closeContactForm();
       showToast('Your request has been sent! We will contact you soon.');
     }
-
     function submitCallbackForm(event) {
       event.preventDefault();
       const formData = {
@@ -3991,21 +3588,16 @@
       const requests = JSON.parse(localStorage.getItem('reno_requests') || '[]');
       requests.push(formData);
       localStorage.setItem('reno_requests', JSON.stringify(requests));
-
       emailjs.send('service_7p46q6m', 'template_9s77rxz', {
         name: formData.name,
         phone: formData.phone,
         time: formData.time,
         message: 'Callback request'
-      }).catch((error) => {
-        console.error('EmailJS error:', error);
-      });
-
+      }).catch((error) => { console.error('EmailJS error:', error); });
       document.getElementById('callbackForm').reset();
       closeCallbackForm();
       showToast('We will call you back soon!');
     }
-
     function showToast(message) {
       const toast = document.getElementById('toast');
       const toastMessage = document.getElementById('toastMessage');
@@ -4015,5 +3607,4 @@
     }
   </script>
 </body>
-
 </html>
