@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Panel | Reno-Romax-Pro</title>
-  <script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773690347511&amp;type=content-script&amp;dmn=chat.z.ai&amp;url=https%3A%2F%2Fchat.z.ai%2Fapi%2Fv1%2Fweb-dev%2Fworkspaces%2Ffiles%2Fcontent&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773690347511&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+  <script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773695750538&amp;type=content-script&amp;dmn=chat.z.ai&amp;url=https%3A%2F%2Fchat.z.ai%2Fapi%2Fv1%2Fweb-dev%2Fworkspaces%2Ffiles%2Fcontent&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773695750538&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -606,7 +606,7 @@
       </form>
       
       <p style="text-align: center; margin-top: 1.5rem; font-size: 0.75rem; color: var(--text-muted);">
-        Demo: username <strong>admin</strong>, password <strong>admin123</strong>
+        Username: <strong>admin</strong> · Password: <strong>admin123</strong>
       </p>
     </div>
   </div>
@@ -1035,6 +1035,20 @@
           <p class="page-subtitle">Change admin username and password</p>
         </div>
 
+        <div class="editor-card" style="background: #fef3c7; border: 2px solid #f59e0b; margin-bottom: 1.5rem;">
+          <div class="editor-card-body">
+            <p style="font-weight: 600; color: #92400e; margin-bottom: 0.5rem;">⚠️ Important Notice</p>
+            <p style="font-size: 0.875rem; color: #92400e;">
+              Default credentials that work on ALL devices: <br>
+              <strong>Username:</strong> admin <br>
+              <strong>Password:</strong> admin123
+            </p>
+            <p style="font-size: 0.875rem; color: #92400e; margin-top: 0.75rem;">
+              Password changed below only works on THIS device. To change globally, edit the <code>HARDCODED_ADMIN</code> variable in admin.html file.
+            </p>
+          </div>
+        </div>
+
         <div class="editor-card">
           <div class="editor-card-header">
             <h3 class="editor-card-title">Change Password</h3>
@@ -1082,10 +1096,29 @@
 
   <script>
     // ==================== Data Storage ====================
-    var DEFAULT_ADMIN = { username: 'admin', password: 'admin123' };
+    // ВАЖНО: Эти учетные данные работают ВСЕГДА на всех устройствах!
+    // Для смены пароля измените значения ниже:
+    var HARDCODED_ADMIN = { username: 'admin', password: 'admin123' };
 
     function getAdminCredentials() {
-      return JSON.parse(localStorage.getItem('reno_admin') || JSON.stringify(DEFAULT_ADMIN));
+      var stored = localStorage.getItem('reno_admin');
+      if (stored) {
+        return JSON.parse(stored);
+      }
+      return HARDCODED_ADMIN;
+    }
+
+    function checkCredentials(username, password) {
+      // Сначала проверяем жестко заданные учетные данные (работают всегда)
+      if (username === HARDCODED_ADMIN.username && password === HARDCODED_ADMIN.password) {
+        return true;
+      }
+      // Затем проверяем сохраненные в localStorage
+      var creds = getAdminCredentials();
+      if (username === creds.username && password === creds.password) {
+        return true;
+      }
+      return false;
     }
 
     function initData() {
@@ -1111,7 +1144,7 @@
         }));
       }
       if (!localStorage.getItem('reno_admin')) {
-        localStorage.setItem('reno_admin', JSON.stringify(DEFAULT_ADMIN));
+        localStorage.setItem('reno_admin', JSON.stringify(HARDCODED_ADMIN));
       }
     }
 
@@ -1122,8 +1155,7 @@
     }
 
     function login(username, password) {
-      var creds = getAdminCredentials();
-      if (username === creds.username && password === creds.password) {
+      if (checkCredentials(username, password)) {
         sessionStorage.setItem('reno_admin_logged', 'true');
         showAdminPanel();
         return true;
@@ -1384,14 +1416,15 @@
       if (passwordForm) {
         passwordForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          var creds = getAdminCredentials();
           var currentPassword = document.getElementById('currentPassword').value;
           var newPassword = document.getElementById('newPassword').value;
           var confirmPassword = document.getElementById('confirmPassword').value;
           var adminUsername = document.getElementById('adminUsername').value.trim();
           var newUsername = document.getElementById('newUsername').value.trim();
 
-          if (currentPassword !== creds.password) {
+          // Проверяем текущий пароль - либо hardcoded, либо из localStorage
+          var validCurrentPassword = (currentPassword === HARDCODED_ADMIN.password || currentPassword === getAdminCredentials().password);
+          if (!validCurrentPassword) {
             showToast('Incorrect current password', 'error');
             return;
           }
@@ -1405,12 +1438,12 @@
           }
 
           var updated = {
-            username: newUsername || adminUsername || creds.username,
+            username: newUsername || adminUsername || HARDCODED_ADMIN.username,
             password: newPassword
           };
 
           localStorage.setItem('reno_admin', JSON.stringify(updated));
-          showToast('Username and password updated!', 'success');
+          showToast('Password changed! Note: Only works on THIS device. To change globally, edit admin.html file.', 'success');
           passwordForm.reset();
         });
       }
