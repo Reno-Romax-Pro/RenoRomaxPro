@@ -22,7 +22,7 @@
   <meta name="ICBM" content="43.8561, -79.5085" />
 
   <!-- Canonical URL -->
-  <script type="text/javascript" nonce="b8a1a9a62b894cf7a90bd75792d" src="//injections.adguard.org?ts=1773919033059&amp;type=content-script&amp;dmn=chat.z.ai&amp;url=http%3A%2F%2Fchat.z.ai%2Fapi%2Fv1%2Fweb-dev%2Fworkspaces%2Ffiles%2Fcontent&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="b8a1a9a62b894cf7a90bd75792d" src="//injections.adguard.org?ts=1773919033059&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="canonical" href="https://reno-romax-pro.com/" />
+  <script type="text/javascript" nonce="1b0c695db74f455d995ef953e7a" src="//local.adguard.org?ts=1773957559011&amp;type=content-script&amp;dmn=chat.z.ai&amp;url=https%3A%2F%2Fchat.z.ai%2Fapi%2Fv1%2Fweb-dev%2Fworkspaces%2Ffiles%2Fcontent&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="1b0c695db74f455d995ef953e7a" src="//local.adguard.org?ts=1773957559011&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="canonical" href="https://reno-romax-pro.com/" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -1067,7 +1067,7 @@
 
     .service-card {
       position: relative;
-      aspect-ratio: 21/9;
+      aspect-ratio: 3/2;
       display: block;
       overflow: hidden;
       background-size: cover;
@@ -1078,15 +1078,15 @@
 
     @media (min-width: 768px) {
       .service-card {
-        aspect-ratio: 21/9;
+        aspect-ratio: 3/2;
         max-height: none;
       }
     }
 
     @media (min-width: 1024px) {
       .service-card {
-        aspect-ratio: 21/9;
-        max-height: 450px;
+        aspect-ratio: 3/2;
+        max-height: 600px;
       }
     }
 
@@ -1167,6 +1167,20 @@
       overflow: hidden;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
       aspect-ratio: 16/10;
+    }
+    
+    .basement-item {
+      grid-column: 1 / -1;
+      max-width: 100%;
+      margin: 2rem auto 0;
+      width: 100%;
+    }
+    
+    @media (min-width: 768px) {
+      .basement-item {
+        max-width: calc(50% - 1rem);
+        margin: 2rem auto 0;
+      }
     }
 
     .before-after-item img {
@@ -2471,19 +2485,6 @@
     </div>
   </div>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container about-container">
-      <div class="about-logo fade-in-left" oncontextmenu="return false;">
-        <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1773095008/%D0%94%D0%BB%D1%8F_%D1%81%D0%B0%D0%B9%D1%82%D0%B0._kg5nll.jpg" alt="Reno-Romax-Pro" class="about-logo-img" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" />
-      </div>
-      <div class="about-text fade-in-right">
-        <p><strong style="color: #f97316;">About Our Company</strong><br>At Reno-Romax-Pro, we bring years of experience in high-quality renovations and interior finishing. We pride ourselves on delivering excellence, on time and on budget. Whether it's a full home makeover or a small remodel, we treat every project with care and precision.</p>
-        <p>Our team of skilled professionals is dedicated to turning your vision into reality, with a commitment to quality craftsmanship and customer satisfaction.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Services Section -->
   <section id="services" class="services">
     <div class="services-bg">
@@ -2514,6 +2515,56 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section class="before-after-section">
+    <div class="section-header fade-in">
+      <h2>Before & After</h2>
+      <p>See the amazing transformations we've achieved</p>
+    </div>
+    <div class="before-after-grid">
+      <div class="before-after-item fade-in-left" data-position="50">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&fit=crop" alt="Kitchen Before" class="before-img">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&fit=crop" alt="Kitchen After" class="after-img">
+        <div class="before-after-slider"></div>
+        <div class="before-after-labels">
+          <span class="ba-label">Before</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="before-after-item fade-in-left" data-position="50">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&fit=crop" alt="Bathroom Before" class="before-img">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&fit=crop" alt="Bathroom After" class="after-img">
+        <div class="before-after-slider"></div>
+        <div class="before-after-labels">
+          <span class="ba-label">Before</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="before-after-item basement-item fade-in-left" data-position="50">
+        <img src="images/basement-before.png" alt="Basement Before" class="before-img">
+        <img src="images/basement-after.png" alt="Basement After" class="after-img">
+        <div class="before-after-slider"></div>
+        <div class="before-after-labels">
+          <span class="ba-label">Before</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-container">
+      <div class="about-logo fade-in-left" oncontextmenu="return false;">
+        <img src="https://res.cloudinary.com/dg27n9d1b/image/upload/v1773095008/%D0%94%D0%BB%D1%8F_%D1%81%D0%B0%D0%B9%D1%82%D0%B0._kg5nll.jpg" alt="Reno-Romax-Pro" class="about-logo-img" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" />
+      </div>
+      <div class="about-text fade-in-right">
+        <p><strong style="color: #f97316;">About Our Company</strong><br>At Reno-Romax-Pro, we bring years of experience in high-quality renovations and interior finishing. We pride ourselves on delivering excellence, on time and on budget. Whether it's a full home makeover or a small remodel, we treat every project with care and precision.</p>
+        <p>Our team of skilled professionals is dedicated to turning your vision into reality, with a commitment to quality craftsmanship and customer satisfaction.</p>
       </div>
     </div>
   </section>
@@ -2571,43 +2622,6 @@
         </div>
         <div class="stat-value" data-target="98">0</div>
         <div class="stat-label">% Satisfaction</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Before/After Gallery -->
-  <section class="before-after-section">
-    <div class="section-header fade-in">
-      <h2>Before & After</h2>
-      <p>See the amazing transformations we've achieved</p>
-    </div>
-    <div class="before-after-grid">
-      <div class="before-after-item fade-in-left" data-position="50">
-        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&fit=crop" alt="Before" class="before-img">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&fit=crop" alt="After" class="after-img">
-        <div class="before-after-slider"></div>
-        <div class="before-after-labels">
-          <span class="ba-label">Before</span>
-          <span class="ba-label">After</span>
-        </div>
-      </div>
-      <div class="before-after-item fade-in-left" data-position="50">
-        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&fit=crop" alt="Before" class="before-img">
-        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=800&fit=crop" alt="After" class="after-img">
-        <div class="before-after-slider"></div>
-        <div class="before-after-labels">
-          <span class="ba-label">Before</span>
-          <span class="ba-label">After</span>
-        </div>
-      </div>
-      <div class="before-after-item fade-in-left" data-position="50">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&fit=crop" alt="Before" class="before-img">
-        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&fit=crop" alt="After" class="after-img">
-        <div class="before-after-slider"></div>
-        <div class="before-after-labels">
-          <span class="ba-label">Before</span>
-          <span class="ba-label">After</span>
-        </div>
       </div>
     </div>
   </section>
@@ -2927,7 +2941,7 @@
           <p class="consultation-note">We accept calls from Monday to Friday from 10:00AM to 19:00 PM</p>
         </div>
         <div class="consultation-image fade-in-right" style="display: flex; align-items: center; justify-content: center;">
-          <video src="https://res.cloudinary.com/dmkxk7wv3/video/upload/v1773693432/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_47_bz2t2g.mp4" autoplay muted loop playsinline aria-label="Reno-Romax-Pro consultation video"></video>
+          <video src="https://res.cloudinary.com/dg27n9d1b/video/upload/v1773952093/video_no_audio_meuqp9.mp4" autoplay muted loop playsinline aria-label="Reno-Romax-Pro consultation video"></video>
         </div>
       </div>
     </div>
@@ -2935,7 +2949,7 @@
 
   <section id="store" class="simple-section">
     <h2 class="fade-in">Our Catalog</h2>
-    <p class="fade-in">Upgrade your home with our carefully curated collection of renovation, plumbing, and finishing products — everything you need to create stunning kitchens, beautiful bathrooms, and flawless living spaces.</p>
+    <p class="fade-in">Upgrade your home with our carefully curated collection of renovation, plumbing, and finishing products everything you need to create stunning kitchens, beautiful bathrooms, and flawless living spaces.</p>
     <a href="catalog.html" class="btn-portfolio fade-in">Visit Our Catalog</a>
     <div class="store-video fade-in">
       <video src="https://res.cloudinary.com/dg27n9d1b/video/upload/v1771904381/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_13_cllpwo.mp4" autoplay muted loop playsinline aria-label="Reno-Romax-Pro store showcase video"></video>
