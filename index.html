@@ -22,7 +22,7 @@
   <meta name="ICBM" content="43.8561, -79.5085" />
 
   <!-- Canonical URL -->
-  <script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773690347511&amp;type=content-script&amp;dmn=chat.z.ai&amp;url=https%3A%2F%2Fchat.z.ai%2Fapi%2Fv1%2Fweb-dev%2Fworkspaces%2Ffiles%2Fcontent&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="43b65afc71db4db5a6cf6f0172d" src="//local.adguard.org?ts=1773690347511&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="canonical" href="https://reno-romax-pro.com/" />
+  <script type="text/javascript" nonce="b8a1a9a62b894cf7a90bd75792d" src="//injections.adguard.org?ts=1773919033059&amp;type=content-script&amp;dmn=chat.z.ai&amp;url=http%3A%2F%2Fchat.z.ai%2Fapi%2Fv1%2Fweb-dev%2Fworkspaces%2Ffiles%2Fcontent&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="b8a1a9a62b894cf7a90bd75792d" src="//injections.adguard.org?ts=1773919033059&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="canonical" href="https://reno-romax-pro.com/" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -3557,13 +3557,15 @@
         email: document.getElementById('formEmail').value,
         phone: document.getElementById('formPhone').value,
         service: document.getElementById('formService').value,
-        message: document.getElementById('formMessage').value,
-        status: 'new',
-        date: new Date().toISOString()
+        message: document.getElementById('formMessage').value
       };
-      const requests = JSON.parse(localStorage.getItem('reno_requests') || '[]');
-      requests.push(formData);
-      localStorage.setItem('reno_requests', JSON.stringify(requests));
+      // Send to Netlify Function (database)
+      fetch('/.netlify/functions/requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      }).catch((error) => { console.error('API error:', error); });
+      // Send email via EmailJS
       emailjs.send('service_7p46q6m', 'template_9s77rxz', {
         name: formData.name,
         email: formData.email,
@@ -3580,18 +3582,20 @@
       const formData = {
         name: document.getElementById('callbackName').value,
         phone: document.getElementById('callbackPhone').value,
-        time: document.getElementById('callbackTime').value,
-        type: 'callback',
-        status: 'new',
-        date: new Date().toISOString()
+        service: 'Callback - ' + document.getElementById('callbackTime').value,
+        message: 'Callback request - Best time: ' + document.getElementById('callbackTime').value
       };
-      const requests = JSON.parse(localStorage.getItem('reno_requests') || '[]');
-      requests.push(formData);
-      localStorage.setItem('reno_requests', JSON.stringify(requests));
+      // Send to Netlify Function (database)
+      fetch('/.netlify/functions/requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      }).catch((error) => { console.error('API error:', error); });
+      // Send email via EmailJS
       emailjs.send('service_7p46q6m', 'template_9s77rxz', {
         name: formData.name,
         phone: formData.phone,
-        time: formData.time,
+        time: document.getElementById('callbackTime').value,
         message: 'Callback request'
       }).catch((error) => { console.error('EmailJS error:', error); });
       document.getElementById('callbackForm').reset();
